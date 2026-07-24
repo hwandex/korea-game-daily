@@ -6,223 +6,209 @@
 <title>한국 게임 데일리 브리핑 · 韩国游戏每日简报</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body{
-    background:#0e1016; color:#e6e9f0;
-    font-family:"Pretendard","Malgun Gothic","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    line-height:1.65; -webkit-font-smoothing:antialiased;
+  body {
+    background:#0e1016; color:#e6e8ee;
+    font-family:"Malgun Gothic","Apple SD Gothic Neo","PingFang SC","Microsoft YaHei",-apple-system,sans-serif;
+    line-height:1.65; padding:0 0 60px;
   }
-  .wrap{ max-width:860px; margin:0 auto; padding:32px 18px 60px; }
-  header.top{
-    text-align:center; padding:30px 20px 26px; border-radius:18px;
-    background:linear-gradient(160deg,#171a23,#12141c);
-    border:1px solid #222634; margin-bottom:26px;
+  .wrap { max-width:860px; margin:0 auto; padding:0 18px; }
+  header {
+    text-align:center; padding:40px 18px 30px;
+    background:radial-gradient(ellipse at top,#1a1f2e 0%,#0e1016 70%);
+    border-bottom:1px solid #1e222d;
   }
-  header.top .kwave{ font-size:13px; letter-spacing:3px; color:#5b8cff; font-weight:700; }
-  header.top h1{ font-size:25px; margin:10px 0 4px; font-weight:800; }
-  header.top h1 .cn{ display:block; font-size:16px; color:#aeb6c8; font-weight:600; margin-top:3px; }
-  .datebar{ margin-top:14px; display:inline-flex; flex-wrap:wrap; gap:10px; justify-content:center; }
-  .datebar span{
-    font-size:13px; background:#1e222d; border:1px solid #2a2f3d;
-    padding:6px 13px; border-radius:20px; color:#cdd3e0;
+  header h1 { font-size:26px; font-weight:800; letter-spacing:-0.5px; }
+  header h1 .ko { color:#fff; }
+  header h1 .cn { color:#5b8cff; font-size:20px; display:block; margin-top:4px; }
+  .meta { margin-top:14px; font-size:13px; color:#9aa3b5; }
+  .badge {
+    display:inline-block; margin-top:12px; font-size:12px; color:#5b8cff;
+    border:1px solid #2a3350; background:#141a2b; padding:5px 14px; border-radius:20px;
   }
-  .datebar .live{ color:#4ade80; border-color:#1f4d34; }
-  .datebar .live::before{ content:"●"; margin-right:6px; color:#4ade80; }
-
-  section.block{ margin-bottom:30px; }
-  .blockhead{
-    display:flex; align-items:center; gap:13px; padding:14px 18px;
-    background:#171a23; border:1px solid #232838; border-left:4px solid #5b8cff;
-    border-radius:12px; margin-bottom:14px;
+  .section { margin-top:34px; }
+  .sec-head {
+    display:flex; align-items:center; gap:12px;
+    background:#171a23; border:1px solid #232838; border-left:3px solid #5b8cff;
+    padding:14px 18px; border-radius:12px;
   }
-  .blockhead .num{
-    flex:0 0 auto; width:34px; height:34px; border-radius:9px;
-    background:#5b8cff; color:#fff; font-weight:800; font-size:16px;
+  .sec-num {
+    flex:none; width:34px; height:34px; border-radius:9px;
+    background:#5b8cff; color:#0e1016; font-weight:800; font-size:16px;
     display:flex; align-items:center; justify-content:center;
   }
-  .blockhead h2{ font-size:17px; font-weight:700; }
-  .blockhead h2 .cn{ font-size:13px; color:#9aa3b7; font-weight:500; margin-left:6px; }
-
-  .card{
-    background:#171a23; border:1px solid #212636; border-radius:13px;
-    padding:17px 19px; margin-bottom:13px;
+  .sec-title .ko { font-size:17px; font-weight:700; color:#fff; }
+  .sec-title .cn { font-size:13px; color:#9aa3b5; }
+  .card {
+    background:#171a23; border:1px solid #232838; border-radius:12px;
+    padding:18px 20px; margin-top:12px;
   }
-  .card .ko{ font-size:15.5px; font-weight:600; color:#f2f4fa; }
-  .card .ko .tag{
-    display:inline-block; font-size:11px; font-weight:700; color:#5b8cff;
-    background:#1a2136; border:1px solid #263252; border-radius:6px;
-    padding:2px 8px; margin-right:8px; vertical-align:middle;
+  .card .k { font-size:15px; font-weight:600; color:#f0f2f7; }
+  .card .c { font-size:14px; color:#b9c0d0; margin-top:6px; }
+  .tag {
+    display:inline-block; font-size:11px; color:#8fa8ff; background:#161d33;
+    border:1px solid #263258; padding:2px 9px; border-radius:6px; margin-bottom:9px;
   }
-  .card .cn{ font-size:14px; color:#b7bfd0; margin-top:7px; }
-  .card .detail{ font-size:13px; color:#8b94a8; margin-top:8px; }
-
-  a.srclink{
+  .srclink {
     display:inline-flex; align-items:center; gap:5px; margin-top:9px;
     font-size:12px; color:#5b8cff; text-decoration:none;
     border:1px solid #2a2f3d; background:#1e222d; padding:4px 10px; border-radius:7px;
   }
-  a.srclink:hover{ background:#242a38; border-color:#3a4258; }
-
-  footer.foot{
-    margin-top:40px; padding:22px 20px; border-radius:14px;
-    background:#12141c; border:1px solid #1e2230; font-size:12.5px; color:#8b94a8;
+  .srclink:hover { border-color:#5b8cff; }
+  footer {
+    margin-top:44px; padding-top:22px; border-top:1px solid #1e222d;
+    font-size:12px; color:#8a92a5;
   }
-  footer.foot h3{ font-size:13px; color:#cdd3e0; margin-bottom:9px; }
-  footer.foot .srcs{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
-  footer.foot .srcs a{
-    font-size:11.5px; color:#9fb4ff; text-decoration:none;
-    background:#1a1e29; border:1px solid #262c3c; padding:4px 10px; border-radius:7px;
-  }
-  footer.foot .note{ line-height:1.7; color:#727b90; }
-  footer.foot .note b{ color:#a7afc2; }
+  footer h3 { font-size:13px; color:#c3c9d6; margin-bottom:10px; }
+  footer a { color:#5b8cff; text-decoration:none; margin-right:6px; }
+  footer .disc { margin-top:16px; color:#6b7386; font-size:11px; line-height:1.7; }
 </style>
 </head>
 <body>
+<header>
+  <div class="wrap">
+    <h1><span class="ko">🇰🇷 한국 게임 데일리 브리핑</span><span class="cn">韩国游戏每日简报</span></h1>
+    <div class="meta">2026년 7월 24일 (금) · 한국시간(KST) 기준 &nbsp;|&nbsp; 2026-07-24 (周五) · 韩国时间</div>
+    <div class="badge">⏱ 매일 오전 10:00 KST 자동 업데이트 · 每天 10:00 KST 自动更新</div>
+  </div>
+</header>
+
 <div class="wrap">
 
-  <header class="top">
-    <div class="kwave">KOREA GAME DAILY · K-게임 데일리</div>
-    <h1>한국 게임 데일리 브리핑
-      <span class="cn">韩国游戏每日简报 · 中韩双语</span>
-    </h1>
-    <div class="datebar">
-      <span>📅 2026년 7월 23일 (목) · 한국시간</span>
-      <span class="live">매일 10:00 KST 自动更新</span>
-    </div>
-  </header>
-
-  <!-- ① 新游戏 & 榜单 -->
-  <section class="block">
-    <div class="blockhead">
-      <div class="num">1</div>
-      <h2>신작 & 마켓 순위 <span class="cn">新游戏发布 & 榜单</span></h2>
+  <!-- ① 新游戏发布 & 榜单 -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">1</div>
+      <div class="sec-title">
+        <div class="ko">신작 출시 & 매출·인기 순위</div>
+        <div class="cn">新游戏发布 & 榜单</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">GOOGLE PLAY 1위</span>넷마블 '솔: 인챈트(SOL: enchant)', 구글플레이 매출 1위 탈환 … '신의 탑' 던전 추가</div>
-      <div class="cn">网石(Netmarble)《SOL: enchant》重返韩国 Google Play 畅销榜第 1 名。新增"神之塔"副本(40 级以上可玩、每周约 7 小时进度),凭借"神权"独特玩法与各服选出"神"的系统持续制造话题。</div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202607200001" target="_blank" rel="noopener">🔗 출처 · 来源:베타뉴스 BetaNews ↗</a>
+      <div class="tag">RANKING · 榜单</div>
+      <div class="k">넷마블 '솔: 인챈트', 구글플레이 매출 1위 유지 — 애플 앱스토어는 호요버스 '붕괴: 스타레일'이 선두</div>
+      <div class="c">网石《SOUL:附魔》(솔:인챈트)蝉联韩国 Google Play 畅销榜第 1;苹果 App Store 畅销榜由米哈游《崩坏:星穹铁道》登顶(4.4 版本 + Fate 联动)。各服"神"选举活动与平衡性更新持续引发话题。</div>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank">🔗 출처 · 来源:게임뷰 GameVu ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">APP STORE 1위</span>호요버스 '붕괴: 스타레일', 애플 앱스토어 매출 1위 … 4.4 업데이트 + Fate 콜라보</div>
-      <div class="cn">米哈游(HoYoverse)《崩坏:星穹铁道》登上韩国 App Store 畅销榜第 1(4.4 版本"寂静回响"+《Fate/stay night》联动:新增远坂凛、吉尔伽美什),推动整体营收上扬,Google Play 亦稳居第 2。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">RANKING · 榜单</div>
+      <div class="k">카카오게임즈 '오딘' 매출 4위 · 나이언틱 '포켓몬 GO' 10위권 진입</div>
+      <div class="c">Kakao Games《奥丁》凭借服务 5 周年新内容更新回升至畅销榜第 4,吸引回流玩家;Niantic《宝可梦 GO》借 10 周年线下活动进入前 10。《WOS 白日生存》《Kingshot》《胜利女神:NIKKE》等激烈竞争上位圈。</div>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank">🔗 출처 · 来源:게임뷰 GameVu ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">순위 반등</span>카카오게임즈 '오딘: 발할라 라이징', 5주년 업데이트 효과로 매출 상위권 유지</div>
-      <div class="cn">Kakao Games《奥丁:神叛》6 月末 5 周年更新的热度延续至 7 月,新增服务器"斯卡蒂(Skadi)"与炼金术士职业,营收持续排在畅销榜前列。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">NEW RELEASE · 新作</div>
+      <div class="k">7월 신작 라인업: '붕괴: 넥서스 아니마'(모바일, 7/9) · '팰월드' 정식 출시(PC, 7/10) · '드래곤소드: 어웨이크닝'(PC, 7/23)</div>
+      <div class="c">7 月新作:米哈游收集型 RPG《崩坏:Nexus Anima》(手游,7/9,以"羁绊"叙事与神秘生物交感为卖点);《幻兽帕鲁 Palworld》结束约 2 年抢先体验、7/10 正式发售;动作 RPG《龙剑:觉醒》7/23 上线,主打华丽 Tag 动作与"Orbis"大陆探索。</div>
+      <a class="srclink" href="https://bbs.ruliweb.com/news/read/226445" target="_blank">🔗 출처 · 来源:루리웹 Ruliweb ↗</a>
     </div>
-
-    <div class="card">
-      <div class="ko"><span class="tag">7월 신작</span>이번 달 출시 라인업 … '붕괴: 넥서스 아니마'(7/9), '팰월드' 정식 출시(7/10), '드래곤소드: 어웨이크닝'(7/23)</div>
-      <div class="cn">本月新作日程:收集型 RPG《崩坏:Nexus Anima》(7/9 手游)、《幻兽帕鲁 Palworld》正式版(7/10)、动作新作《龙剑:觉醒 Dragon Sword: Awakening》(7/23,今日上线),PC 端另有《职业棒球之魂 2026》等。</div>
-      <a class="srclink" href="https://bbs.ruliweb.com/news/read/226445" target="_blank" rel="noopener">🔗 출처 · 来源:루리웹 Ruliweb ↗</a>
-    </div>
-  </section>
+  </div>
 
   <!-- ② 市场趋势 & 行业动态 -->
-  <section class="block">
-    <div class="blockhead">
-      <div class="num">2</div>
-      <h2>시장 트렌드 & 산업 동향 <span class="cn">市场趋势 & 行业动态</span></h2>
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">2</div>
+      <div class="sec-title">
+        <div class="ko">시장 트렌드 & 업계 동향</div>
+        <div class="cn">市场趋势 & 行业动态</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">양극화</span>넥슨·크래프톤·넷마블 '빅3' 합산 영업이익 약 3조 원 육박 … 업계 재편 가속</div>
-      <div class="cn">韩国游戏业加速向"三巨头"集中:三家合计营业利润约 2.97 万亿韩元。Nexon 年营收 4.56 万亿韩元/营业利润约 1.41 万亿;Krafton 3.30 万亿(+21.8%);Netmarble 靠自研 IP 使营业利润暴涨 60.2%。呈现"强者恒强"、其余厂商微利或亏损的分化格局。</div>
-      <a class="srclink" href="https://www.digitaltoday.co.kr/en/view/2063/korean-game-industry-big-three-nexon-krafton-netmarble-operating-profit-near-3-trillion-won" target="_blank" rel="noopener">🔗 출처 · 来源:디지털투데이 Digital Today ↗</a>
+      <div class="tag">EARNINGS · 财报</div>
+      <div class="k">시프트업 '니케', 여름 업데이트로 매출 역주행 — 1분기 매출 473억 원(전년比 +12%)</div>
+      <div class="c">SHIFT UP 在新作空窗期仍靠《胜利女神:NIKKE》逆势上扬:4 月 3.5 周年更新后,一季度营收 473 亿韩元、同比 +12%,超出券商此前的下滑预期。7 月更新期间 NIKKE 拿下韩国 Google Play 畅销榜第 2、日本第 2、台湾第 4,业界看好其带动二季度业绩;11 月 4 周年大型更新在即。</div>
+      <a class="srclink" href="https://www.ftoday.co.kr/news/articleView.html?idxno=361902" target="_blank">🔗 출처 · 来源:파이낸셜투데이 Financial Today ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">AI 트렌드</span>생성형 AI 본격 도입 … 국내 게임 종사자 72%가 업무에 AI 활용</div>
-      <div class="cn">2026 年被视为生成式 AI 从投资走向"成果验证"的一年:AI 已用于策划、美术、剧情、QA 及运营,韩国游戏从业者 72% 表示在工作中使用 AI。营销侧值得关注 AI 素材量产与本地化提效。</div>
-      <a class="srclink" href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=84089" target="_blank" rel="noopener">🔗 출처 · 来源:이코리아 eKoreaNews ↗</a>
+      <div class="tag">GLOBAL · 出海</div>
+      <div class="k">엔씨소프트 '리니지2M', 중국서 '천당2: 맹약'으로 정식 출시 직후 앱스토어 1위</div>
+      <div class="c">NCSOFT《天堂2M》以《天堂2:盟约》之名在中国正式上线,发行后即登顶中国区 App Store,目前运营 36 组服务器——是韩国大厂加速拓展中国及全球市场的又一信号。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank">🔗 출처 · 来源:한국면세뉴스 KDF News ↗</a>
     </div>
-
-    <div class="card">
-      <div class="ko"><span class="tag">규제</span>확률형 아이템 규제 강화 … '부당 이익 환수' 및 이용자 피해구제 센터 논의</div>
-      <div class="cn">概率型道具监管趋严:官方层面提出"追缴不当收益",并讨论设立"游戏用户损害救济中心"。收益模式随之向战斗通行证、确定型道具、订阅制及主机/PC 买断制转移——投放素材需注意合规表述。</div>
-      <a class="srclink" href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=84089" target="_blank" rel="noopener">🔗 출처 · 来源:이코리아 eKoreaNews ↗</a>
-    </div>
-  </section>
+  </div>
 
   <!-- ③ 竞品 / 大厂动向 -->
-  <section class="block">
-    <div class="blockhead">
-      <div class="num">3</div>
-      <h2>경쟁사 & 대형 퍼블리셔 <span class="cn">竞品 / 大厂动向</span></h2>
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">3</div>
+      <div class="sec-title">
+        <div class="ko">경쟁작 · 대형 게임사 동향</div>
+        <div class="cn">竞品 / 大厂动向</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">NCSOFT</span>엔씨소프트 신작 '신더시티(Cinder City)' 스팀 페이지 오픈 … 파괴된 서울 배경 시네마틱 슈터</div>
-      <div class="cn">NCSOFT 公开新作《Cinder City》:开放世界电影化第三人称射击,以"被摧毁的首尔"为舞台,含大规模多人 PvE。已开 Steam 页面、官网改版并开设官方 Discord,并与微软展开技术合作,发布主角"Seven"救女故事影像。</div>
-      <a class="srclink" href="https://about.ncsoft.com/news/article/C_update_20260701" target="_blank" rel="noopener">🔗 출처 · 来源:엔씨소프트 NCSOFT ↗</a>
+      <div class="tag">NEXON · 넥슨</div>
+      <div class="k">넥슨 '서든어택', 2026 시즌3 '패러독스' 업데이트 — 신규 캐릭터 'C.베라' & 저격소총 'RSR Paradox' 추가</div>
+      <div class="c">Nexon《突袭 Sudden Attack》上线 2026 第 3 赛季"Paradox",新增角色"C.薇拉"与狙击枪 RSR Paradox,竞技内容开启新赛季。同期넥슨《마비노기 모바일》推出第 2 季"光与暗",满级扩展至 100 并新增深渊·团队副本 Boss。</div>
+      <a class="srclink" href="https://www.gameple.co.kr/news/articleView.html?idxno=215969" target="_blank">🔗 출처 · 来源:게임플 Gameple ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">KRAFTON</span>크래프톤 PUBG 42.2 업데이트(초심자 훈련 개편) … 게임스컴 2026서 신작 5종 공개 예정</div>
-      <div class="cn">Krafton《PUBG:绝地求生》42.2 更新重做新手训练(17 章渐进教学、新兵训练营 14 天任务、"热跳"模式回归);并预告将于 8/26–30 德国科隆 Gamescom 2026 设 5 款新作体验区(含 PUBG Studio 未公开新作)。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59384" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">NETMARBLE · 넷마블</div>
+      <div class="k">넷마블 '나 혼자만 레벨업: 어라이즈', 신규 SSR 헌터 '아그네스 리베라' & 신규 스토리 챕터 추가</div>
+      <div class="c">网石《我独自升级:ARISE》新增 SSR 猎人"阿格妮丝·里维拉",追加新故事章节,影之军团等级上限扩展至 195,持续强化头部 IP 的长线运营。</div>
+      <a class="srclink" href="https://www.gameple.co.kr/news/articleView.html?idxno=215969" target="_blank">🔗 출처 · 来源:게임플 Gameple ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">SMILEGATE</span>스마일게이트 신작 MMORPG '이클립스: 더 어웨이크닝', 공식 홈페이지서 핵심 콘텐츠 공개</div>
-      <div class="cn">Smilegate 新作 MMORPG《Eclipse: The Awakening》通过官网公开世界观、主要地区与核心成长系统"圣所(성소)"——通过圣物获取多样成长资源,支撑角色持续养成。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59046" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">KRAFTON · 크래프톤</div>
+      <div class="k">크래프톤 '배틀그라운드', 'PUBG 네이션스컵 2026 in Seoul' 개최 — 16개국 참전, 총상금 50만 달러</div>
+      <div class="c">Krafton 在首尔举办《PUBG 国家杯 2026》,16 个国家参战、总奖金 50 万美元,以顶级电竞赛事强化 PUBG IP 的全球社群与品牌热度。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank">🔗 출처 · 来源:한국면세뉴스 KDF News ↗</a>
     </div>
-
-    <div class="card">
-      <div class="ko"><span class="tag">NEXON · NETMARBLE</span>넥슨 '퍼스트 디센던트' 신규 콘텐츠 '보이드 요격전: 극한' … 넷마블 '일곱 개의 대죄: Origin' 신규 영웅 추가</div>
-      <div class="cn">大厂持续运营:Nexon《第一后裔 The First Descendant》上线新内容"虚空拦截战:极限";Netmarble《七大罪:Origin》新增英雄"高瑟(고서)",维持在营新品的活跃度。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59384" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
-    </div>
-  </section>
+  </div>
 
   <!-- ④ 营销 & 推广灵感 -->
-  <section class="block">
-    <div class="blockhead">
-      <div class="num">4</div>
-      <h2>마케팅 & 프로모션 인사이트 <span class="cn">营销 & 推广灵感</span></h2>
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">4</div>
+      <div class="sec-title">
+        <div class="ko">마케팅 & 프로모션 아이디어</div>
+        <div class="cn">营销 & 推广灵感</div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">오프라인 이벤트</span>'포켓몬 GO' 10주년 … 서울 반포한강공원서 글로벌 오프라인 행사 개최</div>
-      <div class="cn">营销参考①:《Pokémon GO》以 10 周年为契机,在首尔盘浦汉江公园举办线下大型活动。"周年 IP × 城市地标 × 线下聚会"是拉动老用户回流与自然口碑的经典打法,适合有一定用户基数的产品做怀旧唤醒。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">OFFLINE · 线下体验</div>
+      <div class="k">넷마블 '세븐나이츠 리버스' 콜라보 카페 (서울 홍대 AK플라자, 7/22~8/11)</div>
+      <div class="c">网石《七骑士 Reverse》主题联动咖啡厅:平日自由入场、周末预约制;推出角色主题饮品/甜点/餐点,并设"女仆蛋包饭→女仆芭菲"限时菜单、Cosplay 员工拍立得合影、亚克力立牌·全息海报·照片卡等限定周边。<b>可参考点:</b>用限时菜单+专属周边+可拍照打卡制造 SNS 自传播。</div>
+      <a class="srclink" href="https://www.ebn.co.kr/news/articleView.html?idxno=1716976" target="_blank">🔗 출처 · 来源:EBN ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">IP 콜라보</span>'붕괴: 스타레일' × 'Fate/stay night' 콜라보 … 매출 순위 견인</div>
-      <div class="cn">营销参考②:《崩坏:星穹铁道》联动《Fate/stay night》(登场远坂凛、吉尔伽美什),直接带动双榜营收攀升。跨作强 IP 联动仍是二次元品类拉新与拉付费最有效的爆点,关键在角色契合度与限时稀缺感。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">CONTENT · 大版本</div>
+      <div class="k">카카오게임즈 '패스 오브 엑자일' 신규 확장팩 '올플레임의 저주' (7/25) — 신규 리그 & 전직 '루미너리'</div>
+      <div class="c">Kakao Games《流放之路》7/25 上线扩展"All-flame 的诅咒":新增海盗船长 Valeri 与沉船探险联盟、Scion 第三转职"Luminary",并改版宝石镶嵌系统。<b>可参考点:</b>以"新联盟+新职业+便利性改版"三件套为版本节点造势,兼顾拉新与留存。</div>
+      <a class="srclink" href="https://www.ebn.co.kr/news/articleView.html?idxno=1716976" target="_blank">🔗 출처 · 来源:EBN ↗</a>
     </div>
 
     <div class="card">
-      <div class="ko"><span class="tag">애니 IP · 시즌</span>위메이드 '에브리타운' × 애니메이션 '안녕 자두야' 여름방학 콜라보 업데이트</div>
-      <div class="cn">营销参考③:Wemade《Everytown》联动人气动画《你好,紫菜(안녕 자두야)》,以"和紫菜一起过暑假"为主题上新建筑与景观,并开放第 15 个新区"City Town"。休闲/模拟品类借国民级动画 IP + 季节主题做温情向联动,精准触达家庭与低龄泛用户。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59046" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVU ↗</a>
+      <div class="tag">GACHA · 限定角色</div>
+      <div class="k">스마일게이트 '에픽세븐', 신규 월광 영웅 '파도의 균열 엘비라' 소환 이벤트</div>
+      <div class="c">Smilegate《第七史诗》推出新月光英雄"波涛之裂 艾尔维拉"(限时召唤),以"侵蚀"状态提升技能触发率、担任辅助定位。<b>可参考点:</b>暑期用限定强力角色 + 限时召唤窗口拉动付费高峰,是二次元卡牌的稳定打法。</div>
+      <a class="srclink" href="https://www.ebn.co.kr/news/articleView.html?idxno=1716976" target="_blank">🔗 출처 · 来源:EBN ↗</a>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="foot">
-    <h3>📚 오늘의 출처 · 今日来源汇总</h3>
-    <div class="srcs">
-      <a href="https://www.betanews.net/article/view/beta202607200001" target="_blank" rel="noopener">베타뉴스 BetaNews ↗</a>
-      <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank" rel="noopener">게임뷰 GameVU ↗</a>
-      <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59384" target="_blank" rel="noopener">게임뷰 GameVU ↗</a>
-      <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59046" target="_blank" rel="noopener">게임뷰 GameVU ↗</a>
-      <a href="https://bbs.ruliweb.com/news/read/226445" target="_blank" rel="noopener">루리웹 Ruliweb ↗</a>
-      <a href="https://about.ncsoft.com/news/article/C_update_20260701" target="_blank" rel="noopener">엔씨소프트 NCSOFT ↗</a>
-      <a href="https://www.digitaltoday.co.kr/en/view/2063/korean-game-industry-big-three-nexon-krafton-netmarble-operating-profit-near-3-trillion-won" target="_blank" rel="noopener">디지털투데이 Digital Today ↗</a>
-      <a href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=84089" target="_blank" rel="noopener">이코리아 eKoreaNews ↗</a>
+  <footer>
+    <h3>📚 오늘의 출처 매체 · 今日来源媒体</h3>
+    <div>
+      <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59393" target="_blank">게임뷰 GameVu</a> ·
+      <a href="https://bbs.ruliweb.com/news/read/226445" target="_blank">루리웹 Ruliweb</a> ·
+      <a href="https://www.ftoday.co.kr/news/articleView.html?idxno=361902" target="_blank">파이낸셜투데이 Financial Today</a> ·
+      <a href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank">한국면세뉴스 KDF News</a> ·
+      <a href="https://www.gameple.co.kr/news/articleView.html?idxno=215969" target="_blank">게임플 Gameple</a> ·
+      <a href="https://www.ebn.co.kr/news/articleView.html?idxno=1716976" target="_blank">EBN</a>
     </div>
-    <div class="note">
-      <b>안내 · 说明:</b> 본 브리핑은 위 매체의 실제 기사 기반으로 작성되었으며, 각 항목의 출처 링크는 원문으로 연결됩니다. 순위·수치는 매체 보도 시점 기준이며 실시간과 다를 수 있습니다.<br>
-      本简报基于上述媒体的真实报道整理,每条来源按钮均指向原文;榜单与数据以各媒体报道时点为准,可能与实时情况存在差异。<br>
-      <b>업데이트 · 更新:</b> 매일 10:00 KST 자동 생성 · 每日韩国时间 10:00 自动生成 &nbsp;|&nbsp; 생성일 生成:2026-07-23 (KST)
+    <div class="disc">
+      ※ 모든 링크는 실제로 확인한 원문 기사입니다. 각 소식의 날짜는 원문 게재일 기준이며, 순위·이벤트 일정은 변동될 수 있습니다.<br>
+      ※ 所有链接均为实际访问过的原文。各条日期以原文发布日为准,榜单与活动日程可能变动;信息仅供游戏营销参考。<br>
+      생성 · 生成:Claude (Cowork) · 2026-07-24 KST
     </div>
   </footer>
 
