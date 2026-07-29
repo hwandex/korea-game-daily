@@ -3,267 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>한국 게임 데일리 브리핑 · 韩国游戏每日简报</title>
+<title>한국 게임 데일리 브리핑 · 韩国游戏每日简报 | 2026-07-29</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    background:#0e1016;
-    color:#e6e8ee;
-    font-family:'Malgun Gothic','Apple SD Gothic Neo','Microsoft YaHei','Noto Sans KR',sans-serif;
-    line-height:1.6;
-    padding:0 0 60px;
+    font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR","Microsoft YaHei",sans-serif;
+    background:#0e1016; color:#e6e8ee; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
   }
-  .wrap { max-width:840px; margin:0 auto; padding:0 18px; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 18px 60px; }
+
   header {
-    text-align:center;
-    padding:44px 18px 30px;
-    border-bottom:1px solid #1c202b;
-    margin-bottom:8px;
+    text-align:center; padding:34px 20px 30px; margin-bottom:26px;
+    background:linear-gradient(160deg,#171a23 0%,#12141c 100%);
+    border:1px solid #232838; border-radius:18px;
   }
-  header .flag { font-size:30px; letter-spacing:4px; }
-  header h1 {
-    font-size:26px; font-weight:800; margin:10px 0 4px;
-    background:linear-gradient(90deg,#5b8cff,#8fb0ff);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+  header .flag { font-size:13px; letter-spacing:3px; color:#5b8cff; font-weight:700; }
+  header h1 { font-size:26px; margin:10px 0 4px; font-weight:800; letter-spacing:-.5px; }
+  header h2 { font-size:15px; color:#aab1c4; font-weight:500; margin-bottom:16px; }
+  .meta { display:inline-flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .pill {
+    font-size:12.5px; background:#1e222d; border:1px solid #2a2f3d; color:#c8cede;
+    padding:6px 13px; border-radius:20px;
   }
-  header h2 { font-size:15px; font-weight:500; color:#9aa3b5; margin-bottom:14px; }
-  .meta {
-    display:inline-flex; flex-wrap:wrap; gap:8px; justify-content:center;
-    font-size:13px; margin-top:6px;
-  }
-  .meta span {
-    background:#171a23; border:1px solid #232838; border-radius:20px;
-    padding:5px 14px; color:#c3c9d6;
-  }
-  .meta .live { color:#5b8cff; border-color:#2f3b5c; }
-  .section { margin-top:30px; }
+  .pill.live { color:#5b8cff; border-color:#33406a; }
+  .pill.live::before { content:"●"; color:#4ade80; margin-right:6px; font-size:10px; }
+
+  .section { margin-bottom:30px; }
   .sec-head {
-    display:flex; align-items:center; gap:12px;
+    display:flex; align-items:center; gap:13px; margin-bottom:16px;
     background:#171a23; border:1px solid #232838; border-left:4px solid #5b8cff;
-    border-radius:12px; padding:14px 18px; margin-bottom:16px;
+    border-radius:12px; padding:15px 18px;
   }
-  .sec-head .num {
-    font-size:20px; font-weight:800; color:#5b8cff;
-    background:#0e1016; border:1px solid #2a3350; border-radius:9px;
-    min-width:38px; height:38px; display:flex; align-items:center; justify-content:center;
+  .sec-num {
+    flex-shrink:0; width:38px; height:38px; border-radius:10px;
+    background:linear-gradient(145deg,#5b8cff,#3a63d0); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px;
   }
-  .sec-head .titles h3 { font-size:17px; font-weight:700; }
-  .sec-head .titles p { font-size:13px; color:#8b93a6; }
+  .sec-head .kr { font-size:17px; font-weight:800; }
+  .sec-head .cn { font-size:13px; color:#9aa2b6; }
+
   .card {
-    background:#171a23; border:1px solid #1f2431; border-radius:12px;
-    padding:16px 18px; margin-bottom:14px;
+    background:#171a23; border:1px solid #232838; border-radius:14px;
+    padding:18px 20px; margin-bottom:14px; transition:border-color .2s;
   }
-  .card .ko { font-size:15px; font-weight:600; color:#f0f2f7; }
-  .card .zh {
-    font-size:14px; color:#aab2c4; margin-top:6px;
-    padding-top:6px; border-top:1px dashed #232838;
+  .card:hover { border-color:#33406a; }
+  .card .kr-title { font-size:16px; font-weight:700; color:#f2f4f9; margin-bottom:3px; }
+  .card .cn-title { font-size:13.5px; color:#7fa0e8; margin-bottom:11px; }
+  .card .kr-body { font-size:14px; color:#d3d8e4; margin-bottom:5px; }
+  .card .cn-body { font-size:13.5px; color:#9aa2b6; }
+  .tag {
+    display:inline-block; font-size:11px; color:#8aa0d8; background:#1a2030;
+    border:1px solid #2a3350; border-radius:6px; padding:2px 8px; margin-bottom:10px;
   }
-  .card .tag {
-    display:inline-block; font-size:11px; color:#5b8cff;
-    background:#141b2e; border:1px solid #2a3350; border-radius:5px;
-    padding:2px 8px; margin-bottom:8px;
-  }
+
   .srclink {
-    display:inline-flex; align-items:center; gap:5px; margin-top:9px;
-    font-size:12px; color:#5b8cff; text-decoration:none;
-    border:1px solid #2a2f3d; background:#1e222d;
+    display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px;
+    color:#5b8cff; text-decoration:none; border:1px solid #2a2f3d; background:#1e222d;
     padding:4px 10px; border-radius:7px;
   }
-  .srclink:hover { border-color:#5b8cff; background:#232a3d; }
+  .srclink:hover { border-color:#5b8cff; }
+
   footer {
-    margin-top:40px; padding-top:22px; border-top:1px solid #1c202b;
-    font-size:12px; color:#7f8798;
+    margin-top:40px; padding:22px 20px; background:#12141c;
+    border:1px solid #232838; border-radius:14px; font-size:12.5px; color:#8a92a6;
   }
-  footer h4 { font-size:13px; color:#c3c9d6; margin-bottom:10px; }
-  footer .srcs { display:flex; flex-wrap:wrap; gap:8px; }
-  footer .srcs a {
-    font-size:11px; color:#9aa3b5; text-decoration:none;
-    background:#171a23; border:1px solid #232838; border-radius:6px; padding:3px 9px;
-  }
-  footer .srcs a:hover { color:#5b8cff; border-color:#2f3b5c; }
-  footer .note { margin-top:16px; color:#5c6577; line-height:1.7; }
+  footer h3 { font-size:13.5px; color:#c8cede; margin-bottom:10px; }
+  footer .srcs { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
+  footer .srcs a { font-size:11.5px; color:#9aa2b6; background:#1a1d27; border:1px solid #262b39;
+    padding:4px 9px; border-radius:6px; text-decoration:none; }
+  footer .srcs a:hover { color:#5b8cff; border-color:#33406a; }
+  footer .note { color:#6b7285; font-size:11.5px; line-height:1.7; }
 </style>
 </head>
 <body>
-<header>
-  <div class="flag">🇰🇷 · 🇨🇳</div>
-  <h1>한국 게임 데일리 브리핑</h1>
-  <h2>韩国游戏每日简报</h2>
-  <div class="meta">
-    <span>📅 2026년 7월 28일 (화) · 韩国时间 KST</span>
-    <span class="live">🔄 매일 오전 10:00 KST 자동 업데이트</span>
-  </div>
-</header>
-
 <div class="wrap">
 
-  <!-- SECTION 1 -->
-  <div class="section">
+  <header>
+    <div class="flag">KOREA GAME DAILY · 韩国游戏每日简报</div>
+    <h1>한국 게임 데일리 브리핑</h1>
+    <h2>韩国游戏市场每日简报</h2>
+    <div class="meta">
+      <span class="pill">📅 2026년 7월 29일 (수) · 韩国时间</span>
+      <span class="pill live">매일 10:00 KST 自动更新</span>
+    </div>
+  </header>
+
+  <!-- ① 新游戏 & 榜单 -->
+  <section class="section">
     <div class="sec-head">
-      <div class="num">01</div>
-      <div class="titles">
-        <h3>신작 출시 &amp; 차트 · 新游戏发布 & 榜单</h3>
-        <p>구글플레이 / 앱스토어 매출·인기 순위와 신작 동향</p>
+      <div class="sec-num">1</div>
+      <div>
+        <div class="kr">신작 & 마켓 순위</div>
+        <div class="cn">新游戏发布 & 畅销/免费榜动向</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">주간 매출 차트 · 周매출榜</span>
-      <div class="ko">'메이플 키우기', 윈드브레이커·나이트워커 신규 직업 업데이트 후 구글플레이 매출 4위 등극. 9월 23일까지 성장 지원 아이템·8월 12일까지 데일리 부스터 제공, 혼테일 보스 '카오스 난이도'도 추가.</div>
-      <div class="zh">《枫之谷养成(메이플 키우기)》上线「风息剑士·夜行者」两个新职业更新后,冲上 Google Play 畅销榜第 4 名。至 9/23 提供成长支援道具、至 8/12 每日助推器,并新增混沌黑龙 Boss「Chaos 难度」。</div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank">🔗 출처 · 来源:베타뉴스 (BetaNews) ↗</a>
+      <span class="tag">주간 순위 · 周榜</span>
+      <div class="kr-title">'윈드러너 키우기' 인기 순위 1위 — 방치형 신작 돌풍</div>
+      <div class="cn-title">《风之国度 养成》登顶人气榜——放置类新作强势开局</div>
+      <div class="kr-body">글로벌 6,000만 다운로드 IP를 방치형 RPG로 재해석한 '윈드러너 키우기'가 7월 21일 한국·대만 정식 출시 직후 구글플레이 인기(무료) 순위 1위에 올랐다. 150여 종의 캐릭터·소환수·탈것 성장 콘텐츠와 출시 기념 이벤트로 초반 지표를 끌어올렸다.</div>
+      <div class="cn-body">将全球6,000万下载量IP改编为放置类RPG的《风之国度 养成》，于7月21日韩国·台湾正式上线后登顶Google Play免费人气榜。凭借150余种角色/召唤兽/坐骑养成内容及上线纪念活动拉动初期数据。</div>
+      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank" rel="noopener">🔗 출처 · 来源：베타뉴스 BetaNews ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">주간 인기 차트 · 周人气榜</span>
-      <div class="ko">'윈드러너 키우기', 7월 21일 한국·대만 정식 출시와 함께 인기 순위 1위. 누적 6,000만 다운로드 '윈드러너' IP 재해석 방치형 RPG로, 콤보-피버-버스트 전투와 150종 이상 캐릭터·소환수·탈것 보유. 론칭 보너스 3,000회 무료 뽑기 + 전설 탈것 증정.</div>
-      <div class="zh">《Windrunner养成(윈드러너 키우기)》7/21 韩国·台湾正式上线,登顶人气榜第 1 名。改编自累计 6,000 万下载的「Windrunner」IP 的放置类 RPG,主打 combo-fever-burst 战斗与 150+ 角色/召唤兽/坐骑;开服礼包含 3,000 次免费抽卡 + 传说坐骑。</div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank">🔗 출처 · 来源:베타뉴스 (BetaNews) ↗</a>
+      <span class="tag">매출 순위 · 畅销榜</span>
+      <div class="kr-title">'메이플 키우기' 매출 상승 — 시그너스 기사단 신규 직업 효과</div>
+      <div class="cn-title">《枫之谷 养成》营收上扬——天使团新职业带动</div>
+      <div class="kr-body">'메이플 키우기'가 '윈드브레이커'·'나이트워커' 등 시그너스 기사단 신규 직업 추가로 매출 순위 4위권까지 상승세를 탔다. 신캐릭터 성장 지원 아이템(9월 23일까지)과 혼테일 레이드 '카오스 난이도' 추가가 과금 유인으로 작용했다.</div>
+      <div class="cn-body">《枫之谷 养成》因追加"疾风"·"暗夜行者"等天使骑士团新职业，营收榜攀升至第4位。新角色成长支援道具（截至9月23日）与暗黑龙王团本新增"混沌难度"成为付费驱动。</div>
+      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank" rel="noopener">🔗 출처 · 来源：베타뉴스 BetaNews ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">글로벌 출시 · 全球发行</span>
-      <div class="ko">그라비티, '라그나로크 M: 클래식'과 '라그나로크: 더 뉴 월드'를 다수 지역에 출시하며 간소화된 성장 시스템을 강조. 라그나로크 IP의 글로벌 확장세 지속.</div>
-      <div class="zh">Gravity(그라비티)在多个地区推出《仙境传说 M:Classic》与《仙境传说:The New World》,主打简化的成长系统,持续扩张 RO IP 的全球版图。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59384" target="_blank">🔗 출처 · 来源:게임뷰 (GameVU) ↗</a>
+      <span class="tag">신작 출시 · 新作上线</span>
+      <div class="kr-title">크래프톤 '아스트로 아레나' — 3대3 우주 배틀로얄 7개국 선출시</div>
+      <div class="cn-title">Krafton《Astro Arena》——3v3太空吃鸡，7国抢先上线</div>
+      <div class="kr-body">펍지 스튜디오가 개발한 캐주얼 3v3 PvP '아스트로 아레나'가 7월 9일 인도·인도네시아·태국·대만·멕시코·브라질·미국 등 7개국에 정식 출시됐다. 한 판 3~5분의 톱다운 배틀로얄로, 배그 IP 확장의 캐주얼 실험작으로 주목된다.</div>
+      <div class="cn-body">PUBG工作室开发的休闲3v3 PvP《Astro Arena》于7月9日在印度、印尼、泰国、台湾、墨西哥、巴西、美国等7国正式上线。单局3~5分钟的俯视角吃鸡玩法，被视为PUBG IP向休闲品类扩张的试水之作。</div>
+      <a class="srclink" href="https://m.inven.co.kr/webzine/wznews.php?iskin=csgo&hashtag=%ED%81%AC%EB%9E%98%ED%94%84%ED%86%A4&idx=317124" target="_blank" rel="noopener">🔗 출처 · 来源：인벤 Inven ↗</a>
     </div>
-  </div>
+  </section>
 
-  <!-- SECTION 2 -->
-  <div class="section">
+  <!-- ② 市场趋势 & 行业动态 -->
+  <section class="section">
     <div class="sec-head">
-      <div class="num">02</div>
-      <div class="titles">
-        <h3>시장 트렌드 &amp; 산업 동향 · 市场趋势 & 行业动态</h3>
-        <p>실적·정책·투자·주요 이벤트</p>
+      <div class="sec-num">2</div>
+      <div>
+        <div class="kr">시장 트렌드 & 산업 동향</div>
+        <div class="cn">市场趋势 & 行业动态</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">실적 · 财报</span>
-      <div class="ko">2025년 국내 게임사 합산 매출 10조 7,300억 원(전년比 +13.7%), 영업이익 2조 2,200억 원(+34.6%)으로 호실적. 그러나 데브시스터즈를 제외한 대부분 종목이 지수를 밑돌며 주가는 부진 — '실적과 역행하는 게임주' 신뢰 회복이 과제.</div>
-      <div class="zh">2025 年韩国游戏公司合计营收 10.73 万亿韩元(同比 +13.7%)、营业利润 2.22 万亿韩元(+34.6%),业绩亮眼。但除 Devsisters 外多数个股跑输大盘,股价低迷——「业绩与股价背离」,重建投资者信任成为课题。</div>
-      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=311007&site=ff" target="_blank">🔗 출처 · 来源:인벤 (Inven) ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="tag">2026 전망 · 市场展望</span>
-      <div class="ko">신한투자증권, 2026년 글로벌 게임 시장 3.9% 성장(196.1조 원 규모)·모바일 성장 둔화(~2%) 전망하며 '승자독식' 심화 예상. 5월 GTA6 출시가 개발 리소스를 집중시키고, 펄어비스 '붉은사막'(3월 19일 출시)이 AAA 대작들과 정면승부.</div>
-      <div class="zh">新韩投资证券预测 2026 年全球游戏市场增长 3.9%(约 196.1 万亿韩元),移动端放缓(~2%),「赢家通吃」加剧。5 月 GTA6 发售将虹吸开发资源,Pearl Abyss《붉은사막(赤色沙漠)》(3/19 上线)将与 AAA 大作正面交锋。</div>
-      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=311007&site=ff" target="_blank">🔗 출처 · 来源:인벤 (Inven) ↗</a>
+      <span class="tag">하반기 전략 · 下半年战略</span>
+      <div class="kr-title">3N·2K 하반기 키워드 갈린다 — '정리 vs 물량 공세'</div>
+      <div class="cn-title">3N·2K下半年策略分化——"收缩" vs "机海攻势"</div>
+      <div class="kr-body">넥슨·엔씨는 부진작 정리로 수익성 방어에 나섰고(넥슨 '슈퍼바이브' 서비스 종료, 엔씨 '호연'·'블소2' 글로벌 중단), 넷마블은 'RF 온라인 넥스트'·'세븐나이츠 리버스' 성공을 바탕으로 8종 신작 물량 공세를 예고했다. 크래프톤은 AI 역량 강화를 위해 '스튜디오 서포트 본부'를 신설했다.</div>
+      <div class="cn-body">Nexon·NCSOFT以砍掉表现不佳产品来守住盈利（Nexon关停《Supervive》，NC停运《混沌起源》《剑灵2》全球服），而Netmarble则依托《RF Online Next》《七骑士Reverse》的成功，预告8款新作机海攻势。Krafton为强化AI能力新设"工作室支援本部"。</div>
+      <a class="srclink" href="https://www.mediapen.com/news/view/1067530" target="_blank" rel="noopener">🔗 출처 · 来源：미디어펜 MediaPen ↗</a>
     </div>
 
     <div class="card">
       <span class="tag">정책 · 政策</span>
-      <div class="ko">정부, K-게임 경쟁력 강화를 위해 인디게임 지원(93억 원) 및 대형 IP 개발 지원 사업 확대 방침. 넥슨·엔씨는 부진 게임 서비스 종료로 라인업 재편, 넷마블은 인앱결제 수수료 인하를 활용한 다작 전략.</div>
-      <div class="zh">政府拟扩大对 K-游戏竞争力的支持:投入 93 亿韩元扶持独立游戏,并推动大型 IP 开发项目。Nexon、NCSOFT 通过关停低效游戏重整产品线;Netmarble 则借应用内支付佣金下调推进「多产」策略。</div>
-      <a class="srclink" href="https://www.mediapen.com/news/view/1067530" target="_blank">🔗 출처 · 来源:미디어펜 (MediaPen) ↗</a>
-    </div>
-  </div>
-
-  <!-- SECTION 3 -->
-  <div class="section">
-    <div class="sec-head">
-      <div class="num">03</div>
-      <div class="titles">
-        <h3>경쟁사 / 대형사 동향 · 竞品 / 大厂动向</h3>
-        <p>넷마블·넥슨·엔씨·크래프톤·스마일게이트 등</p>
-      </div>
+      <div class="kr-title">문체부, K-게임 경쟁력 강화 — 인디게임에 93억 원 투자</div>
+      <div class="cn-title">文体部力挺K-Game——向独立游戏投资93亿韩元</div>
+      <div class="kr-body">문화체육관광부는 2026년 모바일에서 PC·콘솔로의 플랫폼 확대, 정책 펀드 대형화, 인디게임 93억 원 규모 투자를 통해 K-게임 경쟁력 강화를 추진한다. 콘솔·글로벌 확장이 정부 지원의 핵심 축으로 부상했다.</div>
+      <div class="cn-body">韩国文化体育观光部推动2026年从移动端向PC·主机的平台扩张、政策基金大型化，并对独立游戏投入93亿韩元，以强化K-Game竞争力。主机化与全球扩张成为政府扶持核心。</div>
+      <a class="srclink" href="https://www.mediapen.com/news/view/1067530" target="_blank" rel="noopener">🔗 출처 · 来源：미디어펜 MediaPen ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">넷마블 · Netmarble</span>
-      <div class="ko">액션 RPG '몬길: 스타 다이브' 팝업스토어를 스타필드 하남에서 운영(언리얼 엔진5, 2013 '몬스터 길들이기' 정식 후속작). 또한 'KOF AFK'는 여름 축제 업데이트로 신규 시즌 파이터 '쿨라 다이아몬드(아쿠아 스플래시)' 출시.</div>
-      <div class="zh">动作 RPG《Mon Gil: STAR DIVE》于星空广场河南店开设快闪店(虚幻 5 引擎,2013《驯服怪物》正统续作);《KOF AFK》推出夏日庆典更新,上线新赛季角色「Kula Diamond(Aqua Splash)」。</div>
-      <a class="srclink" href="https://www.thevaluenews.co.kr/news/199139" target="_blank">🔗 출처 · 来源:더밸류뉴스 (TheValueNews) ↗</a>
+      <span class="tag">글로벌 · 出海</span>
+      <div class="kr-title">카카오게임즈, 자체 IP로 글로벌 정조준 — '크로노 오디세이' 등</div>
+      <div class="cn-title">Kakao Games以自研IP瞄准全球——《Chrono Odyssey》等</div>
+      <div class="kr-body">카카오게임즈는 상반기 '프로젝트Q'에 이어 하반기 '크로노 오디세이'·'아키에이지 크로니클'로 콘솔·글로벌 시장을 공략한다. 국내 대형 퍼블리셔들의 '탈(脫) 모바일 단일 매출' 흐름이 뚜렷해지고 있다.</div>
+      <div class="cn-body">Kakao Games继上半年《Project Q》后，下半年将以《Chrono Odyssey》《ArcheAge Chronicle》进攻主机与全球市场。韩国大型发行商"摆脱单一移动营收"的趋势愈发明显。</div>
+      <a class="srclink" href="https://www.mediapen.com/news/view/1067530" target="_blank" rel="noopener">🔗 출처 · 来源：미디어펜 MediaPen ↗</a>
+    </div>
+  </section>
+
+  <!-- ③ 竞品/大厂动向 -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="sec-num">3</div>
+      <div>
+        <div class="kr">경쟁사 & 대형사 동향</div>
+        <div class="cn">竞品 / 大厂动向</div>
+      </div>
     </div>
 
     <div class="card">
       <span class="tag">엔씨소프트 · NCSOFT</span>
-      <div class="ko">서브컬처 RPG '아스트라 에 오라티오'(디나미스 원 개발) 실제 인게임 플레이 영상 최초 공개 — 전투 시스템·스토리 진행 시연. 한편 '리니지2M'은 텐센트를 통해 중국에서 '천당2: 서약'으로 출시, 현지 앱스토어 1위·서버 12→36개 증설.</div>
-      <div class="zh">二次元 RPG《Astra e Oratio》(Dynamis One 开发)首次公开实机演示——展示战斗系统与剧情推进。同时《天堂 2M》经腾讯在中国以《天堂 2:誓约》上线,登顶当地应用商店,服务器由 12 组扩至 36 组。</div>
-      <a class="srclink" href="https://www.thevaluenews.co.kr/news/199139" target="_blank">🔗 출처 · 来源:더밸류뉴스 (TheValueNews) ↗</a>
+      <div class="kr-title">'리니지2M' 중국 정식 출시 직후 앱스토어 1위</div>
+      <div class="cn-title">《天堂2M》中国上线即登顶App Store</div>
+      <div class="kr-body">엔씨소프트가 '리니지2M'을 현지명 '천당2: 맹약'으로 중국에 정식 출시(6월 24일)했으며, 출시 직후 중국 앱스토어 매출 1위를 기록했다. 리니지 IP의 중국 판호 성과가 하반기 실적 기대감을 높이고 있다.</div>
+      <div class="cn-body">NCSOFT以本地名《天堂2：盟约》于6月24日在中国正式上线《天堂2M》，上线后随即登顶中国App Store畅销榜。天堂IP的中国版号成绩，提升了对下半年业绩的预期。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
     </div>
 
     <div class="card">
       <span class="tag">넥슨 · Nexon</span>
-      <div class="ko">'마비노기 모바일' 시즌2 '빛과 어둠'으로 레벨 캡 100 상향, 신규 메인 스토리·사냥터 '창백한 산'·신규 어비스와 레이드 보스 추가. '프라시아 전기'도 여름 전야제 사전 이벤트와 보드게임 '프라전 마블'을 운영.</div>
-      <div class="zh">《玛奇 Mobile》第 2 季「光与暗」将等级上限提至 100,新增主线剧情、狩猎场「苍白之山」以及新深渊与团本 Boss;《Prasia 战记》同步开启夏日前夜祭预热活动与桌游「Prajeon Marble」。</div>
-      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank">🔗 출처 · 来源:한국면세뉴스 (KDFNews) ↗</a>
+      <div class="kr-title">'마비노기 모바일' 시즌2 '빛과 어둠' — 최고 레벨 100 확장</div>
+      <div class="cn-title">Nexon《玛奇 手游》第二季"光与暗"——满级扩至100</div>
+      <div class="kr-body">넥슨은 '마비노기 모바일' 시즌2 '빛과 어둠' 업데이트로 최고 레벨을 100까지 확장하고 신규 보스를 순차 공개했다. 라이브 서비스 안정화와 콘텐츠 볼륨 확대로 장기 매출 방어에 집중하는 모습이다.</div>
+      <div class="cn-body">Nexon通过《玛奇 手游》第二季"光与暗"更新将满级扩展至100级，并陆续公开新Boss。可见其正聚焦于稳定长线运营、扩充内容体量以守住长期营收。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">넷마블 · Netmarble</span>
+      <div class="kr-title">'블레이드&소울 레볼루션' 첫 신화 던전 '독의 정원' 오픈</div>
+      <div class="cn-title">Netmarble《剑灵Revolution》首个神话副本"毒之庭园"开放</div>
+      <div class="kr-body">넷마블은 '블소 레볼루션'에 첫 신화 던전 '독의 정원'을 추가, 4인 보스 '팔독모' 처치로 신화 장비 설계도를 획득하도록 했다. 강화 점수 시스템과 프로모션(7월 28일까지)을 함께 운영하며 여름 매출 드라이브를 걸었다.</div>
+      <div class="cn-body">Netmarble在《剑灵Revolution》中新增首个神话副本"毒之庭园"，玩家击败4人Boss"八毒母"可获神话装备图纸。同步上线强化评分系统与促销活动（截至7月28日），发起暑期营收攻势。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184572" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
     </div>
 
     <div class="card">
       <span class="tag">크래프톤 · Krafton</span>
-      <div class="ko">'PUBG: 배틀그라운드' 업데이트 42.2로 초보자 트레이닝 전면 개편(17개 챕터·NPC 음성 가이드·14일 신규 캠프). 8월 26~30일 '게임스컴 2026'에서 'Project ZETA', 'Age Twisters' 등 신작 5종 공개 예정. PUBG 네이션스컵(총상금 50만 달러)도 서울서 개최.</div>
-      <div class="zh">《PUBG:绝地求生》42.2 版本全面重做新手训练(17 章节、NPC 语音引导、14 天新手营);将在 8/26–30「Gamescom 2026」公开《Project ZETA》《Age Twisters》等 5 款新作;PUBG Nations Cup(总奖金 50 万美元)于首尔举办。</div>
-      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59384" target="_blank">🔗 출처 · 来源:게임뷰 (GameVU) ↗</a>
+      <div class="kr-title">배그 e스포츠 'PNC 2026 in Seoul' — 총상금 50만 달러</div>
+      <div class="cn-title">Krafton PUBG电竞《PNC 2026 in Seoul》——总奖金50万美元</div>
+      <div class="kr-body">크래프톤은 배틀그라운드 국가대항 e스포츠 'PNC 2026 in Seoul'을 서울 장충체육관에서 개최했다. 16개 국가팀이 총상금 50만 달러를 놓고 격돌하며, 배그 IP의 글로벌 e스포츠 브랜드 파워를 재확인시켰다.</div>
+      <div class="cn-body">Krafton在首尔奖忠体育馆举办PUBG国家对抗电竞赛《PNC 2026 in Seoul》，16支国家队争夺50万美元总奖金，再度印证PUBG IP的全球电竞品牌影响力。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
     </div>
 
     <div class="card">
       <span class="tag">스마일게이트 · Smilegate</span>
-      <div class="ko">'에픽세븐' 여름 업데이트로 5성 화속성 한정 영웅 '시디아이 휴미르' 등장, '구속' 효과 특화. 6주간 특별 사이드 스토리와 아케이드 미니게임, '에픽 대시' 이벤트(8월 27일까지)로 5성 영웅 선택권 제공.</div>
-      <div class="zh">《第七史诗(Epic Seven)》夏季更新登场 5 星火属性限定英雄「Seetheye Humir」,专精「束缚」效果;推出为期 6 周的特别支线剧情与街机小游戏,以及「Epic Dash」活动(至 8/27)提供 5 星英雄自选。</div>
-      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank">🔗 출처 · 来源:한국면세뉴스 (KDFNews) ↗</a>
+      <div class="kr-title">'에픽세븐' 여름 시즌 — 한정 영웅 '심해의 눈 후미르'</div>
+      <div class="cn-title">Smilegate《第七史诗》夏季季——限定英雄"深海之眼 芙米尔"</div>
+      <div class="kr-body">스마일게이트는 '에픽세븐' 여름 시즌 업데이트로 신규 한정 영웅 '심해의 눈 후미르'와 8주 특별 스토리를 공개했다. 대규모 혜택 이벤트 '에픽대시'는 8월 27일까지 운영하며 여름 접속·과금 유입을 노린다.</div>
+      <div class="cn-body">Smilegate通过《第七史诗》夏季季更新公开新限定英雄"深海之眼 芙米尔"及为期8周的特别剧情。大型福利活动"Epic Dash"运营至8月27日，意在拉动暑期登录与付费。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="tag">2026 키워드 · 3N·2K 战略</span>
-      <div class="ko">주요 게임사 2026 키워드 — 넥슨: 부진작 정리·라인업 재편 / 넷마블: 8종 신작 공세(매출 90%가 모바일) / 엔씨: 포트폴리오 집중 / 크래프톤: AI 개발 강화('스튜디오 지원 조직' 신설) / 카카오게임즈: AAA·자체 IP로 반등(프로젝트Q, 크로노 오디세이).</div>
-      <div class="zh">主要厂商 2026 关键词——Nexon:清理弱势产品、重整线布局;Netmarble:8 款新作攻势(90% 营收来自移动);NCSOFT:聚焦产品组合;Krafton:强化 AI 开发(新设「工作室支援组织」);Kakao Games:以 AAA 与自有 IP 反弹(Project Q、Chrono Odyssey)。</div>
-      <a class="srclink" href="https://www.mediapen.com/news/view/1067530" target="_blank">🔗 출처 · 来源:미디어펜 (MediaPen) ↗</a>
-    </div>
-  </div>
-
-  <!-- SECTION 4 -->
-  <div class="section">
+  <!-- ④ 营销 & 推广灵感 -->
+  <section class="section">
     <div class="sec-head">
-      <div class="num">04</div>
-      <div class="titles">
-        <h3>마케팅 &amp; 프로모션 인사이트 · 营销 & 推广灵感</h3>
-        <p>광고 크리에이티브·콜라보·트렌드</p>
+      <div class="sec-num">4</div>
+      <div>
+        <div class="kr">마케팅 & 프로모션 아이디어</div>
+        <div class="cn">营销 & 推广灵感</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">콜라보 마케팅 · 联动营销</span>
-      <div class="ko">브랜드×게임 콜라보가 단순 인게임 광고를 넘어 유저가 '즐기고·소유하고·자랑하는' 경험으로 진화. 대표 사례 — 나이키×포트나이트(에어조던 스킨+미니게임), 스타벅스×롤(챔피언 메뉴·굿즈, 중국), 롯데리아×배그(세트 구매 시 인게임 스킨). '세계관+팬덤+상호작용'으로 감성 충성도를 강화.</div>
-      <div class="zh">品牌×游戏联动正从单纯的植入广告,升级为让用户「体验·拥有·炫耀」的沉浸体验。代表案例——Nike×《堡垒之夜》(AJ 皮肤+小游戏)、星巴克×《英雄联盟》(英雄主题餐单·周边,中国)、乐天利×《PUBG》(套餐赠游戏皮肤)。借「世界观+粉丝+互动」深化情感忠诚度。</div>
-      <a class="srclink" href="https://www.i-boss.co.kr/ab-6141-66958" target="_blank">🔗 출처 · 来源:아이보스 (i-boss) ↗</a>
+      <span class="tag">시즌 마케팅 · 季节营销</span>
+      <div class="kr-title">여름 대형 이벤트 시즌 — '서머 페스티벌' 콘셉트가 정석</div>
+      <div class="cn-title">暑期大型活动季——"Summer Festival"概念成标配</div>
+      <div class="kr-body">넷마블 '킹 오브 파이터 AFK'는 여름 시즌 이벤트 '서머 페스티벌'과 수영복 콘셉트 캐릭터 '쿨라 다이아몬드'를 앞세워 '아쿠아 스플래시' 메인 이벤트를 운영했다. 여름 한정 스킨·계절 콘셉트 캐릭터 + 기간 한정 이벤트 조합은 국내 라이브 게임의 여름 매출 공식으로 자리 잡았다.</div>
+      <div class="cn-body">Netmarble《拳皇AFK》以夏季活动"Summer Festival"及泳装概念角色"库拉·钻石"为主打，推出"Aqua Splash"主活动。夏季限定皮肤+季节概念角色+限时活动的组合，已成为韩国长线游戏的暑期营收公式。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">타깃 전략 · 精准投放</span>
-      <div class="ko">2026 하반기 3대 마케팅 시프트 — ① 서브컬처 팬덤: 모바일 유저의 3%에 불과하지만 매출의 20% 차지, 고몰입 타깃팅이 매스마케팅보다 효율적. ② 여성 게이머 증가: 아시아·중동에서 40% 돌파 전망. ③ 컨텍스트 타깃팅: 프라이버시 규제로 '콘텐츠 소비 맥락 내 광고' 확산.</div>
-      <div class="zh">2026 下半年三大营销转变——①二次元粉丝:仅占移动用户 3%,却贡献 20% 营收,高黏性精准投放比大众营销更高效;②女性玩家增长:预计在亚洲·中东突破 40%;③情境化投放:隐私新规推动「在内容消费情境中植入广告」兴起。</div>
-      <a class="srclink" href="https://openads.co.kr/content/contentDetail?contsId=18721" target="_blank">🔗 출처 · 来源:오픈애즈 (OpenAds) ↗</a>
+      <span class="tag">크로스미디어 · 跨媒体</span>
+      <div class="kr-title">7월 마케팅 캘린더 — 월드컵·워터밤과 묶는 크로스미디어</div>
+      <div class="cn-title">7月营销日历——搭车世界杯·Waterbomb的跨媒体打法</div>
+      <div class="kr-body">나스미디어 7월 캘린더에 따르면 FIFA 월드컵, 워터밤(7.24~26), 대구치맥페스티벌 등 대형 여름 이벤트가 집중됐다. 게임 브랜드는 이런 오프라인 페스티벌·스포츠 이벤트와 IPTV·OTT·CTV를 연계한 크로스미디어 패키지로 여름 화제성을 흡수할 수 있다.</div>
+      <div class="cn-body">据Nasmedia 7月日历，FIFA世界杯、Waterbomb（7.24~26）、大邱炸鸡啤酒节等大型夏季活动集中登场。游戏品牌可借这些线下音乐节/体育赛事，结合IPTV·OTT·CTV的跨媒体套餐，承接暑期话题热度。</div>
+      <a class="srclink" href="https://blog.nasmedia.co.kr/entry/202607-marketing-calendar" target="_blank" rel="noopener">🔗 출처 · 来源：나스미디어 블로그 Nasmedia ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">단계별 전략 · 分阶段打法</span>
-      <div class="ko">신작 마케팅은 3단계로 — 사전(USP 차별화·초기 팬덤 구축) → 론칭(전환 최적화·ASO) → 리텐션(재참여 캠페인·서사형 콘텐츠 업데이트). 여성 73%·Z세대 57% 비중의 포스타입 등 팬 커뮤니티 플랫폼 활용이 코어 오디언스 공략에 유효.</div>
-      <div class="zh">新作营销分三阶段——预热(USP 差异化·培育早期粉丝)→上线(转化优化·ASO)→留存(再触达活动·叙事型内容更新)。善用女性占 73%、Z 世代占 57% 的 Postype 等粉丝社区平台,有效触达核心受众。</div>
-      <a class="srclink" href="https://openads.co.kr/content/contentDetail?contsId=18721" target="_blank">🔗 출처 · 来源:오픈애즈 (OpenAds) ↗</a>
+      <span class="tag">사전예약 · 预约转化</span>
+      <div class="kr-title">사전등록 → 성장 지원 아이템 = 초반 지표 부스트 공식</div>
+      <div class="cn-title">预约登记→成长支援道具＝拉动初期数据的公式</div>
+      <div class="kr-body">엔씨 '리니지 리마스터'의 신콘텐츠 '무한의 나선: 정복자의 첨탑' 사전등록처럼, '사전등록 시 성장 지원 아이템 지급'은 신규·복귀 유저의 초반 진입 장벽을 낮추는 국내 표준 전술이다. 신작·대형 업데이트 마케팅 설계 시 우선 검토할 레버로 참고할 만하다.</div>
+      <div class="cn-body">如NC《天堂 Remaster》新内容"无限螺旋：征服者尖塔"的预约登记那样，"预约即送成长支援道具"是降低新用户/回流用户初期门槛的韩国标准打法。可作为新作或大型更新营销设计时优先考量的杠杆。</div>
+      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184572" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
     </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
   <footer>
-    <h4>📚 오늘의 출처 매체 · 今日来源媒体</h4>
+    <h3>📌 오늘의 출처 · 今日来源汇总</h3>
     <div class="srcs">
-      <a href="https://www.betanews.net/article/view/beta202607270022" target="_blank">베타뉴스 BetaNews</a>
-      <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59384" target="_blank">게임뷰 GameVU</a>
-      <a href="https://www.inven.co.kr/webzine/news/?news=311007&site=ff" target="_blank">인벤 Inven</a>
-      <a href="https://www.mediapen.com/news/view/1067530" target="_blank">미디어펜 MediaPen</a>
-      <a href="https://www.thevaluenews.co.kr/news/199139" target="_blank">더밸류뉴스 TheValueNews</a>
-      <a href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank">한국면세뉴스 KDFNews</a>
-      <a href="https://www.i-boss.co.kr/ab-6141-66958" target="_blank">아이보스 i-boss</a>
-      <a href="https://openads.co.kr/content/contentDetail?contsId=18721" target="_blank">오픈애즈 OpenAds</a>
+      <a href="https://www.betanews.net/article/view/beta202607270022" target="_blank" rel="noopener">베타뉴스 BetaNews ↗</a>
+      <a href="https://m.inven.co.kr/webzine/wznews.php?iskin=csgo&hashtag=%ED%81%AC%EB%9E%98%ED%94%84%ED%86%A4&idx=317124" target="_blank" rel="noopener">인벤 Inven ↗</a>
+      <a href="https://www.mediapen.com/news/view/1067530" target="_blank" rel="noopener">미디어펜 MediaPen ↗</a>
+      <a href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">한국면세뉴스 KDFNews ①</a>
+      <a href="https://www.kdfnews.com/news/articleView.html?idxno=184572" target="_blank" rel="noopener">한국면세뉴스 KDFNews ②</a>
+      <a href="https://blog.nasmedia.co.kr/entry/202607-marketing-calendar" target="_blank" rel="noopener">나스미디어 Nasmedia ↗</a>
     </div>
-    <p class="note">
-      본 브리핑은 게임 마케팅 실무 지원용으로 매일 오전 10:00(KST) 자동 생성됩니다. 모든 항목의 출처는 실제 방문한 원문 링크입니다.<br>
-      本简报为游戏营销实务支持,每日 10:00(韩国时间)自动生成;每条要点均附实际访问的原文出处链接。<br>
-      생성 시각 · 生成时间:2026-07-28 10:00 KST
-    </p>
+    <div class="note">
+      ※ 모든 링크는 작성 시점에 실제 확인한 원문 기사로 연결됩니다. 일부 실적·수치는 각 매체 보도 시점 기준이며, 최신 공식 수치와 차이가 있을 수 있습니다.<br>
+      ※ 所有链接均指向撰写时实际核查过的原文报道。部分业绩/数据以各媒体报道时点为准，可能与最新官方数字存在差异。<br>
+      · 생성 시각 生成时间：2026-07-29 10:00 KST · 매일 10:00 KST 自动更新
+    </div>
   </footer>
 
 </div>
