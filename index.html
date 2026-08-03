@@ -3,252 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>한국 게임 위클리 브리핑 · 韩国游戏每周简报 | 2026-07-21~27</title>
+<title>한국 게임 주간 简报 · 2026-07-27~08-02</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR","Microsoft YaHei",sans-serif;
-    background:#0e1016; color:#e6e8ee; line-height:1.65;
-    -webkit-font-smoothing:antialiased;
+    background:#0e1016; color:#e7eaf3;
+    font-family:"Pretendard","Malgun Gothic","Apple SD Gothic Neo","Segoe UI",sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
   }
-  .wrap { max-width:860px; margin:0 auto; padding:28px 18px 60px; }
+  .wrap { max-width:920px; margin:0 auto; padding:32px 18px 64px; }
 
-  header {
-    text-align:center; padding:34px 20px 30px; margin-bottom:26px;
+  /* Header */
+  header { text-align:center; padding:34px 20px 30px; margin-bottom:8px;
     background:linear-gradient(160deg,#171a23 0%,#12141c 100%);
-    border:1px solid #232838; border-radius:18px;
-  }
-  header .flag { font-size:13px; letter-spacing:3px; color:#5b8cff; font-weight:700; }
-  header h1 { font-size:26px; margin:10px 0 4px; font-weight:800; letter-spacing:-.5px; }
-  header h2 { font-size:15px; color:#aab1c4; font-weight:500; margin-bottom:16px; }
-  .meta { display:inline-flex; flex-wrap:wrap; gap:8px; justify-content:center; }
-  .pill {
-    font-size:12.5px; background:#1e222d; border:1px solid #2a2f3d; color:#c8cede;
-    padding:6px 13px; border-radius:20px;
-  }
-  .pill.live { color:#5b8cff; border-color:#33406a; }
-  .pill.live::before { content:"●"; color:#4ade80; margin-right:6px; font-size:10px; }
+    border:1px solid #232838; border-radius:18px; }
+  header .kicker { font-size:13px; letter-spacing:2px; color:#5b8cff; font-weight:700; text-transform:uppercase; }
+  header h1 { font-size:30px; margin:10px 0 4px; letter-spacing:-.5px; }
+  header h1 .cn { display:block; font-size:19px; color:#aab3c9; font-weight:500; margin-top:4px; }
+  .weekbadge { display:inline-block; margin-top:16px; padding:8px 18px; font-size:15px; font-weight:700;
+    background:#1e2434; border:1px solid #2f3752; border-radius:999px; color:#cdd6ee; }
+  .meta { margin-top:14px; font-size:12.5px; color:#7c85a0; }
+  .meta span { display:inline-block; margin:0 7px; }
 
-  .section { margin-bottom:30px; }
-  .sec-head {
-    display:flex; align-items:center; gap:13px; margin-bottom:16px;
-    background:#171a23; border:1px solid #232838; border-left:4px solid #5b8cff;
-    border-radius:12px; padding:15px 18px;
-  }
-  .sec-num {
-    flex-shrink:0; width:38px; height:38px; border-radius:10px;
-    background:linear-gradient(145deg,#5b8cff,#3a63d0); color:#fff;
-    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px;
-  }
-  .sec-head .kr { font-size:17px; font-weight:800; }
-  .sec-head .cn { font-size:13px; color:#9aa2b6; }
+  /* Section headers */
+  .section { margin-top:34px; }
+  .sec-head { display:flex; align-items:center; gap:14px; padding:16px 20px;
+    background:#171a23; border:1px solid #232838; border-radius:14px; }
+  .sec-num { flex:none; width:42px; height:42px; border-radius:11px;
+    background:linear-gradient(150deg,#5b8cff,#3a5fd0); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; }
+  .sec-title { font-size:19px; font-weight:700; }
+  .sec-title .cn { display:block; font-size:13.5px; color:#9aa4bd; font-weight:500; margin-top:1px; }
 
-  .card {
-    background:#171a23; border:1px solid #232838; border-radius:14px;
-    padding:18px 20px; margin-bottom:14px; transition:border-color .2s;
-  }
-  .card:hover { border-color:#33406a; }
-  .card .kr-title { font-size:16px; font-weight:700; color:#f2f4f9; margin-bottom:3px; }
-  .card .cn-title { font-size:13.5px; color:#7fa0e8; margin-bottom:11px; }
-  .card .kr-body { font-size:14px; color:#d3d8e4; margin-bottom:5px; }
-  .card .cn-body { font-size:13.5px; color:#9aa2b6; }
-  .tag {
-    display:inline-block; font-size:11px; color:#8aa0d8; background:#1a2030;
-    border:1px solid #2a3350; border-radius:6px; padding:2px 8px; margin-bottom:10px;
-  }
-  .date-chip { color:#5b8cff; font-weight:600; }
+  /* Cards */
+  .card { background:#171a23; border:1px solid #232838; border-radius:14px;
+    padding:20px 22px; margin-top:14px; }
+  .card:hover { border-color:#2f3752; }
+  .ko { font-size:16.5px; font-weight:700; color:#f1f4fb; letter-spacing:-.2px; }
+  .cn { font-size:15px; color:#c4cbe0; margin-top:5px; }
+  .card p.body-ko { font-size:14px; color:#c8cee0; margin-top:11px; }
+  .card p.body-cn { font-size:14px; color:#98a1ba; margin-top:4px; }
+  .tag { display:inline-block; font-size:11px; font-weight:700; color:#8fb0ff;
+    background:#1b2233; border:1px solid #2b3350;
+    padding:2px 9px; border-radius:6px; margin-bottom:9px; letter-spacing:.3px; }
+  .date-chip { float:right; font-size:11.5px; color:#6f7891; font-weight:600; }
 
-  .srclink {
-    display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px;
-    color:#5b8cff; text-decoration:none; border:1px solid #2a2f3d; background:#1e222d;
-    padding:4px 10px; border-radius:7px;
-  }
-  .srclink:hover { border-color:#5b8cff; }
+  /* Source link button */
+  .srclink { display:inline-flex; align-items:center; gap:5px; margin-top:9px;
+    font-size:12px; color:#5b8cff; text-decoration:none;
+    border:1px solid #2a2f3d; background:#1e222d; padding:4px 10px; border-radius:7px; }
+  .srclink:hover { background:#242a3a; border-color:#3a4260; }
 
-  footer {
-    margin-top:40px; padding:22px 20px; background:#12141c;
-    border:1px solid #232838; border-radius:14px; font-size:12.5px; color:#8a92a6;
-  }
-  footer h3 { font-size:13.5px; color:#c8cede; margin-bottom:10px; }
-  footer .srcs { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
-  footer .srcs a { font-size:11.5px; color:#9aa2b6; background:#1a1d27; border:1px solid #262b39;
-    padding:4px 9px; border-radius:6px; text-decoration:none; }
-  footer .srcs a:hover { color:#5b8cff; border-color:#33406a; }
-  footer .note { color:#6b7285; font-size:11.5px; line-height:1.7; }
+  /* Rank list */
+  .ranklist { list-style:none; margin-top:12px; }
+  .ranklist li { display:flex; align-items:center; gap:12px; padding:9px 12px;
+    border-radius:9px; margin-bottom:5px; background:#12151e; border:1px solid #1f2431; font-size:14px; }
+  .ranklist .rk { flex:none; width:26px; height:26px; border-radius:7px; background:#232a3d;
+    color:#9fb4ff; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .ranklist .rk.top { background:linear-gradient(150deg,#5b8cff,#3a5fd0); color:#fff; }
+  .ranklist .nm { font-weight:600; color:#eef1f8; }
+  .ranklist .dev { color:#8189a1; font-size:12.5px; margin-left:auto; }
+
+  footer { margin-top:44px; padding:24px 22px; background:#12141c;
+    border:1px solid #232838; border-radius:14px; font-size:13px; color:#9aa4bd; }
+  footer h3 { font-size:14px; color:#cdd6ee; margin-bottom:10px; }
+  footer ul { list-style:none; }
+  footer li { padding:5px 0; border-bottom:1px dashed #222838; font-size:12.5px; }
+  footer li:last-child { border-bottom:none; }
+  footer .disc { margin-top:14px; font-size:11.5px; color:#6f7891; line-height:1.7; }
+  footer a { color:#5b8cff; text-decoration:none; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="flag">KOREA GAME WEEKLY · 韩国游戏每周简报</div>
-    <h1>한국 게임 위클리 브리핑</h1>
-    <h2>韩国游戏市场每周简报</h2>
+    <div class="kicker">Korea Game Weekly · 한국 게임 주간 简报</div>
+    <h1>한국 게임 주간 리포트
+      <span class="cn">韩国游戏每周简报</span>
+    </h1>
+    <div class="weekbadge">🗓️ 2026-07-27 ~ 08-02 주간 (Asia/Seoul)</div>
     <div class="meta">
-      <span class="pill">🗓️ 2026-07-21 ~ 07-27 주간 · 韩国时间</span>
-      <span class="pill live">每周一 10:00 KST 自动更新</span>
+      <span>⏰ 매주 월요일 10:00 KST 自动更新</span>
+      <span>·</span>
+      <span>본기 기준일 每周一 09:00 · 2026-08-03</span>
     </div>
   </header>
 
-  <!-- ① 新作 & 榜单 -->
-  <section class="section">
+  <!-- ① 新游戏 & 榜单 -->
+  <div class="section">
     <div class="sec-head">
-      <div class="sec-num">1</div>
-      <div>
-        <div class="kr">신작 & 마켓 순위</div>
-        <div class="cn">新游戏发布 & 畅销/免费榜动向</div>
+      <div class="sec-num">①</div>
+      <div class="sec-title">신작 & 순위 차트
+        <span class="cn">新游戏发布 & 榜单</span>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">주간 인기 순위 · <span class="date-chip">07/27</span></span>
-      <div class="kr-title">'윈드러너 키우기' 인기(무료) 순위 1위 — 방치형 신작 돌풍</div>
-      <div class="cn-title">《风之国度 养成》登顶免费人气榜——放置类新作本周强势</div>
-      <div class="kr-body">글로벌 6,000만 다운로드 IP를 방치형 RPG로 재해석한 '윈드러너 키우기'가 7월 21일 한국·대만 정식 출시 이후 이번 주 구글플레이 인기(무료) 순위 1위를 지켰다. 150여 종 캐릭터·소환수·탈것 성장 콘텐츠와 출시 기념 이벤트가 초반 지표를 견인했다.</div>
-      <div class="cn-body">将全球6,000万下载量IP改编为放置类RPG的《风之国度 养成》，7月21日韩台正式上线后，本周稳居Google Play免费人气榜第1。150余种角色/召唤兽/坐骑养成内容及上线纪念活动拉动初期数据。</div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank" rel="noopener">🔗 출처 · 来源：베타뉴스 BetaNews (07/27) ↗</a>
+      <span class="tag">주간 매출 차트 · 周榜</span>
+      <span class="date-chip">2026-07-31</span>
+      <div class="ko">7월 마지막 주 구글플레이 매출 TOP · 넷마블 '솔: 인챈트' 1위 유지</div>
+      <div class="cn">7月最后一周 Google Play 畅销榜:网石《SOUL: Enchant》蝉联第一,米哈游《绝区零》凭两周年更新升至第二。</div>
+      <ol class="ranklist">
+        <li><span class="rk top">1</span><span class="nm">솔: 인챈트 <span style="color:#8189a1">SOUL: Enchant</span></span><span class="dev">넷마블 Netmarble</span></li>
+        <li><span class="rk top">2</span><span class="nm">젠레스 존 제로 <span style="color:#8189a1">绝区零</span></span><span class="dev">호요버스 HoYoverse</span></li>
+        <li><span class="rk">6</span><span class="nm">메이플 키우기 <span style="color:#8189a1">枫之谷放置</span></span><span class="dev">넥슨 Nexon</span></li>
+        <li><span class="rk">9</span><span class="nm">로블록스 <span style="color:#8189a1">Roblox·방학 반등</span></span><span class="dev">Roblox</span></li>
+        <li><span class="rk">10</span><span class="nm">오딘: 발할라 라이징 <span style="color:#8189a1">奥丁</span></span><span class="dev">카카오게임즈 Kakao Games</span></li>
+      </ol>
+      <p class="body-ko">신작 '쿠키런: 크럼블'(데브시스터즈)이 애플 앱스토어 상단에 진입했고, '열혈강호: 넥스트'(킹넷)가 구글·애플 매출 10위권에 신규 진입했다.</p>
+      <p class="body-cn">新品《跑跑姜饼人: Crumble》(Devsisters)冲上苹果榜前列;《热血江湖: Next》(KingNet)新进双平台畅销榜 Top10。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59735" target="_blank">🔗 출처 · 来源:게임뷰 GameVu ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">매출 순위 · 畅销榜</span>
-      <div class="kr-title">국산 MMORPG, 구글 매출 최상위권 장악 — '솔: 인챈트' 강세 지속</div>
-      <div class="cn-title">国产MMORPG垄断Google畅销榜顶端——《SOUL: Enchant》持续强势</div>
-      <div class="kr-body">넷마블 '솔: 인챈트'가 신규 콘텐츠 '신의 탑' 업데이트 이후 매출 1위 자리를 장기 수성하며, 리니지M·오딘 등 국산 MMORPG가 상위권을 장악했다. '승리의 여신: 니케'는 13위→4위로 급등했고, 중국산 전략게임 점유율은 감소하며 국산 게임의 반등세가 뚜렷하다.</div>
-      <div class="cn-body">Netmarble《SOUL: Enchant》在"神之塔"新内容更新后长期守住畅销榜第1，《天堂M》《奥丁》等国产MMORPG占据前列。《胜利女神：妮姬》从第13位飙升至第4位，中国产策略游戏份额下降，国产游戏反弹势头明显。</div>
-      <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=306085" target="_blank" rel="noopener">🔗 출처 · 来源：경향게임스 KHGames ↗</a>
+      <span class="tag">신작 출시 · 新游上线</span>
+      <span class="date-chip">2026-07-30~31</span>
+      <div class="ko">데브시스터즈 '쿠키런: 크럼블' 글로벌 정식 출시 — 출시 당일 국내 앱스토어 인기 1위</div>
+      <div class="cn">Devsisters《跑跑姜饼人: Crumble》全球同步上线——首日登顶韩国苹果免费游戏榜第一,畅销榜升至第三。</div>
+      <p class="body-ko">쿠키 69종·펫 54종을 앞세운 방치형 RPG. 사전 다운로드 단계에서 이미 인기 1위, 전체 매출의 약 50%가 해외에서 발생했으며 대만·태국 2위, 미국 8위를 기록. 4주 단위 정기 업데이트 운영 예정.</p>
+      <p class="body-cn">主打 69 款姜饼人 + 54 只宠物的放置类 RPG。预下载阶段即登顶人气榜,约 50% 营收来自海外(中国台湾/泰国第 2、美国第 8),将以 4 周为周期定期更新。</p>
+      <a class="srclink" href="https://zdnet.co.kr/view/?no=20260731133557" target="_blank">🔗 출처 · 来源:ZDNet Korea ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">신작 출시 · <span class="date-chip">07/29 예정</span></span>
-      <div class="kr-title">'열혈강호: 넥스트' · '헤일로: 캠페인 이볼브드' 이번 주 출시</div>
-      <div class="cn-title">《热血江湖: Next》·《光环: 战役进化》本周上线</div>
-      <div class="kr-body">7월 29일 신작 MMORPG '열혈강호: 넥스트'와 '헤일로: 캠페인 이볼브드'가 나란히 출시된다. 클래식 무협 IP와 글로벌 콘솔 IP가 같은 날 시장에 진입하며 여름 신작 경쟁이 한층 뜨거워졌다.</div>
-      <div class="cn-body">7月29日，新作MMORPG《热血江湖: Next》与《光环: 战役进化》同日上线。经典武侠IP与全球主机IP在同一天进入市场，暑期新作竞争进一步升温。</div>
-      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank" rel="noopener">🔗 출처 · 来源：인벤 Inven (07/27) ↗</a>
+      <span class="tag">인기 순위 · 人气榜</span>
+      <span class="date-chip">2026-07-27</span>
+      <div class="ko">'윈드러너 키우기' 인기 순위 1위 등극 (7월 21일 정식 출시)</div>
+      <div class="cn">《Wind Runner 放置》登顶人气榜(7月21日正式上线),《枫之谷放置》靠新职业更新推动畅销榜上升。</div>
+      <p class="body-ko">글로벌 누적 6,000만 다운로드 IP '윈드러너'를 방치형 RPG로 재해석, 150여 종 캐릭터·소환수·탈것 성장 콘텐츠 강조. 메이플 키우기는 신규 직업 '윈드브레이커'·'나이트워커' 추가로 매출 4위.</p>
+      <p class="body-cn">将全球累计 6000 万下载的《Wind Runner》IP 改造为放置 RPG,主打 150 余种角色/召唤兽/坐骑养成;《枫之谷放置》靠新增职业升至畅销第 4。</p>
+      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank">🔗 출처 · 来源:베타뉴스 BetaNews ↗</a>
     </div>
-  </section>
+  </div>
 
   <!-- ② 市场趋势 & 行业动态 -->
-  <section class="section">
+  <div class="section">
     <div class="sec-head">
-      <div class="sec-num">2</div>
-      <div>
-        <div class="kr">시장 트렌드 & 산업 동향</div>
-        <div class="cn">市场趋势 & 行业动态</div>
+      <div class="sec-num">②</div>
+      <div class="sec-title">시장 트렌드 & 산업 동향
+        <span class="cn">市场趋势 & 行业动态</span>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">하반기 전망 · 下半年展望</span>
-      <div class="kr-title">하반기 대작 릴레이 개막 — 출시일은 '11월 GTA6' 피하기 눈치싸움</div>
-      <div class="cn-title">下半年大作接力开场——档期在"11月GTA6"前激烈错峰</div>
-      <div class="kr-body">7~11월 국내외 대작이 쉴 틈 없이 쏟아지는 가운데, 최근 공개된 신작들의 출시일이 11월 GTA6(11/19)를 기점으로 치열한 눈치싸움을 벌이고 있다. 국내 게임사도 하반기 신작·글로벌 출시 시점을 GTA6 전후로 재조정하는 흐름이 관측된다.</div>
-      <div class="cn-body">7~11月国内外大作接连登场，而近期公开的新作档期正以11月GTA6（11/19）为节点激烈错峰。韩国厂商也出现将下半年新作及全球上线时点围绕GTA6前后重新调整的趋势。</div>
-      <a class="srclink" href="https://www.thisisgame.com/articles/425879" target="_blank" rel="noopener">🔗 출처 · 来源：디스이즈게임 ThisIsGame ↗</a>
+      <span class="tag">실적 · 财报</span>
+      <span class="date-chip">2026-07-29</span>
+      <div class="ko">크래프톤, 2분기 역대 최고 실적 — 매출 1조 2,902억 원, 영업이익 4,109억 원(+67%)</div>
+      <div class="cn">Krafton 二季度创历史新高:营收 1.29 万亿韩元(同比 +94.9%),营业利润 4,109 亿韩元(同比 +67%)。</div>
+      <p class="body-ko">'배틀그라운드' 지속 성장과 '서브노티카 2'(5월 얼리액세스 후 22일 만에 500만 장 돌파)가 견인. PC 매출 첫 5,000억 원 돌파, 콘솔 매출 전년比 143% 급증. 상반기 누적 매출 2조 6,616억 원.</p>
+      <p class="body-cn">《绝地求生》持续增长 +《深海迷航2》(5月抢先体验后22天销量破500万)双驱动;PC 营收首破5000亿,主机营收同比 +143%,上半年累计营收 2.66 万亿。</p>
+      <a class="srclink" href="https://zdnet.co.kr/view/?no=20260729154918" target="_blank">🔗 출처 · 来源:ZDNet Korea ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">증권가 평가 · <span class="date-chip">07/27</span></span>
-      <div class="kr-title">교보증권 "엔씨 '리니지 클래식' 견조한 트래픽·매출…내년까지 성장 여력"</div>
-      <div class="cn-title">教保证券："NC《天堂 Classic》流量与营收稳健，明年前仍有增长空间"</div>
-      <div class="kr-body">교보증권은 엔씨소프트 '리니지 클래식'이 견조한 트래픽과 매출을 유지 중이며 내년까지 성장 가능성이 있다고 평가했다. 리니지 IP의 라이브 서비스 지속력이 엔씨 하반기 실적 방어의 핵심 축으로 재부각됐다.</div>
-      <div class="cn-body">教保证券评价NCSOFT《天堂 Classic》正维持稳健的流量与营收，并认为到明年前仍具增长潜力。天堂IP长线运营的持续力，再度成为NC下半年业绩防守的核心。</div>
-      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank" rel="noopener">🔗 출처 · 来源：인벤 Inven (07/27) ↗</a>
+      <span class="tag">실적 전망 · 财报预测</span>
+      <span class="date-chip">2026-07-28</span>
+      <div class="ko">넷마블 2분기 매출 7,340억 원 전망 — 영업이익 889억 원으로 약 12% 감소 예상</div>
+      <div class="cn">网石二季度预计营收 7,340 亿韩元(+2.3%),营业利润约 889 亿韩元(同比约 -12%)。</div>
+      <p class="body-ko">상반기 신작 '일곱 개의 대죄: 오리진'·'몬길: 스타 다이브'가 시장 기대치를 하회한 것이 부진 요인으로 지목. 하반기 신작 라인업으로 반등을 노린다.</p>
+      <p class="body-cn">上半年新作《七大罪: Origin》《MonGil: Star Dive》表现不及预期是主因,寄望下半年新作阵容实现反弹。</p>
+      <a class="srclink" href="https://newsway.co.kr/news/view?ud=2026072814403387344" target="_blank">🔗 출처 · 来源:뉴스웨이 Newsway ↗</a>
     </div>
-  </section>
 
-  <!-- ③ 竞품/大厂动向 -->
-  <section class="section">
+    <div class="card">
+      <span class="tag">정책 · 政策</span>
+      <span class="date-chip">2026-07-28</span>
+      <div class="ko">문체부, '중간 허리' 게임사 제작지원 6배 확대 추진 — 프로젝트당 최대 30억 원</div>
+      <div class="cn">韩国文体部拟将中坚游戏企业的制作扶持提高 6 倍——单项目最高约 30 亿韩元(此前 5 亿)。</div>
+      <p class="body-ko">제작비 100억~500억 원 규모 게임 대상 '대규모 제작지원 트랙' 신설. 인디게임 지원 기업은 130개→200개 이상으로 확대. 세액공제·정책금융·AI 전환 지원·불법 서버 단속 강화도 병행. 중소사와 대형사 사이 '중간 허리' 육성이 목표.</p>
+      <p class="body-cn">面向 100亿~500亿韩元制作规模的游戏新设"大型制作扶持轨道";独立游戏受扶持企业由 130 家增至 200+ 家,同时推进税收抵免、政策金融、AI 转型补贴与盗版打击,目标培育中小与大厂之间的"腰部"企业。</p>
+      <a class="srclink" href="https://www.ddaily.co.kr/page/view/2026072815140498687" target="_blank">🔗 출처 · 来源:디지털데일리 DigitalDaily ↗</a>
+    </div>
+  </div>
+
+  <!-- ③ 竞品 / 大厂动向 -->
+  <div class="section">
     <div class="sec-head">
-      <div class="sec-num">3</div>
-      <div>
-        <div class="kr">경쟁사 & 대형사 동향</div>
-        <div class="cn">竞品 / 大厂动向</div>
+      <div class="sec-num">③</div>
+      <div class="sec-title">경쟁사 & 대형사 동향
+        <span class="cn">竞品 / 大厂动向</span>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">호요버스 · <span class="date-chip">07/29 예정</span></span>
-      <div class="kr-title">'젠레스 존 제로' 2주년 3.1 '기나긴 이별' — 신규 캐릭터 '레미엘'</div>
-      <div class="cn-title">《绝区零》2周年3.1版本"漫长的告别"——新角色"雷米埃尔"</div>
-      <div class="kr-body">호요버스 '젠레스 존 제로'가 7월 29일 2주년 기념 3.1 업데이트 '기나긴 이별'을 실시한다. 빛 속성 신규 공허 사냥꾼 '레미엘' 픽업과 신규 스킨 2종이 추가되며, 2주년 대형 이벤트로 여름 접속·과금 드라이브를 건다.</div>
-      <div class="cn-body">HoYoverse《绝区零》于7月29日推出2周年3.1版本"漫长的告别"，追加光属性新角色"雷米埃尔"卡池及2款新皮肤，以2周年大型活动拉动暑期登录与付费。</div>
-      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank" rel="noopener">🔗 출처 · 来源：인벤 Inven (07/27) ↗</a>
+      <span class="tag">Krafton · 크래프톤</span>
+      <span class="date-chip">2026-07-29</span>
+      <div class="ko">게임스컴 2026에서 신작 5종 최초 공개 예고 — 'NO LAW'·'프로젝트 제타' 등</div>
+      <div class="cn">Krafton 预告将在科隆游戏展 2026 首度公开 5 款新作,含《NO LAW》《Project Zeta》及基于 PUBG IP 的新项目。</div>
+      <p class="body-ko">2분기 컨퍼런스콜에서 발표. '배틀그라운드' IP 확장과 신규 프로젝트 라인업으로 하반기 글로벌 모멘텀 이어간다는 전략.</p>
+      <p class="body-cn">于二季度电话会披露,借《绝地求生》IP 扩展与新项目阵容延续下半年全球势头。</p>
+      <a class="srclink" href="https://zdnet.co.kr/view/?no=20260729154918" target="_blank">🔗 출처 · 来源:ZDNet Korea ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">넷마블 · Netmarble</span>
-      <div class="kr-title">'블레이드&소울 레볼루션' 첫 신화 던전 '독의 정원' + 프로모션</div>
-      <div class="cn-title">Netmarble《剑灵Revolution》首个神话副本"毒之庭园"＋促销</div>
-      <div class="kr-body">넷마블은 '블소 레볼루션'에 첫 신화 던전 '독의 정원'을 추가, 4인 보스 '팔독모' 처치로 신화 장비 설계도를 획득하도록 했다. 강화 점수 시스템과 프로모션(7월 28일까지)을 함께 운영하며 여름 매출 드라이브를 걸었다.</div>
-      <div class="cn-body">Netmarble在《剑灵Revolution》中新增首个神话副本"毒之庭园"，击败4人Boss"八毒母"可获神话装备图纸。同步上线强化评分系统与促销活动（截至7月28日），发起暑期营收攻势。</div>
-      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184572" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
+      <span class="tag">Netmarble · 넷마블</span>
+      <span class="date-chip">2026-07-28</span>
+      <div class="ko">하반기 신작 5종 출격 — '나 혼자만 레벨업: 카르마', '프로젝트 이지스' 등</div>
+      <div class="cn">网石下半年出击 5 款新作:《我独自升级: Karma》《Project Aegis》《Project Octopus》《Evilbane》《香格里拉边境: 七最强种》。</div>
+      <p class="body-ko">'나 혼자만 레벨업: 카르마'는 모바일 로그라이트 액션 RPG, '프로젝트 이지스'는 글로벌 IP 기반 방치형 RPG로 증권가가 가장 주목. 이 밖에 '펄 인 블루'(수집형 RPG), '프로젝트 블룸워커'(PC·콘솔)도 개발 중.</p>
+      <p class="body-cn">《我独自升级: Karma》为 Roguelite 动作 RPG,《Project Aegis》为基于全球 IP 的放置 RPG(券商最看好);另有《Pearl in Blue》(收集 RPG)、《Project Bloomwalker》(PC/主机)在研。</p>
+      <a class="srclink" href="https://newsway.co.kr/news/view?ud=2026072814403387344" target="_blank">🔗 출처 · 来源:뉴스웨이 Newsway ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">엔씨소프트 · NCSOFT</span>
-      <div class="kr-title">'리니지2M' 중국 정식 출시 후 앱스토어 매출 1위</div>
-      <div class="cn-title">《天堂2M》中国上线后登顶App Store畅销榜</div>
-      <div class="kr-body">엔씨소프트가 현지명 '천당2: 맹약'으로 중국에 정식 출시한 '리니지2M'이 출시 직후 중국 앱스토어 매출 1위를 기록했다. 리니지 IP의 중국 판호 성과가 하반기 실적 기대감을 높이며 이번 주에도 화제를 이어갔다.</div>
-      <div class="cn-body">NCSOFT以本地名《天堂2：盟约》在中国正式上线的《天堂2M》，上线后即登顶中国App Store畅销榜。天堂IP的中国版号成绩提升下半年业绩预期，本周持续成为话题。</div>
-      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
+      <span class="tag">HoYoverse · 호요버스</span>
+      <span class="date-chip">2026-07-28</span>
+      <div class="ko">'젠레스 존 제로' 출시 2주년 — 3.1 버전 '기나긴 이별' 7월 29일 업데이트</div>
+      <div class="cn">米哈游《绝区零》上线两周年——3.1 版本《漫长告别》于 7 月 29 日更新。</div>
+      <p class="body-ko">공허 사냥꾼 신규 캐릭터 '레미엘'(빛 속성) 픽업, 신규 스킨 2종, 2주년 기념 이벤트 및 특별 보상 지급. 캐릭터 비주얼과 신규 콘텐츠로 복귀·신규 유저 유입을 겨냥.</p>
+      <p class="body-cn">推出新角色"雷米尔"(光属性)、2 款新皮肤及两周年纪念活动与专属奖励,以角色美术与新内容拉动回流与拉新。</p>
+      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank">🔗 출처 · 来源:인벤 Inven ↗</a>
     </div>
-  </section>
+
+    <div class="card">
+      <span class="tag">Devsisters · 데브시스터즈</span>
+      <span class="date-chip">2026-07-30</span>
+      <div class="ko">'쿠키런: 크럼블' 글로벌 동시 출시로 방치형 시장 공략 본격화</div>
+      <div class="cn">Devsisters 以《跑跑姜饼人: Crumble》全球同步上线,正式进军放置类市场。</div>
+      <p class="body-ko">쿠키런 IP를 방치형 RPG로 확장. 출시 당일 국내 앱스토어 인기 1위, 해외 매출 비중 약 50%로 글로벌 흥행 신호. (상세 ①·④ 참조)</p>
+      <p class="body-cn">将姜饼人 IP 拓展至放置 RPG,首日登顶韩国苹果人气榜,海外营收占比约 50%,释放全球爆款信号。(详见 ①/④)</p>
+      <a class="srclink" href="https://zdnet.co.kr/view/?no=20260731133557" target="_blank">🔗 출처 · 来源:ZDNet Korea ↗</a>
+    </div>
+  </div>
 
   <!-- ④ 营销 & 推广灵感 -->
-  <section class="section">
+  <div class="section">
     <div class="sec-head">
-      <div class="sec-num">4</div>
-      <div>
-        <div class="kr">마케팅 & 프로모션 아이디어</div>
-        <div class="cn">营销 & 推广灵感</div>
+      <div class="sec-num">④</div>
+      <div class="sec-title">마케팅 & 프로모션 인사이트
+        <span class="cn">营销 & 推广灵感</span>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">시즌 마케팅 · 季节营销</span>
-      <div class="kr-title">2주년·여름 시즌 = '한정 캐릭터 + 대형 이벤트' 화제성 공식</div>
-      <div class="cn-title">周年庆·夏季＝"限定角色＋大型活动"造话题公式</div>
-      <div class="kr-body">이번 주 젠레스 2주년(신규 '레미엘'), 넷마블 여름 '서머 페스티벌', 스마일게이트 에픽세븐 여름 한정 영웅처럼, 여름·주년 타이밍에 '한정 캐릭터/스킨 + 기간 한정 대형 이벤트'를 묶는 것이 국내 라이브 게임의 표준 화제화 전술이다. 마케팅 캠페인 설계 시 출시·주년 타이밍과 한정 리워드를 연동할 것.</div>
-      <div class="cn-body">本周《绝区零》2周年（新角色"雷米埃尔"）、Netmarble夏季"Summer Festival"、Smilegate《第七史诗》夏季限定英雄——在夏季/周年节点捆绑"限定角色/皮肤＋限时大型活动"，是韩国长线游戏的标准造话题打法。营销活动设计时应将上线/周年节点与限定奖励联动。</div>
-      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
+      <span class="tag">글로벌 런칭 전략 · 全球发行</span>
+      <span class="date-chip">2026-07-31</span>
+      <div class="ko">'쿠키런: 크럼블'식 글로벌 동시 출시 — 해외 매출 50% 확보 공식</div>
+      <div class="cn">《跑跑姜饼人: Crumble》式全球同步发行——海外营收占比达 50% 的打法。</div>
+      <p class="body-ko">① 검증된 IP를 진입장벽 낮은 방치형 장르로 재해석 → ② 사전 다운로드 단계부터 인기 1위 확보로 초반 화제성 극대화 → ③ 대만·태국·미국 등 다지역 동시 공략 → ④ '4주 단위 정기 업데이트'를 사전 공표해 초반 이탈 방지. 캐주얼·수집형 신작의 글로벌 세팅에 그대로 참고할 만한 템플릿.</p>
+      <p class="body-cn">①用低门槛放置玩法重塑成熟 IP → ②预下载即冲人气第一,拉满上线话题 → ③台/泰/美多地区同步 → ④预告"4 周定期更新"稳留存。可直接套用于休闲/收集类新作的全球化配置。</p>
+      <a class="srclink" href="https://zdnet.co.kr/view/?no=20260731133557" target="_blank">🔗 출처 · 来源:ZDNet Korea ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">크로스미디어 · 跨媒体</span>
-      <div class="kr-title">여름 오프라인 이벤트(워터밤·월드컵)와 묶는 크로스미디어 패키지</div>
-      <div class="cn-title">搭车夏季线下活动（Waterbomb·世界杯）的跨媒体套餐</div>
-      <div class="kr-body">7월 마케팅 캘린더 기준 FIFA 월드컵, 워터밤(7.24~26), 대구치맥페스티벌 등 대형 여름 이벤트가 집중됐다. 게임 브랜드는 이런 오프라인 페스티벌·스포츠 이벤트와 IPTV·OTT·CTV를 연계한 크로스미디어로 여름 화제성을 흡수할 수 있다.</div>
-      <div class="cn-body">据7月营销日历，FIFA世界杯、Waterbomb（7.24~26）、大邱炸鸡啤酒节等大型夏季活动集中登场。游戏品牌可借这些线下音乐节/体育赛事，结合IPTV·OTT·CTV的跨媒体承接暑期热度。</div>
-      <a class="srclink" href="https://blog.nasmedia.co.kr/entry/202607-marketing-calendar" target="_blank" rel="noopener">🔗 출처 · 来源：나스미디어 블로그 Nasmedia ↗</a>
+      <span class="tag">라이브옵스 · 周年运营</span>
+      <span class="date-chip">2026-07-28</span>
+      <div class="ko">'젠레스 존 제로' 2주년 리텐션 마케팅 — 캐릭터 비주얼 + 보상 설계</div>
+      <div class="cn">《绝区零》两周年留存打法——角色美术冲击 + 奖励设计。</div>
+      <p class="body-ko">신규 캐릭터의 강렬한 비주얼(핑크빛 '레미엘')을 티저 핵심 소재로 삼아 SNS 화제성을 선점하고, 2주년 특별 보상·신규 스킨 2종으로 휴면·복귀 유저를 동시에 공략. 서브컬처 라이브서비스의 '주년 이벤트 = 최대 매출 스파이크' 공식을 재확인.</p>
+      <p class="body-cn">以新角色强视觉("粉发雷米尔")作为预告核心占领社媒话题,再用周年专属奖励 + 2 款新皮肤同时激活沉睡与回流用户,印证二次元长线运营"周年活动 = 最大营收峰值"的公式。</p>
+      <a class="srclink" href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank">🔗 출처 · 来源:인벤 Inven ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">전환 전술 · 转化打法</span>
-      <div class="kr-title">사전등록 → 성장 지원 아이템 = 신규·복귀 유저 초반 부스트</div>
-      <div class="cn-title">预约登记→成长支援道具＝拉动新用户/回流的初期助推</div>
-      <div class="kr-body">엔씨 '리니지 리마스터' 신콘텐츠 '무한의 나선' 사전등록처럼, '사전등록 시 성장 지원 아이템 지급'은 국내 신작·대형 업데이트의 표준 전환 전술이다. 여름 신작 경쟁이 치열한 지금, 사전예약 리워드 설계를 마케팅 우선 레버로 검토할 만하다.</div>
-      <div class="cn-body">如NC《天堂 Remaster》新内容"无限螺旋"的预约登记那样，"预约即送成长支援道具"是韩国新作/大型更新的标准转化打法。在暑期新作竞争白热化的当下，可将预约奖励设计作为营销的优先杠杆。</div>
-      <a class="srclink" href="https://www.kdfnews.com/news/articleView.html?idxno=184572" target="_blank" rel="noopener">🔗 출처 · 来源：한국면세뉴스 KDFNews ↗</a>
+      <span class="tag">시장 인사이트 · 品类风向</span>
+      <span class="date-chip">2026-07-27</span>
+      <div class="ko">'키우기(방치형)' 장르가 여름 성수기 차트를 장악 — 저비용·고효율 유입 채널</div>
+      <div class="cn">"放置(키우기)"品类占据暑期榜单——低成本高效率的获量通道。</div>
+      <p class="body-ko">윈드러너 키우기·메이플 키우기·쿠키런 크럼블 등 방치형이 매출·인기 상위를 동시 석권. 기존 IP를 방치형으로 확장하면 (a) 낮은 학습 곡선으로 신규 유입 CPI 절감, (b) 짧은 세션·자동 진행으로 여름·방학 트래픽에 최적화. 마케팅은 'IP 재미 + 편의성'을 동시에 소구하는 것이 핵심.</p>
+      <p class="body-cn">《Wind Runner 放置》《枫之谷放置》《跑跑姜饼人 Crumble》同时霸榜。将老 IP 放置化可(a)以低学习曲线降低拉新 CPI,(b)以短会话/自动挂机契合暑期流量。素材应同时主打"IP 乐趣 + 便捷体验"。</p>
+      <a class="srclink" href="https://www.betanews.net/article/view/beta202607270022" target="_blank">🔗 출처 · 来源:베타뉴스 BetaNews ↗</a>
     </div>
-  </section>
+  </div>
 
+  <!-- Footer -->
   <footer>
-    <h3>📌 이번 주 출처 · 本周来源汇总</h3>
-    <div class="srcs">
-      <a href="https://www.betanews.net/article/view/beta202607270022" target="_blank" rel="noopener">베타뉴스 BetaNews (07/27) ↗</a>
-      <a href="https://www.khgames.co.kr/news/articleView.html?idxno=306085" target="_blank" rel="noopener">경향게임스 KHGames ↗</a>
-      <a href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank" rel="noopener">인벤 Inven (07/27) ↗</a>
-      <a href="https://www.thisisgame.com/articles/425879" target="_blank" rel="noopener">디스이즈게임 ThisIsGame ↗</a>
-      <a href="https://www.kdfnews.com/news/articleView.html?idxno=184572" target="_blank" rel="noopener">한국면세뉴스 KDFNews ①</a>
-      <a href="https://www.kdfnews.com/news/articleView.html?idxno=184615" target="_blank" rel="noopener">한국면세뉴스 KDFNews ②</a>
-      <a href="https://blog.nasmedia.co.kr/entry/202607-marketing-calendar" target="_blank" rel="noopener">나스미디어 Nasmedia ↗</a>
-    </div>
-    <div class="note">
-      ※ 본 위클리 브리핑은 지난 한 주(2026-07-21~27, KST) 보도를 기준으로 작성됐으며, 모든 링크는 작성 시점에 실제 확인한 원문으로 연결됩니다. ①~③ 板块的榜单·신작·대형사 소식은 근 1주 내 보도, ④ 마케팅 板块은 이번 달 마케팅 캘린더·시즌 트렌드를 함께 참고했습니다.<br>
-      ※ 本周报以过去一周（2026-07-21~27，KST）报道为准撰写，所有链接均指向撰写时实际核查过的原文。①~③板块的榜单/新作/大厂消息为近1周内报道，④营销板块结合了本月营销日历与季节趋势。<br>
-      · 생성 시각 生成时间：2026-07-29 KST · 발행 주기 发布周期：每周一 10:00 KST 自动更新
-    </div>
+    <h3>📚 이번 주 출처 매체 · 本周来源媒体 (모든 기사 발행일 2026-07-27~08-02, 최근 7일 이내)</h3>
+    <ul>
+      <li>게임뷰 GameVu — 7월 마지막 주 모바일 매출 순위 (发布 2026-07-31) · <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59735" target="_blank">링크 ↗</a></li>
+      <li>ZDNet Korea — 쿠키런: 크럼블 출시 성과 (发布 2026-07-31) · <a href="https://zdnet.co.kr/view/?no=20260731133557" target="_blank">링크 ↗</a></li>
+      <li>ZDNet Korea — 크래프톤 2분기 실적 & 게임스컴 신작 (发布 2026-07-29) · <a href="https://zdnet.co.kr/view/?no=20260729154918" target="_blank">링크 ↗</a></li>
+      <li>뉴스웨이 Newsway — 넷마블 2분기 실적 & 하반기 신작 (发布 2026-07-28) · <a href="https://newsway.co.kr/news/view?ud=2026072814403387344" target="_blank">링크 ↗</a></li>
+      <li>디지털데일리 DigitalDaily — 문체부 중견 게임사 제작지원 확대 (发布 2026-07-28) · <a href="https://www.ddaily.co.kr/page/view/2026072815140498687" target="_blank">링크 ↗</a></li>
+      <li>인벤 Inven — 젠레스 존 제로 2주년 3.1 업데이트 (发布 2026-07-28) · <a href="https://www.inven.co.kr/webzine/news/?news=318902" target="_blank">링크 ↗</a></li>
+      <li>베타뉴스 BetaNews — 주간 모바일 순위(윈드러너·메이플 키우기) (发布 2026-07-27) · <a href="https://www.betanews.net/article/view/beta202607270022" target="_blank">링크 ↗</a></li>
+    </ul>
+    <p class="disc">
+      ※ 본 简报의 모든 뉴스는 위 매체에서 실제 확인한 기사이며, 발행일은 모두 2026-07-27~08-02(Asia/Seoul) 최근 7일 이내입니다.<br>
+      ※ 本简报所有资讯均来自上述实际访问的报道,发布日期均在 2026-07-27~08-02(韩国时间)最近 7 天以内。<br>
+      순위·매출 수치는 각 매체·집계 기준에 따라 다를 수 있습니다 / 榜单与营收数据依各媒体统计口径可能存在差异。<br>
+      🕙 다음 업데이트 · 下次更新:2026-08-10 (월) 10:00 KST
+    </p>
   </footer>
 
 </div>
