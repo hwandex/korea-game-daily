@@ -1,319 +1,220 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>한국 게임 주간 브리핑 · 韩国游戏每周简报</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국 게임 주간 브리핑 | 韩国游戏每周简报</title>
 <style>
-  :root{
-    --bg:#0e1016; --card:#171a23; --card2:#1e222d; --line:#2a2f3d;
-    --brand:#5b8cff; --brand2:#8ab4ff; --text:#e7ebf3; --muted:#98a0b3;
-    --ko:#eef2fa; --cn:#aab4c8; --chip:#1e222d;
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0e1016;
+    color:#e6e8ef;
+    font-family:'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR','PingFang SC','Microsoft YaHei',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
   }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);
-    font-family:"Pretendard","Noto Sans KR","Malgun Gothic","Microsoft YaHei",system-ui,-apple-system,sans-serif;
-    line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:920px;margin:0 auto;padding:26px 18px 60px}
-  header.top{text-align:center;padding:34px 20px 30px;background:
-    radial-gradient(120% 120% at 50% -10%,rgba(91,140,255,.18),transparent 60%);
-    border:1px solid var(--line);border-radius:20px;margin-bottom:10px}
-  .brandtag{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--brand2);
-    border:1px solid var(--line);background:var(--card);padding:5px 13px;border-radius:20px;margin-bottom:16px}
-  h1{margin:6px 0 4px;font-size:29px;line-height:1.28}
-  h1 small{display:block;font-size:16px;color:var(--muted);font-weight:500;margin-top:6px}
-  .period{margin-top:18px;display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .period span{background:var(--card2);border:1px solid var(--line);border-radius:10px;
-    padding:8px 14px;font-size:13.5px;color:var(--text)}
-  .period b{color:var(--brand2)}
-  .auto{margin-top:14px;font-size:12.5px;color:var(--muted)}
-  .auto .dot{color:#42d392}
+  .wrap { max-width:920px; margin:0 auto; padding:0 20px 70px; }
+  header {
+    text-align:center;
+    padding:52px 20px 34px;
+    border-bottom:1px solid #1e2230;
+    margin-bottom:8px;
+  }
+  header .kicker { color:#5b8cff; font-size:13px; letter-spacing:3px; font-weight:700; text-transform:uppercase; }
+  header h1 { font-size:30px; margin:12px 0 6px; font-weight:800; letter-spacing:-.5px; }
+  header h1 .cn { display:block; font-size:19px; color:#aab0c4; font-weight:600; margin-top:4px; }
+  .period {
+    display:inline-flex; flex-wrap:wrap; justify-content:center; gap:8px;
+    margin-top:18px;
+  }
+  .period .pill {
+    background:#171a23; border:1px solid #2a2f3d; color:#cdd3e6;
+    padding:7px 16px; border-radius:30px; font-size:13px; font-weight:600;
+  }
+  .period .pill.accent { background:#16203a; border-color:#2f4a86; color:#8fb0ff; }
+  .updnote { margin-top:14px; color:#727a92; font-size:12px; }
 
-  section{margin-top:26px}
-  .sechead{display:flex;align-items:center;gap:14px;background:var(--card);
-    border:1px solid var(--line);border-left:4px solid var(--brand);
-    border-radius:14px;padding:14px 18px;margin-bottom:14px}
-  .num{flex:none;width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#5b8cff,#3f6fe0);
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff}
-  .secttl{font-size:18px;font-weight:700}
-  .secttl small{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:1px}
+  section { margin-top:40px; }
+  .sec-head {
+    display:flex; align-items:center; gap:14px;
+    background:#131722; border:1px solid #222838;
+    border-left:4px solid #5b8cff;
+    padding:14px 18px; border-radius:12px; margin-bottom:20px;
+  }
+  .sec-head .num {
+    flex:none; width:38px; height:38px; border-radius:10px;
+    background:#5b8cff; color:#0e1016; font-weight:800; font-size:18px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .sec-head h2 { font-size:18px; font-weight:700; letter-spacing:-.3px; }
+  .sec-head h2 .cn { color:#98a0b8; font-weight:500; font-size:14px; margin-left:6px; }
 
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:16px 18px;margin-bottom:12px}
-  .card .ko{font-size:15.5px;font-weight:650;color:var(--ko);margin:0 0 3px}
-  .card .cn{font-size:14px;color:var(--cn);margin:0 0 8px}
-  .card .body{font-size:13.7px;color:var(--muted);margin:6px 0 2px}
-  .card .body .kb{color:#cdd4e2;display:block;margin-bottom:2px}
-  .tag{display:inline-block;font-size:11px;color:var(--brand2);background:var(--chip);
-    border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-bottom:8px}
-  .date{float:right;font-size:11.5px;color:var(--muted);font-weight:500}
-  .srclink{display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:12px;
-    color:#5b8cff;text-decoration:none;border:1px solid #2a2f3d;background:#1e222d;
-    padding:4px 10px;border-radius:7px}
-  .srclink:hover{border-color:var(--brand);color:var(--brand2)}
+  .card {
+    background:#171a23; border:1px solid #232838;
+    border-radius:14px; padding:20px 22px; margin-bottom:16px;
+    transition:border-color .2s;
+  }
+  .card:hover { border-color:#33405e; }
+  .card .tag {
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.5px;
+    color:#8fb0ff; background:#16203a; border:1px solid #294173;
+    padding:3px 10px; border-radius:6px; margin-bottom:12px;
+  }
+  .card .date { float:right; font-size:11px; color:#6b7290; }
+  .ko { font-size:15.5px; font-weight:600; color:#f2f4fb; margin-bottom:9px; }
+  .ko b { color:#8fb0ff; font-weight:700; }
+  .cn { font-size:14px; color:#b3b9cd; }
+  .cn b { color:#7fa5f5; font-weight:600; }
+  .divider { height:1px; background:#20263500; border-top:1px dashed #262c3c; margin:12px 0; }
 
-  footer{margin-top:36px;border:1px solid var(--line);background:var(--card);
-    border-radius:16px;padding:20px 22px}
-  footer h3{margin:0 0 6px;font-size:15px}
-  footer p{font-size:12.8px;color:var(--muted);margin:4px 0}
-  .srcgrid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .srcgrid a{font-size:12px;color:var(--brand2);text-decoration:none;background:var(--card2);
-    border:1px solid var(--line);border-radius:8px;padding:5px 11px}
-  .foot-note{margin-top:14px;font-size:11.5px;color:#6c7386;border-top:1px dashed var(--line);padding-top:12px}
+  .srclink {
+    display:inline-flex; align-items:center; gap:5px;
+    margin-top:9px; font-size:12px; color:#5b8cff; text-decoration:none;
+    border:1px solid #2a2f3d; background:#1e222d;
+    padding:4px 10px; border-radius:7px;
+  }
+  .srclink:hover { background:#242938; border-color:#3a4262; }
+
+  footer {
+    margin-top:52px; padding-top:26px; border-top:1px solid #1e2230;
+    color:#8a91a8; font-size:13px;
+  }
+  footer h3 { color:#cdd3e6; font-size:14px; margin-bottom:12px; }
+  footer ul { list-style:none; }
+  footer li { padding:6px 0; border-bottom:1px solid #171a23; font-size:12.5px; }
+  footer li a { color:#5b8cff; text-decoration:none; }
+  footer .note { margin-top:16px; color:#6b7290; font-size:11.5px; line-height:1.7; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header class="top">
-    <div class="brandtag">KOREA GAME · WEEKLY BRIEFING</div>
+  <header>
+    <div class="kicker">Korea Game Weekly</div>
     <h1>한국 게임 주간 브리핑
-      <small>韩国游戏每周简报</small></h1>
+      <span class="cn">韩国游戏每周简报</span>
+    </h1>
     <div class="period">
-      <span>📅 <b>2026-08-17 ~ 08-23</b> 주간 (한국시간 KST)</span>
-      <span>🗓️ 발행일 · 发布日 <b>2026-08-24 (월)</b></span>
+      <span class="pill accent">📅 2026-08-24 ~ 08-30 주간 (KST)</span>
+      <span class="pill">🇰🇷🇨🇳 중한 이중언어 · 中韩双语</span>
     </div>
-    <div class="auto"><span class="dot">●</span> 매주 월요일 10:00 KST 자동 업데이트 · 每周一 10:00 KST 自动更新</div>
+    <div class="updnote">매주 월요일 10:00 KST 자동 업데이트 · 每周一 10:00 KST 自动更新</div>
   </header>
 
-  <!-- ① -->
+  <!-- ① 신작 & 순위 -->
   <section>
-    <div class="sechead">
+    <div class="sec-head">
       <div class="num">1</div>
-      <div class="secttl">신작 출시 &amp; 차트<small>新游戏发布 &amp; 榜单</small></div>
+      <h2>신작 출시 &amp; 순위 <span class="cn">新游戏发布 &amp; 榜单</span></h2>
     </div>
 
     <div class="card">
-      <span class="date">betanews · 2026.08.17</span>
-      <span class="tag">모바일 매출 순위 · 手游畅销榜</span>
-      <p class="ko">메이플 키우기·승리의 여신 니케, 업데이트 타고 매출 상승세</p>
-      <p class="cn">《枫叶物语（放置）》与《胜利女神：NIKKE》借更新走高</p>
-      <div class="body">
-        <span class="kb">구글 매출 2위 '메이플 키우기'는 신규 '여정의 보물' 시스템으로, 5위 '니케'는 '페르소나' 컬래버로 상승. (8/10~8/16 주간 집계)</span>
-        Google Play 畅销榜：《枫叶物语》凭新系统「旅程的宝藏」升至第2；《NIKKE》借《女神异闻录》联动升至第5（统计周期 8/10–8/16）。
-      </div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202608170001" target="_blank" rel="noopener">🔗 출처 · 来源：베타뉴스 Betanews ↗</a>
+      <span class="tag">🏆 구글플레이 매출 1위</span>
+      <div class="ko"><b>제우스: 오만의 신</b>, 8월 26일 정식 출시하며 구글플레이 <b>매출 1위·인기 5위</b> 등극</div>
+      <div class="cn"><b>《宙斯:傲慢之神》</b>于 8月26日正式上线,登顶 Google Play <b>畅销榜第1名、人气榜第5名</b>。컴투스(Com2uS)发行、Averton 开发,基于虚幻引擎5打造的希腊神话题材 MMORPG,含8种职业与 AI 托管模式,成为本周最大黑马。</div>
+      <a class="srclink" href="https://www.betanews.net/article/view/beta202608310002" target="_blank" rel="noopener">🔗 출처 · 来源:베타뉴스 BetaNews (2026-08-31) ↗</a>
     </div>
 
     <div class="card">
-      <span class="date">betanews · 2026.08.18</span>
-      <span class="tag">PC방 순위 · 网吧榜</span>
-      <p class="ko">FC 온라인, 여름 시즌·8/20 대규모 업데이트 앞두고 PC방 2위</p>
-      <p class="cn">《FC Online》借夏季赛季与 8/20 大更新前热度，网吧榜升至第2</p>
-      <div class="body">
-        <span class="kb">FC 온라인 2위(+1, 이용시간 +27.2%), 오버워치 5위(+1, 넥슨 이관 효과), 던전앤파이터 10위(+2).</span>
-        《FC Online》第2（+1，时长+27.2%）；《守望先锋》第5（+1，Nexon 接管带动）；《DNF》第10（+2）。
-      </div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202608180054" target="_blank" rel="noopener">🔗 출처 · 来源：베타뉴스 Betanews ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">신작 사전예약 · 新游预约</span>
-      <p class="ko">넷마블 '아스달 연대기: 뉴 월드' 시즌 2 사전예약 시작</p>
-      <p class="cn">网石《阿斯达编年史：新世界》第2赛季开启预约</p>
-      <div class="body">
-        <span class="kb">'NO 패키지, NO 뽑기' 표방 — 시간·노력이 곧 성장, 아이템은 거래소로 유저 간 순환. 사전예약 보상으로 각종 각성 11연 소환권 지급.</span>
-        主打「无付费礼包、无抽卡」，以时间与努力换成长、道具经交易所在玩家间流通；预约赠多张觉醒11连召唤券。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779461" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">게임메카 · 2026.08.22</span>
-      <span class="tag">테스트 · 测试</span>
-      <p class="ko">'더스크블러드', 서버 문제로 테스트 첫날 조기 종료</p>
-      <p class="cn">《Duskbloods》因服务器问题，测试首日提前中止</p>
-      <div class="body">
-        <span class="kb">기대작 네트워크 테스트가 접속 폭주·서버 이슈로 첫날 조기 종료. 대규모 온라인 테스트의 인프라 준비 리스크를 재확인.</span>
-        备受期待作品的网络测试因涌入与服务器故障首日提前结束，再次凸显大规模在线测试的基建风险。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779480" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">📈 매출 톱10 · MMORPG 강세</span>
+      <div class="ko"><b>오딘: 발할라 라이징</b>, 편의성 개선·길드 협력 시스템·PK 지역 개편 업데이트로 구글 <b>매출 7위</b> 유지</div>
+      <div class="cn"><b>《奥丁:瓦尔哈拉崛起》</b>(卡카오게임즈发行)通过便利性优化、新增公会协作系统与 PK 区域改版,维持 Google 畅销榜<b>第7名</b>。本周韩国畅销榜整体呈现 <b>MMORPG 强势</b>格局,新作强势入榜叠加老游戏更新拉动。</div>
+      <a class="srclink" href="https://www.betanews.net/article/view/beta202608310002" target="_blank" rel="noopener">🔗 출처 · 来源:베타뉴스 BetaNews (2026-08-31) ↗</a>
     </div>
   </section>
 
-  <!-- ② -->
+  <!-- ② 시장 트렌드 & 산업 동향 -->
   <section>
-    <div class="sechead">
+    <div class="sec-head">
       <div class="num">2</div>
-      <div class="secttl">시장 트렌드 &amp; 업계 동향<small>市场趋势 &amp; 行业动态</small></div>
+      <h2>시장 트렌드 &amp; 산업 동향 <span class="cn">市场趋势 &amp; 行业动态</span></h2>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">지분·M&amp;A · 股权交易</span>
-      <p class="ko">방준혁 의장, 텐센트 보유 넷마블 지분 13.4% 3,740억 원에 인수</p>
-      <p class="cn">方准赫会长以 3,740亿韩元 收购腾讯持有的网石 13.4% 股份</p>
-      <div class="body">
-        <span class="kb">방 의장 지분 24.93%→38.34%로 확대. 텐센트의 대규모 물량 출회에 따른 시장 충격을 최대주주가 직접 흡수한 형태. 양사 글로벌 협력은 지속.</span>
-        方准赫持股由 24.93% 升至 38.34%，由最大股东直接承接腾讯抛售以稳定市场；双方全球业务合作将延续。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779463" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">🎮 게임스컴 2026</span>
+      <div class="ko">독일 쾰른 <b>게임스컴 2026(8/26~30)</b> 개막… 엔씨·크래프톤 등 K-게임, 신작 대거 공개하며 <b>침체 시장 반등 신호탄</b></div>
+      <div class="cn">德国科隆 <b>Gamescom 2026(8月26~30日)</b>开幕,NCSOFT、Krafton 等韩国大厂集中公开新作,被业界视为<b>低迷市场触底反弹的信号</b>。海外市场攻略与全球化成为 K-游戏本届关键词。</div>
+      <a class="srclink" href="https://biz.heraldcorp.com/article/10852319" target="_blank" rel="noopener">🔗 출처 · 来源:헤럴드경제 Herald Biz (2026-08-26) ↗</a>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.20</span>
-      <span class="tag">플랫폼·엔진 · 平台引擎</span>
-      <p class="ko">팀 스위니 "에픽 플랫폼 개방, 언리얼 6로 이어간다"</p>
-      <p class="cn">Tim Sweeney：「Epic 平台开放路线，将延续到虚幻6」</p>
-      <div class="body">
-        <span class="kb">에픽게임즈 CEO가 스토어 수수료·오픈 생태계 기조를 재확인하고 차세대 엔진 '언리얼 6' 방향성을 시사. 개발·퍼블리싱 비용 구조에 영향.</span>
-        Epic CEO 重申商店抽成与开放生态方针，并透露下一代引擎「虚幻6」方向，将影响研发与发行成本结构。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779388" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">🏅 게임스컴 어워드 후보</span>
+      <div class="ko">펄어비스 <b>붉은사막(Crimson Desert)</b>, 게임스컴 어워드 2026 <b>'Most Epic'·'Best PC Game'</b> 2개 부문 후보 선정 (팬 투표 8/26 개시)</div>
+      <div class="cn">珍艾碧丝(Pearl Abyss)<b>《红色沙漠》</b>入围 Gamescom Award 2026 <b>"最史诗(Most Epic)"</b>与<b>"最佳PC游戏"</b>两大提名,公众投票于 8月26日开启,是韩国游戏时隔三年冲击奖项的希望。</div>
+      <a class="srclink" href="https://www.gamemeca.com/en/view.php?gid=1779555" target="_blank" rel="noopener">🔗 출처 · 来源:게임메카 Gamemeca (2026-08-25) ↗</a>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">e스포츠·스폰서 · 电竞赞助</span>
-      <p class="ko">KeSPA, 제주삼다수와 e스포츠 국가대표 파트너십 체결</p>
-      <p class="cn">韩国电竞协会（KeSPA）与济州三多水签订国家队合作</p>
-      <div class="body">
-        <span class="kb">비(非)게임 대형 브랜드가 e스포츠 국가대표를 후원 — 게임 밖 소비재 브랜드의 e스포츠 스폰서십 확대 흐름을 보여주는 사례.</span>
-        非游戏大品牌赞助电竞国家队，反映快消品牌加码电竞赞助的行业趋势。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779431" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">전시·행사 · 展会</span>
-      <p class="ko">[이구동성] 위기의 지스타와 떠오르는 BIC</p>
-      <p class="cn">评论：面临瓶颈的 G-Star 与崛起的 BIC（釜山独立游戏展）</p>
-      <div class="body">
-        <span class="kb">대형 종합 전시(지스타)의 위상 정체 vs 인디 중심 BIC의 존재감 확대 — 국내 전시·행사 마케팅 배분을 재고하게 하는 흐름.</span>
-        大型综合展（G-Star）声势停滞、独立向 BIC 存在感上升，促使业界重新权衡展会营销资源分配。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779445" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">📰 어워드 결과</span>
+      <div class="ko">게임스컴 어워드 2026 결과, <b>CDPR·세가 각 3관왕</b>… 붉은사막 수상 불발로 <b>韓 게임 3년 만의 수상 무산</b></div>
+      <div class="cn">Gamescom Award 2026 结果揭晓,<b>CD Projekt Red 与世嘉(Sega)各揽3奖</b>;《红色沙漠》最终未能获奖,<b>韩国游戏时隔三年的夺奖期待落空</b>(最佳手游由网易《燕云十六声》斩获),凸显 K-游戏在全球评审端仍需突破。</div>
+      <a class="srclink" href="https://www.invenglobal.com/articles/25338/gamescom-award-2026-winners-announced-cdpr-and-sega-win-three-awards-each" target="_blank" rel="noopener">🔗 출처 · 来源:Inven Global (2026-08-28) ↗</a>
     </div>
   </section>
 
-  <!-- ③ -->
+  <!-- ③ 경쟁사 / 대형사 동향 -->
   <section>
-    <div class="sechead">
+    <div class="sec-head">
       <div class="num">3</div>
-      <div class="secttl">경쟁작 · 대형사 동향<small>竞品 / 大厂动向</small></div>
+      <h2>경쟁사 / 대형사 동향 <span class="cn">竞品 / 大厂动向</span></h2>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.22~23</span>
-      <span class="tag">넥슨 Nexon</span>
-      <p class="ko">넥슨×블리자드, 오버워치 풀뿌리 e스포츠 육성 — '오버워치 데이' 부산 개최</p>
-      <p class="cn">Nexon × 暴雪：共育《守望先锋》草根电竞，「守望先锋 Day」落地釜山</p>
-      <div class="body">
-        <span class="kb">8/12 넥슨 서비스 이관 이후 첫 대형 행보. 블리자드 핵심 개발진이 약 10년 만에 부산 방문, 지역 밀착 e스포츠·콜라보·서비스 품질 강화 예고.</span>
-        8/12 移交 Nexon 后首个大动作：暴雪核心团队时隔约十年访釜山，主打本地化电竞、联动与服务提升。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779487" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">🟠 크래프톤 KRAFTON</span>
+      <div class="ko">게임스컴 ONL에서 <b>신작 5종 첫 공개</b> — NO LAW(오픈월드 FPS)·프로젝트 제타(택티컬 아레나)·에이지 트위스터(2인 협동)·타래: 언바운드(동양 다크판타지 액션RPG)·PUBG: 데드넷(로그라이트 배틀로얄)</div>
+      <div class="cn">Krafton 在 Gamescom 开幕之夜(ONL)<b>首度公开5款新作,题材零重叠</b>:<b>NO LAW</b>(无法都市开放世界FPS)、<b>Project ZETA</b>(4队3人战术竞技场)、<b>Age Twisters</b>(祖孙双人合作解谜)、<b>TARAE: The Unbound</b>(东方黑暗奇幻动作RPG,含韩国"萬神"职业)、<b>PUBG: DED.NET</b>(1996年背景 Roguelite 大逃杀)。</div>
+      <a class="srclink" href="https://www.invenglobal.com/articles/25217/krafton-unveils-5-new-games-at-gamescom-no-overlapping-genres" target="_blank" rel="noopener">🔗 출처 · 来源:Inven Global (2026-08-26) ↗</a>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">엔씨소프트 NCSOFT</span>
-      <p class="ko">엔씨, 블소 네오 'PC방 게릴라 이벤트'로 신규·복귀 유저 공략</p>
-      <p class="cn">NCSOFT 以《剑灵 NEO》网吧游击活动，拉新与召回玩家</p>
-      <div class="body">
-        <span class="kb">8/22~30 주말, 전국 엔씨패밀리존 PC방 70여 곳. 15분 이상 플레이 시 즉석 경품(기계식 키보드·배민/네이버페이 상품권 등). 로블록스·OTT 연계 미션도 병행.</span>
-        8/22–30 周末，全国约70家 NC 网吧；游玩满15分钟即抽实物奖（机械键盘、外卖/Naver Pay 券等），并捆绑 Roblox 与 OTT 任务。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779460" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">게임메카 · 2026.08.22</span>
-      <span class="tag">스마일게이트 Smilegate</span>
-      <p class="ko">에픽세븐 8주년 — '카제나' 컬래버·신규 에피소드·스팀 출시 예고</p>
-      <p class="cn">《第七史诗》8周年：'Kazena' 联动、新剧情，并预告 Steam 上线</p>
-      <div class="body">
-        <span class="kb">자사 신작 '카제나' 캐릭터(레노아·하루·메이린)를 영웅으로 편입, 로그라이크 '차원 탐험'·신규 3v3 PvP 추가. 2026 하반기 스팀 출시, 8/29 오프라인 행사·E7WC 병행.</span>
-        将自研新作《Kazena》角色纳入英雄阵容，新增 Roguelike 与3v3 PvP；预告 2026下半年 Steam 上线，配合 8/29 线下活动与 E7WC 赛事。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779483" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">게임메카 · 2026.08.22</span>
-      <span class="tag">하이퍼그리프 Hypergryph</span>
-      <p class="ko">'명일방주: 엔드필드' 삼성 갤럭시 액세서리 컬래버 출시</p>
-      <p class="cn">《明日方舟：终末地》推出三星 Galaxy 联名周边</p>
-      <div class="body">
-        <span class="kb">서브컬처 대작이 IP 굿즈를 넘어 스마트폰 하드웨어 액세서리로 확장 — 가을 시즌 '소풍' 콘셉트 마케팅. 국내 서브컬처 IP의 하드웨어 콜라보 참고 사례.</span>
-        二次元大作从 IP 周边扩展到手机硬件配件，主打秋季「郊游」概念，可作硬件联名参考案例。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779482" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">🔵 엔씨소프트 NCSOFT</span>
+      <div class="ko">신작 <b>'라이크 오어 다이(Like or Die)'</b> 공식 발표 — 스트리머가 되어 생존 경쟁을 벌이는 팀 기반 서바이벌 FPS. 기대작 <b>아이온2, 9월 30일 글로벌 얼리액세스</b> 확정</div>
+      <div class="cn">NCSOFT 正式公布新作 <b>《Like or Die》</b>——玩家化身主播、进行生存竞争的团队生存 FPS。旗舰 MMORPG <b>《AION2(永恒之塔2)》</b>确定 <b>9月30日起5天全球抢先体验</b>,正式上线预计 10月5日前后,PC 双平台(Purple/Steam)十国语言、Founders Pack 纯外观道具销售中。</div>
+      <div class="divider"></div>
+      <a class="srclink" href="https://biz.heraldcorp.com/article/10852319" target="_blank" rel="noopener">🔗 출처 · 来源:헤럴드경제 Herald Biz (2026-08-26) ↗</a>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=59497" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (업데이트 2026-08-30) ↗</a>
     </div>
   </section>
 
-  <!-- ④ -->
+  <!-- ④ 마케팅 & 프로모션 영감 -->
   <section>
-    <div class="sechead">
+    <div class="sec-head">
       <div class="num">4</div>
-      <div class="secttl">마케팅 &amp; 프로모션 인사이트<small>营销 &amp; 推广灵感</small></div>
+      <h2>마케팅 &amp; 프로모션 영감 <span class="cn">营销 &amp; 推广灵感</span></h2>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">F&amp;B 컬래버 · 餐饮联动</span>
-      <p class="ko">명조 × 도미노피자 — 포토카드·인게임 코드 번들 (8/21~9/17)</p>
-      <p class="cn">《鸣潮》× 达美乐披萨：照片卡 + 游戏内兑换码 套餐（8/21–9/17）</p>
-      <div class="body">
-        <span class="kb">라지 피자 + 5,000원에 랜덤 굿즈(블록·포토카드 4종)와 인게임 아이템 코드 제공. 오프라인 구매를 게임 리텐션으로 연결하는 O2O 설계.</span>
-        大号披萨加5,000韩元即得随机周边（积木、4款照片卡）与游戏道具码，将线下消费导流至留存，是典型 O2O 玩法。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779422" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">🍜 브랜드 × 게임 크로스오버</span>
+      <div class="ko"><b>농심 신라면</b>, 게임스컴 2026서 대형 체험 마케팅 — 8홀 <b>'신라면 팩토리'</b> 부스(펌핑게임·토핑볼 등 4종 체험 → 포인트로 케데헌 굿즈 교환) + 게임스컴 비치 단독 스폰서 <b>'gamescom beach spiced up by Nongshim'</b></div>
+      <div class="cn"><b>农心辛拉面</b>在 Gamescom 2026 打造大型体验式营销:8号馆 <b>"辛拉面工厂"</b>展台,观众化身虚拟员工玩4款体验游戏、积分兑换辛拉面周边与《K-pop 恶魔猎人》联名商品;并冠名 <b>"gamescom beach spiced up by Nongshim"</b>沙滩专区(TASTE SHIN 主题试吃+拍照区)。<b>启示:食品/快消品牌用"沉浸体验+可玩化+IP联名"切入游戏受众,是当下高性价比破圈打法。</b></div>
+      <a class="srclink" href="https://www.sisa-news.com/news/article.html?no=275033" target="_blank" rel="noopener">🔗 출처 · 来源:시사뉴스 Sisa News (2026-08-28) ↗</a>
     </div>
 
     <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">IP 이모티콘 · IP表情包</span>
-      <p class="ko">그라비티, 라그나로크 '포링' 라인(LINE) 이모티콘 40종 출시</p>
-      <p class="cn">Gravity 推出《仙境传说》「波利」LINE 表情包 40款</p>
-      <div class="body">
-        <span class="kb">캐주얼 콘셉트로 재해석한 포링 31종+시그니처 아이콘 9종, 약 200개 지역 1,900원. 24주년·신작 유입 유저까지 겨냥한 저비용 IP 노출 채널.</span>
-        以休闲风重塑波利（31款）+9款标志图标，约200个地区 1,900韩元发售；服务24周年，兼顾新作导入用户的低成本 IP 曝光。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779432" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">betanews · 2026.08.17</span>
-      <span class="tag">크로스 IP 컬래버 · 跨IP联动</span>
-      <p class="ko">승리의 여신: 니케 × 페르소나 'PERSONA ON FRONTLINE' (~9/10)</p>
-      <p class="cn">《胜利女神：NIKKE》×《女神异闻录》联动活动（至 9/10）</p>
-      <div class="body">
-        <span class="kb">페르소나 3·4·5 3개 작품과 동시 컬래버로 매출·인기 동반 상승. 강한 팬덤을 가진 콘솔 IP를 활용한 대형 크로스오버의 전형.</span>
-        与《P3/P4/P5》三作同期联动，带动畅销与人气双升，是借强粉丝向主机 IP 做大型跨界的范例。
-      </div>
-      <a class="srclink" href="https://www.betanews.net/article/view/beta202608170001" target="_blank" rel="noopener">🔗 출처 · 来源：베타뉴스 Betanews ↗</a>
-    </div>
-
-    <div class="card">
-      <span class="date">게임메카 · 2026.08.21</span>
-      <span class="tag">포지셔닝 · 定位营销</span>
-      <p class="ko">'NO 뽑기' 마케팅 — 아스달 뉴 월드의 역발상 포지셔닝</p>
-      <p class="cn">「无抽卡」定位——《阿斯达 新世界》的逆向营销</p>
-      <div class="body">
-        <span class="kb">과금·확률 피로감이 높은 시장에서 '무(無)뽑기·거래 경제'를 전면에 내세워 차별화. 반(反)BM 메시지 자체를 사전예약 후킹 포인트로 활용.</span>
-        在氪金与概率疲劳高企的市场，正面打出「无抽卡＋交易经济」实现差异化，将反商业化叙事本身作为预约钩子。
-      </div>
-      <a class="srclink" href="https://www.gamemeca.com/view.php?gid=1779461" target="_blank" rel="noopener">🔗 출처 · 来源：게임메카 Gamemeca ↗</a>
+      <span class="tag">🗳️ 팬 참여형 · KOL 마케팅</span>
+      <div class="ko">게임스컴 어워드 <b>공개 팬 투표(8/26 개시)</b>를 활용한 참여형 화제몰이 — 붉은사막 등 후보작이 <b>현장 관람객·시청자 투표</b>로 글로벌 노출 극대화</div>
+      <div class="cn">利用 Gamescom Award <b>公众投票机制(8月26日开启)</b>做参与型造势:《红色沙漠》等提名作借助<b>现场观众+直播观众投票</b>放大全球曝光。<b>启示:把"评审提名+粉丝投票+主播直播"绑成一条声量链路,让用户从旁观者变成"为你拉票"的传播节点,是发行期低成本造势的可复制模板。</b></div>
+      <a class="srclink" href="https://www.gamemeca.com/en/view.php?gid=1779555" target="_blank" rel="noopener">🔗 출처 · 来源:게임메카 Gamemeca (2026-08-25) ↗</a>
     </div>
   </section>
 
+  <!-- 페이지 푸터: 출처 요약 -->
   <footer>
-    <h3>📚 이번 주 출처 · 本周来源汇总</h3>
-    <p>본 브리핑의 모든 기사는 <b>2026-08-17 ~ 08-23 (KST)</b> 사이에 발행된 보도만 채택했습니다. · 本简报仅采用该周期内发布的报道。</p>
-    <div class="srcgrid">
-      <a href="https://www.gamemeca.com/news.php" target="_blank" rel="noopener">게임메카 Gamemeca ↗</a>
-      <a href="https://www.betanews.net/" target="_blank" rel="noopener">베타뉴스 Betanews ↗</a>
+    <h3>📚 본주 출처 매체 정리 · 本周来源媒体汇总 (发布日期均在近一周 2026-08-24~08-31 内)</h3>
+    <ul>
+      <li>베타뉴스 BetaNews — <a href="https://www.betanews.net/article/view/beta202608310002" target="_blank" rel="noopener">2026년 8월 4주차 모바일 게임 순위</a> · 발행 2026-08-31</li>
+      <li>헤럴드경제 Herald Biz — <a href="https://biz.heraldcorp.com/article/10852319" target="_blank" rel="noopener">부진 터는 K-게임…엔씨·크래프톤 신작 대반격</a> · 발행 2026-08-26</li>
+      <li>게임메카 Gamemeca — <a href="https://www.gamemeca.com/en/view.php?gid=1779555" target="_blank" rel="noopener">Crimson Desert, 게임스컴 어워드 2개 부문 후보</a> · 발행 2026-08-25</li>
+      <li>Inven Global — <a href="https://www.invenglobal.com/articles/25217/krafton-unveils-5-new-games-at-gamescom-no-overlapping-genres" target="_blank" rel="noopener">Krafton, 게임스컴서 신작 5종 공개</a> · 발행 2026-08-26</li>
+      <li>Inven Global — <a href="https://www.invenglobal.com/articles/25338/gamescom-award-2026-winners-announced-cdpr-and-sega-win-three-awards-each" target="_blank" rel="noopener">게임스컴 어워드 2026 수상 결과</a> · 발행 2026-08-28</li>
+      <li>게임뷰 GameVu — <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=59497" target="_blank" rel="noopener">엔씨 아이온2 글로벌 9월 30일 얼리액세스</a> · 업데이트 2026-08-30</li>
+      <li>시사뉴스 Sisa News — <a href="https://www.sisa-news.com/news/article.html?no=275033" target="_blank" rel="noopener">농심, 게임스컴 2026 '신라면 팩토리' 마케팅</a> · 발행 2026-08-28</li>
+    </ul>
+    <div class="note">
+      ※ 본 브리핑의 모든 기사는 실제 접속·확인한 원문이며, 발행일이 최근 7일(2026-08-24~08-31, Asia/Seoul) 이내인 자료만 수록했습니다.<br>
+      ※ 本简报所有内容均来自实际访问核实的原文,仅收录发布日期在近7天(2026-08-24~08-31,韩国时间)以内的资料。<br>
+      생성 시각 · 生成时间:2026-08-31 (월/周一) KST
     </div>
-    <p class="foot-note">
-      발행일 확인 · 各条来源发布日期（均在近 7일 이내）：<br>
-      · 베타뉴스 모바일 매출 순위 2026.08.17 &nbsp;|&nbsp; 베타뉴스 PC방 순위 2026.08.18<br>
-      · 게임메카 넷마블 지분 인수 / 스위니 / KeSPA / 지스타·BIC / 아스달 시즌2 / 블소 네오 / 명조×도미노 / 포링 이모티콘 : 2026.08.20~08.21<br>
-      · 게임메카 넥슨×블리자드 오버워치 / 에픽세븐 8주년 / 엔드필드 갤럭시 / 더스크블러드 : 2026.08.22~08.23<br>
-      ⚙️ 자동 생성 · 매주 월요일 10:00 KST · 每周一 10:00 KST 自动生成
-    </p>
   </footer>
 
 </div>
