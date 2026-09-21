@@ -5,375 +5,249 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>한국 게임 주간 브리핑 · 韩国游戏每周简报</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:#0e1016;
-    color:#e6e8ee;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo","Microsoft YaHei",sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  :root{
+    --bg:#0e1016; --card:#171a23; --card2:#1e222d; --line:#2a2f3d;
+    --brand:#5b8cff; --brand-soft:#8fb0ff; --txt:#e8ebf2; --muted:#9aa3b5;
+    --ko:#f2f4fa; --cn:#b9c1d4;
   }
-  .wrap { max-width:920px; margin:0 auto; padding:0 18px 60px; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo","Microsoft YaHei",sans-serif;
+    line-height:1.6; padding:0 16px 60px;
+  }
+  .wrap{max-width:860px;margin:0 auto}
 
   /* Header */
-  header {
-    text-align:center;
-    padding:46px 18px 34px;
+  header{padding:42px 0 26px;text-align:center;border-bottom:1px solid var(--line);margin-bottom:30px}
+  .kicker{font-size:12.5px;letter-spacing:2.5px;color:var(--brand);font-weight:700;text-transform:uppercase}
+  h1{font-size:27px;margin:12px 0 4px;font-weight:800;letter-spacing:-.3px}
+  h1 .cn{display:block;font-size:17px;color:var(--cn);font-weight:600;margin-top:3px;letter-spacing:0}
+  .period{
+    display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+    background:var(--card2);border:1px solid var(--line);border-radius:999px;
+    padding:8px 18px;font-size:14px;font-weight:700;color:var(--brand-soft)
   }
-  .badge {
-    display:inline-block;
-    font-size:12px;
-    letter-spacing:1px;
-    color:#5b8cff;
-    border:1px solid #2a2f3d;
-    background:#171a23;
-    padding:5px 14px;
-    border-radius:20px;
-    margin-bottom:18px;
-  }
-  header h1 {
-    font-size:27px;
-    font-weight:800;
-    letter-spacing:-0.5px;
-    line-height:1.35;
-  }
-  header h1 .cn { display:block; font-size:18px; font-weight:600; color:#aeb4c2; margin-top:6px; }
-  .period {
-    margin-top:20px;
-    display:inline-flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-  }
-  .period span {
-    font-size:13px;
-    background:#171a23;
-    border:1px solid #232838;
-    padding:7px 15px;
-    border-radius:9px;
-    color:#cdd2de;
-  }
-  .period span b { color:#5b8cff; font-weight:700; }
-  .autoupd { color:#7f8698; }
+  .meta{margin-top:12px;font-size:12.5px;color:var(--muted)}
+  .meta b{color:var(--txt)}
 
-  /* Section header card */
-  .sec-head {
-    display:flex;
-    align-items:center;
-    gap:14px;
-    background:linear-gradient(90deg,#191d28,#14171f);
-    border:1px solid #242a38;
-    border-left:3px solid #5b8cff;
-    border-radius:12px;
-    padding:15px 18px;
-    margin:34px 0 16px;
+  /* Section */
+  section{margin-bottom:34px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .num{
+    flex:none;width:42px;height:42px;border-radius:12px;
+    background:linear-gradient(135deg,var(--brand),#3a63d6);
+    display:flex;align-items:center;justify-content:center;
+    font-size:19px;font-weight:800;color:#fff;box-shadow:0 4px 14px rgba(91,140,255,.32)
   }
-  .sec-num {
-    flex:0 0 auto;
-    width:38px; height:38px;
-    display:flex; align-items:center; justify-content:center;
-    background:#5b8cff;
-    color:#0e1016;
-    font-weight:800;
-    font-size:18px;
-    border-radius:9px;
-  }
-  .sec-head h2 { font-size:17px; font-weight:700; }
-  .sec-head h2 .cn { font-size:13px; font-weight:500; color:#9aa1b1; margin-left:2px; }
+  .sec-title{font-size:18px;font-weight:800}
+  .sec-title .cn{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-top:1px}
 
-  /* News card */
-  .card {
-    background:#171a23;
-    border:1px solid #212636;
-    border-radius:13px;
-    padding:18px 19px;
-    margin-bottom:14px;
+  /* Card */
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin-bottom:14px
   }
-  .card .kr {
-    font-size:15.5px;
-    font-weight:700;
-    color:#f2f4f9;
-    letter-spacing:-0.2px;
+  .card .ko{font-size:15.5px;font-weight:700;color:var(--ko);margin-bottom:6px}
+  .tag{
+    display:inline-block;font-size:11px;font-weight:700;color:var(--brand-soft);
+    background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3);
+    padding:2px 9px;border-radius:6px;margin-bottom:9px;letter-spacing:.3px
   }
-  .card .cn-title {
-    font-size:13.5px;
-    font-weight:600;
-    color:#8fb0ff;
-    margin-top:3px;
+  .card .body-ko{font-size:14px;color:var(--txt);margin-bottom:8px}
+  .card .body-cn{font-size:13.5px;color:var(--cn);padding-top:8px;border-top:1px dashed var(--line)}
+  .card .body-cn .lead{color:var(--muted);font-size:11.5px;letter-spacing:.5px;display:block;margin-bottom:2px}
+
+  .srclink{
+    display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:12px;
+    color:#5b8cff;text-decoration:none;border:1px solid #2a2f3d;background:#1e222d;
+    padding:4px 10px;border-radius:7px;transition:border-color .15s,background .15s
   }
-  .card .body-kr {
-    font-size:13.5px;
-    color:#c3c9d6;
-    margin-top:11px;
-  }
-  .card .body-cn {
-    font-size:13px;
-    color:#9198a8;
-    margin-top:6px;
-    padding-top:9px;
-    border-top:1px dashed #262c3b;
-  }
-  .tag {
-    display:inline-block;
-    font-size:11px;
-    color:#e6b45b;
-    background:#241f14;
-    border:1px solid #3a3020;
-    padding:2px 8px;
-    border-radius:6px;
-    margin-bottom:9px;
-  }
-  .date-pill {
-    float:right;
-    font-size:11px;
-    color:#7f8698;
-    background:#12151d;
-    border:1px solid #232838;
-    padding:2px 8px;
-    border-radius:6px;
-  }
-  .srclink {
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    margin-top:9px;
-    font-size:12px;
-    color:#5b8cff;
-    text-decoration:none;
-    border:1px solid #2a2f3d;
-    background:#1e222d;
-    padding:4px 10px;
-    border-radius:7px;
-    transition:background .15s,border-color .15s;
-  }
-  .srclink:hover { background:#252b3a; border-color:#3a4256; }
+  .srclink:hover{border-color:var(--brand);background:#242a38}
+  .date-badge{font-size:11px;color:var(--muted);margin-left:8px}
 
   /* Footer */
-  footer {
-    margin-top:46px;
-    background:#12141b;
-    border:1px solid #212636;
-    border-radius:13px;
-    padding:22px 20px;
+  footer{margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
+  footer h3{font-size:14px;font-weight:800;margin-bottom:4px}
+  footer h3 .cn{font-weight:600;color:var(--muted);font-size:12.5px}
+  .src-note{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .src-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .src-list li{
+    font-size:12.5px;background:var(--card);border:1px solid var(--line);
+    border-radius:9px;padding:9px 13px;display:flex;flex-wrap:wrap;align-items:center;gap:8px
   }
-  footer h3 { font-size:14px; color:#e6e8ee; margin-bottom:4px; }
-  footer .sub { font-size:12px; color:#7f8698; margin-bottom:14px; }
-  .src-list { list-style:none; display:grid; gap:8px; }
-  .src-list li {
-    font-size:12.5px;
-    color:#aeb4c2;
-    display:flex;
-    gap:9px;
-    align-items:baseline;
-  }
-  .src-list li a { color:#5b8cff; text-decoration:none; word-break:break-all; }
-  .src-list li a:hover { text-decoration:underline; }
-  .src-list .d {
-    flex:0 0 auto;
-    font-size:11px;
-    color:#e6b45b;
-    background:#241f14;
-    border:1px solid #3a3020;
-    padding:1px 7px;
-    border-radius:5px;
-  }
-  .foot-note {
-    margin-top:16px;
-    padding-top:14px;
-    border-top:1px solid #212636;
-    font-size:11.5px;
-    color:#6b7284;
-    line-height:1.7;
-  }
+  .src-list .m{font-weight:700;color:var(--txt)}
+  .src-list .d{color:var(--brand-soft);font-size:11.5px}
+  .src-list a{color:var(--brand);text-decoration:none;word-break:break-all;font-size:11.5px}
+  .foot-bottom{margin-top:22px;text-align:center;font-size:11.5px;color:var(--muted);line-height:1.8}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="badge">한국 게임 주간 브리핑 · 韩国游戏每周简报</div>
-    <h1>
-      이번 주 한국 게임 시장 리포트
-      <span class="cn">本周韩国游戏市场周报</span>
+    <div class="kicker">Korea Game Weekly</div>
+    <h1>한국 게임 주간 브리핑
+      <span class="cn">韩国游戏每周简报</span>
     </h1>
-    <div class="period">
-      <span>📅 <b>2026-09-07 ~ 09-13</b> 주간 (Asia/Seoul)</span>
-      <span class="autoupd">🔄 매주 월요일 10:00 KST 自动更新</span>
-    </div>
+    <div class="period">📅 2026-09-14 ~ 09-20 주간</div>
+    <div class="meta">매주 월요일 10:00 KST 자동 업데이트 · <b>每周一 10:00 KST 自动更新</b><br>
+      본 리포트의 모든 기사는 최근 7일 이내(한국시간) 발행된 최신 보도입니다 · 全部资料均为近 7 天内(韩国时间)最新报道</div>
   </header>
 
-  <!-- ① 신작 & 차트 -->
-  <div class="sec-head">
-    <div class="sec-num">1</div>
-    <h2>신작 발표 &amp; 차트 <span class="cn">新游戏发布 &amp; 榜单</span></h2>
-  </div>
+  <!-- ① 新游戏发布 & 榜单 -->
+  <section>
+    <div class="sec-head">
+      <div class="num">1</div>
+      <div class="sec-title">신작 출시 &amp; 마켓 차트
+        <span class="cn">新游戏发布 &amp; 榜单</span>
+      </div>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-14</span>
-    <span class="tag">주간 매출 순위 · 周榜</span>
-    <div class="kr">신작 '이클립스' 출시 직후 인기·매출 동반 상위권 진입</div>
-    <div class="cn-title">新作《月蚀:觉醒》上线即冲入人气·畅销双榜前列</div>
-    <div class="body-kr">9월 2주차(9/7~9/13) 구글플레이 기준, 스마일게이트 신작 '이클립스: 더 어웨이크닝'이 인기 2위·매출 2위에 안착했다. 컴투스 '제우스: 오만의 신'이 매출 1위를 유지(신규 PvP '콜로세움' 추가)했고, 엔씨 '리니지M'이 3위권을 지켰다. 국산 MMORPG 경쟁이 최고조에 달한 한 주였다.</div>
-    <div class="body-cn">按 Google Play 9月第2周(7~13日)数据,Smilegate 新作《月蚀:觉醒》登上人气榜第2、畅销榜第2。Com2uS《宙斯:傲慢之神》守住畅销榜第1(新增 PvP 玩法"斗兽场"),NCSOFT《天堂M》稳居第3。国产 MMORPG 竞争进入白热化的一周。</div>
-    <a class="srclink" href="https://www.betanews.net/article/view/beta202609140002" target="_blank" rel="noopener">🔗 출처 · 来源:베타뉴스 Betanews ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">구글플레이 매출 차트 · Google Play 畅销榜</span>
+      <div class="ko">국산 MMORPG, 구글 매출 1~3위 '싹쓸이'</div>
+      <div class="body-ko">이번 주 구글플레이 매출 순위는 컴투스 '제우스: 오만의 신'이 1위, 스마일게이트 '이클립스: 더 어웨이크닝'이 2위, 엔씨소프트 '리니지M'이 3위를 차지하며 국산 MMORPG가 최상위권을 장악했다. 4위 'WOS: 화이트아웃 서바이벌', 6위 넷마블 '솔: 인챈트'가 뒤를 이었다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>本周韩国 Google Play 畅销榜前三名被国产 MMORPG 包揽:Com2uS《宙斯:傲慢之神》登顶第 1,Smilegate《Eclipse: The Awakening》第 2,NCSOFT《天堂 M》第 3;第 4 为中国厂商《WOS: Whiteout Survival》,第 6 为 Netmarble《Sol: Enchant》。国产 MMO 强势回归成为本周榜单最大看点。</div>
+      <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=308374" target="_blank" rel="noopener">🔗 출처 · 来源:경향게임스(京乡游戏) ↗</a><span class="date-badge">2026-09-14</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-11</span>
-    <span class="tag">신작 출시 · 新游上线</span>
-    <div class="kr">스마일게이트 '이클립스: 더 어웨이크닝' 9월 10일 정식 출시</div>
-    <div class="cn-title">Smilegate《月蚀:觉醒》9月10日正式上线</div>
-    <div class="body-kr">엔픽셀이 개발한 크로스플랫폼(PC·모바일) MMORPG로, 사전등록 100만 명을 돌파했다. 출시 당일 국내 애플 앱스토어 게임 매출 1위를 기록. PD가 출시 당일 오전 개발자 노트를 공개하고, 몬스터 분포·NPC 상호작용·초반 퀘스트 혼잡 등을 당일 즉시 개선하는 등 실시간 피드백 대응이 호평받았다.</div>
-    <div class="body-cn">由 Npixel 开发的 PC·移动跨平台 MMORPG,预约突破100万。上线当日登顶韩国 App Store 游戏畅销榜第1。制作人当天上午即发布开发者笔记,并当日修复怪物分布、NPC 交互、前期任务拥堵等问题,实时反馈式运营获好评。</div>
-    <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=308281" target="_blank" rel="noopener">🔗 출처 · 来源:경향게임스 Kyunghyang Games ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">사전등록 · 预约开启</span>
+      <div class="ko">넷마블 '나 혼자만 레벨업: 카르마' 한·일 사전등록 돌입</div>
+      <div class="body-ko">넷마블은 글로벌 흥행 IP 기반 로그라이크 액션 RPG '나 혼자만 레벨업: 카르마'를 도쿄게임쇼 2026에서 공개하고, 9월 16일부터 구글플레이·앱스토어에서 한국·일본 사전등록을 시작했다. 200종 이상의 버프와 8명의 플레이어블 캐릭터, '그림자 군단' 직접 조작이 특징이며, 사전등록자에게 '성진우 프레데터 의상' 등 한정 보상을 제공한다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Netmarble 在东京电玩展 2026 上公开基于全球爆款 IP 的肉鸽动作 RPG《我独自升级:业力》,并于 9 月 16 日在 Google Play / App Store 开启韩日双区预约。游戏主打 200+ 增益 buff、8 名可玩角色,以及可直接操控「影之军团」的核心玩法;预约玩家可获「成振宇 掠夺者外观」等限定奖励。</div>
+      <a class="srclink" href="https://www.industrynews.co.kr/news/articleView.html?idxno=86191" target="_blank" rel="noopener">🔗 출처 · 来源:인더스트리뉴스(产业新闻) ↗</a><span class="date-badge">2026-09-16</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-12</span>
-    <span class="tag">차트 · 榜单</span>
-    <div class="kr">'이클립스' 구글플레이 매출 2위 안착… MMORPG 경쟁 점입가경</div>
-    <div class="cn-title">《月蚀》登 Google Play 畅销第2,MMORPG 竞争愈演愈烈</div>
-    <div class="body-kr">'이클립스'는 출시 2일 만에 구글플레이 매출 2위에 올랐다. 현재 매출 구도는 1위 '제우스: 오만의 신'(컴투스), 2위 '이클립스', 3위 '리니지M'. 넷마블 '솔: 인챈트'가 6위를 지키는 가운데, 10월 출시 예정인 카카오게임즈 '도깨비의 세계' 등으로 하반기 경쟁이 더욱 치열해질 전망이다.</div>
-    <div class="body-cn">《月蚀》上线2天即升至 Google Play 畅销榜第2。当前格局为:第1《宙斯:傲慢之神》(Com2uS)、第2《月蚀》、第3《天堂M》。Netmarble《SOUL:Enchant》守第6;随着 Kakao Games《鬼怪世界》计划10月上线,下半年竞争预计更加激烈。</div>
-    <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=308304" target="_blank" rel="noopener">🔗 출처 · 来源:경향게임스 Kyunghyang Games ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">글로벌 출시 · 全球上线</span>
+      <div class="ko">넥슨 '데이브 더 다이버' 모바일 버전 글로벌 출시</div>
+      <div class="body-ko">국내 패키지 게임 최초로 글로벌 누적 1,000만 장을 돌파한 넥슨 '데이브 더 다이버'가 9월 17일 iOS·안드로이드 모바일 버전으로 글로벌 정식 출시됐다. 모바일 전용 협력 콘텐츠도 함께 추가됐다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Nexon《潜水员戴夫》(Dave the Diver)——韩国首款全球累计销量突破 1,000 万份的单机游戏——于 9 月 17 日推出 iOS/Android 手机版并全球上线,同步加入手机端专属合作(联机)内容。</div>
+      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100003" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스(首尔时报) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
+  </section>
 
-  <!-- ② 시장 트렌드 -->
-  <div class="sec-head">
-    <div class="sec-num">2</div>
-    <h2>시장 트렌드 &amp; 산업 동향 <span class="cn">市场趋势 &amp; 行业动态</span></h2>
-  </div>
+  <!-- ② 市场趋势 & 行业动态 -->
+  <section>
+    <div class="sec-head">
+      <div class="num">2</div>
+      <div class="sec-title">시장 트렌드 &amp; 업계 동향
+        <span class="cn">市场趋势 &amp; 行业动态</span>
+      </div>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-07</span>
-    <span class="tag">시장 트렌드 · 市场趋势</span>
-    <div class="kr">국산 게임, 구글플레이 매출 1~4위 독식… 외산 부진</div>
-    <div class="cn-title">国产游戏包揽 Google Play 畅销榜前四,外来游戏疲软</div>
-    <div class="body-kr">이번 주 구글플레이 매출 최상위권을 국산 게임이 독점했다. '제우스: 오만의 신', '리니지M', '메이플 키우기', '솔: 인챈트'가 1~4위를 차지했고, 중국산 'WOS: 화이트아웃 서바이벌'은 5위에 머물렀다. 국산 신작·대형 업데이트 러시가 매출 상위권을 밀어올린 결과다.</div>
-    <div class="body-cn">本周 Google Play 畅销榜最高位被国产游戏包揽——《宙斯:傲慢之神》《天堂M》《枫之谷放置》《SOUL:Enchant》占据前四,中国产《WOS:寒霜启示录》仅列第5。国产新作与大型更新集中发力,推高了畅销榜顶端。</div>
-    <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=308119" target="_blank" rel="noopener">🔗 출처 · 来源:경향게임스 Kyunghyang Games ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">도쿄게임쇼 2026 · TGS 2026</span>
+      <div class="ko">한국 기업 127개사 TGS 참가…중국 공백 메우며 역대급 존재감</div>
+      <div class="body-ko">9월 17~21일 일본 지바에서 열린 도쿄게임쇼 2026(총 1,138개사·53개국 참가)에 한국 기업이 전년 대비 50개사 늘어난 127개사가 참가했다. 중국 퍼블리셔의 대거 불참으로 생긴 공백을 한국 서브컬처·MMO 신작이 메우며 K-게임의 일본 시장 공략이 본격화됐다. 일본 모바일 게임 시장은 연 약 110억 달러(약 15조 원) 규모로 아시아 2위다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>9 月 17-21 日于日本千叶举办的东京电玩展 2026(共 1,138 家企业、53 国参展)中,韩国参展企业较去年增加 50 家、达 127 家。随着中国发行商大规模缺席,韩国二次元与 MMO 新作填补了空缺,K-游戏对日本市场的攻势全面展开。日本手游市场年规模约 110 亿美元(约 15 万亿韩元),为亚洲第二大市场。</div>
+      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-11</span>
-    <span class="tag">서브컬처 트렌드 · 二次元趋势</span>
-    <div class="kr">K-게임사, 도쿄게임쇼 2026서 서브컬처 영토 확장</div>
-    <div class="cn-title">韩系厂商在东京电玩展 2026 加码二次元赛道</div>
-    <div class="body-kr">넥슨·넷마블·엔씨·스마일게이트 등이 TGS 2026(9월 하순)에 총출동해 서브컬처 수집형 신작을 대거 공개한다. 글로벌 시장조사에 따르면 서브컬처 게임 시장은 2023년 209억 달러에서 2031년 485억 달러로 성장할 전망으로, 국내 대형사들이 성장성에 주목해 라인업을 집중 배치하고 있다.</div>
-    <div class="body-cn">Nexon、Netmarble、NCSOFT、Smilegate 等将齐聚 TGS 2026(9月下旬),集中公开二次元收集型新作。市场调研预计二次元游戏市场将从2023年的209亿美元增长至2031年的485亿美元;韩国大厂正瞄准这一增长空间密集布局产品线。</div>
-    <a class="srclink" href="https://view.asiae.co.kr/article/2026091110160455981" target="_blank" rel="noopener">🔗 출처 · 来源:아시아경제 Asiae ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">장르 트렌드 · 品类趋势</span>
+      <div class="ko">K-서브컬처(수집형 RPG) 장르, 일본 무대 전면에 서다</div>
+      <div class="body-ko">이번 TGS에서 엔씨 '아스트라에 오라티오', 넥슨 '파레이돌리아', 넷마블 '펄 인 블루' 등 한국 서브컬처 신작이 대거 출품되며, 그간 일본이 강세를 보이던 수집형 RPG 시장에 한국 개발사들이 정면 도전하는 흐름이 뚜렷해졌다. 크로스플랫폼(PC·콘솔·모바일) 지원이 공통 키워드로 부상했다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>本届 TGS 上,NCSOFT《Astrae Oratio》、Nexon《Pareidolia》、Netmarble《Pearl in Blue》等一批韩国二次元(收集型 RPG)新作集中亮相,韩国厂商正面进军此前由日本主导的收集型 RPG 市场,趋势明显。跨平台(PC/主机/手机)互通成为多款新作的共同关键词。</div>
+      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
+  </section>
 
-  <div class="card">
-    <span class="date-pill">2026-09-14</span>
-    <span class="tag">장르 트렌드 · 品类趋势</span>
-    <div class="kr">'가벼운 MMO' 부상… 접속 압박·과금 피로도 낮춘 설계가 통했다</div>
-    <div class="cn-title">"轻量 MMO"崛起:降低在线压力与付费疲劳的设计奏效</div>
-    <div class="body-kr">'이클립스'의 초반 흥행은 미접속 상태에서도 자동 성장하는 '성소' 시스템 등 접속·과금 부담을 줄인 설계에서 비롯됐다는 분석이다. 하드코어 MMORPG 일변도였던 한국 시장에 '라이트 MMO' 수요가 뚜렷해지며 장르 전략의 축이 이동하고 있다.</div>
-    <div class="body-cn">分析指出,《月蚀》初期热度源自"圣所"等即使不在线也可自动成长的设计,显著降低了在线与付费负担。在长期以硬核 MMORPG 为主的韩国市场,"轻量 MMO"需求正明显显现,品类策略重心随之转移。</div>
-    <a class="srclink" href="https://www.betanews.net/article/view/beta202609140002" target="_blank" rel="noopener">🔗 출처 · 来源:베타뉴스 Betanews ↗</a>
-  </div>
+  <!-- ③ 竞品 / 大厂动向 -->
+  <section>
+    <div class="sec-head">
+      <div class="num">3</div>
+      <div class="sec-title">경쟁작 &amp; 주요사 동향
+        <span class="cn">竞品 / 大厂动向</span>
+      </div>
+    </div>
 
-  <!-- ③ 경쟁사 / 대형사 -->
-  <div class="sec-head">
-    <div class="sec-num">3</div>
-    <h2>경쟁사 / 대형사 동향 <span class="cn">竞品 / 大厂动向</span></h2>
-  </div>
+    <div class="card">
+      <span class="tag">엔씨소프트 · NCSOFT</span>
+      <div class="ko">엔씨 '아스트라에 오라티오' TGS 첫 시연…신전기(神電記) 장르</div>
+      <div class="body-ko">엔씨소프트는 '블루 아카이브' 출신 스태프가 참여한 다이나미스원 개발의 신작 모바일 RPG '아스트라에 오라티오'를 TGS에서 첫 공개했다. 가상의 1989년 도쿄를 배경으로 한 '신전기' 세계관으로, 삼성 갤럭시 S26 울트라 42대에서 시연 가능하게 구성했다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>NCSOFT 在 TGS 首度公开由 Dynamis One(团队含《蔚蓝档案》原班人马)开发的新作手机 RPG《Astrae Oratio》。作品以架空 1989 年东京为舞台、主打「神电记」都市奇幻世界观,现场用 42 台三星 Galaxy S26 Ultra 供玩家试玩。</div>
+      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/16/ncsoft-nexon-netmarble-take-new-titles-to-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-16</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-09</span>
-    <span class="tag">넷마블 · 엔씨</span>
-    <div class="kr">넷마블 'RF 온라인 넥스트'·엔씨 '아이온2' 대규모 9월 업데이트</div>
-    <div class="cn-title">Netmarble《RF Online Next》·NCSOFT《永恒之塔2》9月大型更新</div>
-    <div class="body-kr">넷마블은 'RF 온라인 넥스트'에 신규 보스가 담긴 '코어월드 II', 신규 던전, 런처 '로렐라이' 등을 추가했다. 엔씨는 '아이온2'에 PvE 최고 난도 성역 '비탄의 설원'(아이템 레벨 5800~6200)과 신규 보스 '델트라스', 명예의 전당·칭찬 시스템을 도입했다.</div>
-    <div class="body-cn">Netmarble 为《RF Online Next》新增含新 Boss 的"核心世界 II"、新副本及发射器"罗蕾莱";NCSOFT 为《永恒之塔2》加入 PvE 最高难度圣域"悲叹的雪原"(装等5800~6200)、新 Boss"德尔特拉斯",并引入名人堂与称赞系统。</div>
-    <a class="srclink" href="https://www.sisaon.co.kr/news/articleView.html?idxno=204268" target="_blank" rel="noopener">🔗 출처 · 来源:시사오늘 SisaON ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">넥슨 · Nexon</span>
+      <div class="ko">넥슨, 추석 앞두고 대규모 업데이트 총력전</div>
+      <div class="body-ko">넥슨은 추석 성수기를 겨냥해 '카트라이더 러쉬플러스' 시즌41 '갤럭시'(신규 카트 6종), '던전앤파이터 모바일' 신규 캐릭터 '아처'와 '루크 레이드', '메이플스토리' 290레벨 에픽 던전 '아우룸 레기스', '서든어택' 시즌4 '문라이즈' 등을 잇달아 선보였다. TGS에서는 IO 스튜디오의 서브컬처 신작 '파레이돌리아'와 '마비노기 모바일' 일본 출시도 공개했다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Nexon 瞄准中秋旺季密集推出大型更新:《跑跑卡丁车 RUSH+》第 41 赛季「Galaxy」(6 款新车)、《DNF 手游》新角色「弓箭手」与「Luke 团本」、《冒险岛》290 级史诗副本「Aurum Regis」、《突击风暴》第 4 赛季「Moonrise」等。TGS 上还公开了 IO 工作室的二次元新作《Pareidolia》及《玛奇 Mobile》的日本上线计划。</div>
+      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100003" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스(首尔时报) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-08</span>
-    <span class="tag">넷마블 · 엔씨 · 스마일게이트</span>
-    <div class="kr">넷마블 '아스달' 뉴월드 시즌2 개막, 엔씨 신작 TGS 첫 시연 예고</div>
-    <div class="cn-title">Netmarble《阿斯达》新世界第2季开启,NCSOFT 新作预告 TGS 首秀</div>
-    <div class="body-kr">넷마블 '아스달 연대기'는 뉴월드 시즌2와 함께 신규 서버 4종(페가수스·피닉스·오로라·베가)을 열고 보석 비용 한시적 50% 할인·전설 보상을 내걸었다. 엔씨는 서브컬처 RPG '아스트라에 오라티오'를 TGS 2026에서 첫 시연하며 9월 17일 프롤로그 다이제스트 영상 공개를 예고했다.</div>
-    <div class="body-cn">Netmarble《阿斯达编年史》随新世界第2季开放4个新服(飞马·凤凰·极光·织女),限时宝石5折并推出传说奖励。NCSOFT 将在 TGS 2026 首度试玩二次元 RPG《Astrae Oratio》,并预告9月17日公开序章精华影像。</div>
-    <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000099652" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈 Seoul Times ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">넷마블 · Netmarble</span>
+      <div class="ko">넷마블, TGS서 신작 3종 동시 공개</div>
+      <div class="body-ko">넷마블은 '나 혼자만 레벨업: 카르마', 일본 인기 만화 기반 '샹그릴라 프론티어: 7대 최강종족', 신작 서브컬처 RPG '펄 인 블루'(첫 공개) 등 3종을 TGS에 출품했다. 웹툰·만화 IP를 앞세운 일본·글로벌 동시 공략 전략이 두드러진다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Netmarble 在 TGS 同台公开 3 款新作:《我独自升级:业力》、改编自日本人气漫画的《香格里拉边境:七大最强种族》,以及首度亮相的二次元 RPG《Pearl in Blue》。以网漫/漫画 IP 为主力、日本与全球同步进攻的策略十分鲜明。</div>
+      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/16/ncsoft-nexon-netmarble-take-new-titles-to-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-16</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-11</span>
-    <span class="tag">넥슨 · 시프트업 · 대형사 TGS</span>
-    <div class="kr">TGS 2026 K-게임 출품작 라인업 공개</div>
-    <div class="cn-title">TGS 2026 韩系厂商参展阵容公开</div>
-    <div class="body-kr">넥슨은 넥슨게임즈 신작 '파레이돌리아'와 '마비노기 모바일'을, 엔씨는 '아스트라에 오라티오' 단독 부스(삼성 갤럭시 S26 울트라로 시연)를, 넷마블은 '펄인블루'·'나 혼자만 레벨업: 카르마'를, 스마일게이트는 '미래시'·'데드 어카운트'를 출품한다. 시프트업은 '스텔라 블레이드 컴플리트 에디션'(닌텐도 스위치 2)을 선보인다.</div>
-    <div class="body-cn">Nexon 带来 Nexon Games 新作《Paredolia》与《玛奇 手游》;NCSOFT 设《Astrae Oratio》独立展台(用三星 Galaxy S26 Ultra 试玩);Netmarble 出品《Pearl in Blue》《我独自升级:因果》;Smilegate 展出《未来视》《Dead Account》;SHIFT UP 则带来《星刃 完整版》(Switch 2)。</div>
-    <a class="srclink" href="https://view.asiae.co.kr/article/2026091110160455981" target="_blank" rel="noopener">🔗 출처 · 来源:아시아경제 Asiae ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">스마일게이트 · 시프트업 · 카카오게임즈</span>
+      <div class="ko">스마일게이트·시프트업·카카오게임즈, 하반기 라인업 예열</div>
+      <div class="body-ko">스마일게이트는 수집형 RPG '미래시: 언씬 퓨처'와 로그라이트 '데드 어카운트: 두 개의 푸른 불꽃'을 선보이며 10월 19~26일 스팀 넥스트 페스트 참가를 예고했다. 시프트업은 '스텔라 블레이드 컴플리트 에디션'의 닌텐도 스위치2 버전을 공개했다. 카카오게임즈는 '도깨비'(10월 8일)와 '패스 오브 엑자일2'(12월 12일) 출시 일정을 알렸다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Smilegate 展出收集型 RPG《Miraeshi: The Unseen Future》与肉鸽《Dead Account: Two Blue Flames》,并预告 10 月 19-26 日参加 Steam 新品节;SHIFT UP 公开《剑星 完整版》的 Switch 2 版本;Kakao Games 公布《도깨비/Godsphere》(10 月 8 日)与《流放之路 2》(12 月 12 日)的上线时间。各大厂下半年阵容集中预热。</div>
+      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100015" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스(首尔时报) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
+  </section>
 
-  <div class="card">
-    <span class="date-pill">2026-09-14</span>
-    <span class="tag">컴투스 · Com2uS</span>
-    <div class="kr">컴투스 '제우스: 오만의 신' 매출 1위 유지, 신규 PvP '콜로세움' 투입</div>
-    <div class="cn-title">Com2uS《宙斯:傲慢之神》守住畅销第1,上线新 PvP"斗兽场"</div>
-    <div class="body-kr">출시 후 매출 1위를 이어가는 '제우스: 오만의 신'은 유저 캐릭터의 외형·능력을 반영한 '페르소나'로 겨루는 PvP 콘텐츠 '콜로세움'을 추가하며 상위권 방어에 나섰다. 신작 '이클립스'의 추격 속에서도 선두를 지켰다.</div>
-    <div class="body-cn">上线后持续位居畅销榜首的《宙斯:傲慢之神》新增以反映玩家角色外形与能力的"化身"对战的 PvP 玩法"斗兽场",巩固头部位置;在新作《月蚀》的追赶下仍守住领先。</div>
-    <a class="srclink" href="https://www.betanews.net/article/view/beta202609140002" target="_blank" rel="noopener">🔗 출처 · 来源:베타뉴스 Betanews ↗</a>
-  </div>
+  <!-- ④ 营销 & 推广灵感 -->
+  <section>
+    <div class="sec-head">
+      <div class="num">4</div>
+      <div class="sec-title">마케팅 &amp; 프로모션 인사이트
+        <span class="cn">营销 &amp; 推广灵感</span>
+      </div>
+    </div>
 
-  <!-- ④ 마케팅 & 프로모션 -->
-  <div class="sec-head">
-    <div class="sec-num">4</div>
-    <h2>마케팅 &amp; 프로모션 인사이트 <span class="cn">营销 &amp; 推广灵感</span></h2>
-  </div>
+    <div class="card">
+      <span class="tag">오프라인 부스 마케팅 · 线下展位营销</span>
+      <div class="ko">TGS 서브컬처 부스, '체험형 이벤트'로 승부</div>
+      <div class="body-ko">이번 TGS에서 한국 서브컬처 신작들은 단순 시연을 넘어 체험형 마케팅을 대거 도입했다. 넥슨 '파레이돌리아'는 AI 음성인식으로 캐릭터가 실시간 반응하는 부스를, 넷마블 '나 혼자만 레벨업: 카르마'는 성우 쇼와 현장 타임어택 대전을, 스마일게이트는 현지 코스어와 LED 타워 연출을 선보였다. IP 몰입감을 오프라인 경험으로 전환한 사례로 참고할 만하다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>本届 TGS 上,韩国二次元新作大量采用「体验式营销」而非单纯试玩:Nexon《Pareidolia》搭建 AI 语音识别、角色实时应答的展位;Netmarble《我独自升级:业力》举办声优 show 与现场限时挑战对战;Smilegate 则用当地 coser 与 LED 塔造型造势。将 IP 沉浸感转化为线下体验——非常值得借鉴的打法。</div>
+      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-10</span>
-    <span class="tag">IP 콜라보 · IP联动</span>
-    <div class="kr">배틀그라운드 × '주술회전' 콜라보 시즌 개막 (9/10~10/11)</div>
-    <div class="cn-title">《绝地求生》× 《咒术回战》联动季开启(9/10~10/11)</div>
-    <div class="body-kr">PUBG가 인기 애니 '주술회전'과 콜라보를 시작했다. 매일 로비 접속 체크인, '주술회전 상자 맞히기' 미션, 신규 유저 대상 '단 하나의 선택' 의상 박스, 4주차 미션 릴레이(최종 보상 G-Coin) 등으로 구성. 애니 IP를 활용해 로그인·리텐션·신규 유입을 동시에 노리는 전형적 이벤트 설계다.</div>
-    <div class="body-cn">PUBG 与人气动画《咒术回战》展开联动:每日大厅签到、"咒术回战宝箱"任务、面向新玩家的"唯一之选"服装箱、为期4周的任务接力(最终奖励 G-Coin)。借动画 IP 同时拉动登录、留存与拉新,是典型的活动设计范式。</div>
-    <a class="srclink" href="https://pubg.com/ko/events/notice/11012" target="_blank" rel="noopener">🔗 출처 · 来源:PUBG 공식 이벤트 PUBG Official ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">셀럽 &amp; IP 마케팅 · 名人 × IP 营销</span>
+      <div class="ko">'카르마' 미디어 행사에 일본 배우 혼고 카나타 특별 게스트</div>
+      <div class="body-ko">넷마블은 '나 혼자만 레벨업: 카르마'의 마쿠하리 메세 미디어 행사에 일본 배우 혼고 카나타를 특별 게스트로 초청해 빠른 템포의 전투를 직접 시연하게 했다. 현지 셀럽을 활용해 일본 시장 화제성을 끌어올리고, 사전등록 한정 코스튬('성진우 프레데터 의상')으로 전환을 유도한 IP×셀럽 조합이 돋보인다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Netmarble 在《我独自升级:业力》的幕张展媒体活动上邀请日本演员本乡奏多(Hongo Kanata)担任特别嘉宾,现场演示高速战斗。借助本地名人拉高日本市场话题度,再用预约限定外观(「成振宇 掠夺者」)促进转化——IP × 名人的组合拳很有参考价值。</div>
+      <a class="srclink" href="https://www.industrynews.co.kr/news/articleView.html?idxno=86191" target="_blank" rel="noopener">🔗 출처 · 来源:인더스트리뉴스(产业新闻) ↗</a><span class="date-badge">2026-09-16</span>
+    </div>
 
-  <div class="card">
-    <span class="date-pill">2026-09-11</span>
-    <span class="tag">라이브 운영 · 实时运营</span>
-    <div class="kr">'이클립스' 실시간 피드백 운영… 출시 당일 개발자 노트·즉시 패치</div>
-    <div class="cn-title">《月蚀》实时反馈式运营:上线当日开发者笔记 + 即时补丁</div>
-    <div class="body-kr">스마일게이트는 출시 당일 오전 PD 개발자 노트를 공개하고, 유저 제보를 반영해 몬스터 개체 수 유동 조정·NPC 상호작용 개선·초반 퀘스트 혼잡 해소를 같은 날 적용했다. '빠른 소통 → 즉시 개선 → 재공지'의 사이클을 초반 화제성과 신뢰 확보에 활용한 사례로, 신작 론칭 운영 벤치마크로 참고할 만하다.</div>
-    <div class="body-cn">Smilegate 在上线当日上午发布制作人开发者笔记,并根据玩家反馈于当天完成怪物数量动态调整、NPC 交互优化与前期任务拥堵疏导。"快速沟通→即时改进→再公告"的循环被用于抢占初期话题度与建立信任,可作为新作发行运营的标杆参考。</div>
-    <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=308281" target="_blank" rel="noopener">🔗 출처 · 来源:경향게임스 Kyunghyang Games ↗</a>
-  </div>
-
-  <div class="card">
-    <span class="date-pill">2026-09-11</span>
-    <span class="tag">하드웨어 협업 · 硬件联动</span>
-    <div class="kr">엔씨 × 삼성전자, TGS서 '갤럭시 S26 울트라' 시연 부스 협업</div>
-    <div class="cn-title">NCSOFT × 三星,在 TGS 用"Galaxy S26 Ultra"打造试玩展台</div>
-    <div class="body-kr">엔씨는 TGS 2026 단독 부스에서 신작 '아스트라에 오라티오'를 삼성 '갤럭시 S26 울트라'로 시연하고, 3D 플레이트 기술을 적용한 '스페이셜 사이니지'로 부스를 연출한다. 게임 IP와 최신 플래그십 단말·디스플레이 기술을 결합한 체험형 마케팅으로, 서브컬처 타깃의 몰입 경험을 강조한 접근이다.</div>
-    <div class="body-cn">NCSOFT 在 TGS 2026 独立展台用三星"Galaxy S26 Ultra"试玩新作《Astrae Oratio》,并以采用3D 板技术的"空间标牌"布置展台。将游戏 IP 与最新旗舰终端及显示技术结合的体验式营销,凸显面向二次元受众的沉浸体验。</div>
-    <a class="srclink" href="https://view.asiae.co.kr/article/2026091110160455981" target="_blank" rel="noopener">🔗 출처 · 来源:아시아경제 Asiae ↗</a>
-  </div>
+    <div class="card">
+      <span class="tag">리텐션 이벤트 · 留存活动</span>
+      <div class="ko">메이플스토리, '퍼스널 버닝'으로 명절 리텐션 설계</div>
+      <div class="body-ko">넥슨 '메이플스토리'는 9월 17일 업데이트에서 신규 에픽 던전 '아우룸 레기스'와 함께 캐릭터 육성 가속 이벤트 '퍼스널 버닝'을 11월 18일까지 장기간 운영한다. 추석 연휴 유입 유저를 두 달간 붙잡아두는 '롱런 리텐션' 설계가 핵심으로, 명절 시즌 마케팅 캘린더 참고 사례다.</div>
+      <div class="body-cn"><span class="lead">中文对照</span>Nexon《冒险岛》9 月 17 日更新推出新史诗副本「Aurum Regis」,并将角色养成加速活动「Personal Burning」长线运营至 11 月 18 日。用两个月周期留住中秋假期涌入的新老玩家,是典型的「长线留存」设计——节庆季营销日历的好范例。</div>
+      <a class="srclink" href="https://maplestory.nexon.com/promotion/event/2026/20260917/intro" target="_blank" rel="noopener">🔗 출처 · 来源:메이플스토리 공식(冒险岛官方) ↗</a><span class="date-badge">2026-09-17</span>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <h3>📚 이번 주 출처 · 本周来源汇总</h3>
-    <div class="sub">아래 모든 기사의 발행일은 최근 7일 이내(2026-09-07 ~ 09-14, Asia/Seoul)입니다. 各条来源发布日期均在近一周内。</div>
+    <h3>이번 주 출처 매체 <span class="cn">/ 本周来源媒体</span></h3>
+    <p class="src-note">아래 모든 기사의 발행일은 이번 주(2026-09-14 ~ 09-20, 한국시간) 이내입니다. · 以下所有文章发布日期均在本周(2026-09-14 ~ 09-20,韩国时间)之内。</p>
     <ul class="src-list">
-      <li><span class="d">09-14</span><a href="https://www.betanews.net/article/view/beta202609140002" target="_blank" rel="noopener">베타뉴스 Betanews — 주간 모바일 순위(9월 2주차)</a></li>
-      <li><span class="d">09-12</span><a href="https://www.khgames.co.kr/news/articleView.html?idxno=308304" target="_blank" rel="noopener">경향게임스 Kyunghyang Games — '이클립스' 구글 매출 2위</a></li>
-      <li><span class="d">09-11</span><a href="https://www.khgames.co.kr/news/articleView.html?idxno=308281" target="_blank" rel="noopener">경향게임스 Kyunghyang Games — '이클립스' 앱스토어 1위·실시간 피드백</a></li>
-      <li><span class="d">09-11</span><a href="https://view.asiae.co.kr/article/2026091110160455981" target="_blank" rel="noopener">아시아경제 Asiae — TGS 2026 서브컬처 영토 확장</a></li>
-      <li><span class="d">09-10</span><a href="https://pubg.com/ko/events/notice/11012" target="_blank" rel="noopener">PUBG 공식 PUBG Official — 배틀그라운드 × 주술회전 콜라보</a></li>
-      <li><span class="d">09-09</span><a href="https://www.sisaon.co.kr/news/articleView.html?idxno=204268" target="_blank" rel="noopener">시사오늘 SisaON — 넷마블 RF·엔씨 아이온2 업데이트</a></li>
-      <li><span class="d">09-08</span><a href="https://www.seoultimes.news/news/article.html?no=2000099652" target="_blank" rel="noopener">서울타임즈 Seoul Times — 넷마블 뉴월드 시즌2·엔씨 TGS 예고</a></li>
-      <li><span class="d">09-07</span><a href="https://www.khgames.co.kr/news/articleView.html?idxno=308119" target="_blank" rel="noopener">경향게임스 Kyunghyang Games — 국산 게임 매출 1~4위 독식</a></li>
+      <li><span class="m">경향게임스 京乡游戏</span><span class="d">2026-09-14</span><a href="https://www.khgames.co.kr/news/articleView.html?idxno=308374" target="_blank" rel="noopener">주간 모바일 차트 기사 ↗</a></li>
+      <li><span class="m">인더스트리뉴스 产业新闻</span><span class="d">2026-09-16</span><a href="https://www.industrynews.co.kr/news/articleView.html?idxno=86191" target="_blank" rel="noopener">나 혼자만 레벨업: 카르마 사전등록 ↗</a></li>
+      <li><span class="m">서울경제 首尔经济(Seoul Economic Daily)</span><span class="d">2026-09-16</span><a href="https://en.sedaily.com/technology/2026/09/16/ncsoft-nexon-netmarble-take-new-titles-to-tokyo-game-show" target="_blank" rel="noopener">TGS 신작 공개 ↗</a></li>
+      <li><span class="m">서울경제 首尔经济(Seoul Economic Daily)</span><span class="d">2026-09-17</span><a href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">K-서브컬처 TGS 특집 ↗</a></li>
+      <li><span class="m">서울타임즈뉴스 首尔时报</span><span class="d">2026-09-17</span><a href="https://www.seoultimes.news/news/article.html?no=2000100003" target="_blank" rel="noopener">넥슨 추석 업데이트 ↗</a></li>
+      <li><span class="m">서울타임즈뉴스 首尔时报</span><span class="d">2026-09-17</span><a href="https://www.seoultimes.news/news/article.html?no=2000100015" target="_blank" rel="noopener">TGS 신작·하반기 라인업 ↗</a></li>
+      <li><span class="m">메이플스토리 공식 冒险岛官方</span><span class="d">2026-09-17</span><a href="https://maplestory.nexon.com/promotion/event/2026/20260917/intro" target="_blank" rel="noopener">2026년 9월 업데이트 ↗</a></li>
     </ul>
-    <div class="foot-note">
-      ※ 본 브리핑은 위 매체의 실제 보도 기사만을 근거로 작성되었으며, 인용된 모든 기사의 발행일은 2026-09-07 ~ 09-14(Asia/Seoul) 사이입니다. 순위·수치는 각 기사 보도 시점 기준이며, 실시간과 다를 수 있습니다.<br>
-      ※ 本简报仅基于上述媒体的真实报道撰写,所引用文章发布日期均在 2026-09-07 ~ 09-14(韩国时间)之间。榜单与数据以各报道时点为准,可能与实时情况存在差异。<br>
-      🔄 매주 월요일 10:00 KST 自动更新 · 每周一 10:00(韩国时间)自动更新
+    <div class="foot-bottom">
+      한국 게임 주간 브리핑 · 韩国游戏每周简报<br>
+      기준 주간: 2026-09-14 ~ 09-20 (Asia/Seoul) · 생성: 2026-09-21 월요일 10:00 KST<br>
+      ※ 자동 수집·정리된 요약으로, 발행 전 원문 링크로 팩트 확인을 권장합니다. / 本简报由自动整理生成,发布前建议通过原文链接核实。
     </div>
   </footer>
 
