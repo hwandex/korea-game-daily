@@ -1,253 +1,231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>한국 게임 주간 브리핑 · 韩国游戏每周简报</title>
 <style>
   :root{
     --bg:#0e1016; --card:#171a23; --card2:#1e222d; --line:#2a2f3d;
-    --brand:#5b8cff; --brand-soft:#8fb0ff; --txt:#e8ebf2; --muted:#9aa3b5;
-    --ko:#f2f4fa; --cn:#b9c1d4;
+    --accent:#5b8cff; --txt:#e8ebf2; --sub:#9aa3b5; --ko:#e8ebf2; --zh:#b9c2d6;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--bg); color:var(--txt);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo","Microsoft YaHei",sans-serif;
-    line-height:1.6; padding:0 16px 60px;
-  }
-  .wrap{max-width:860px;margin:0 auto}
-
-  /* Header */
-  header{padding:42px 0 26px;text-align:center;border-bottom:1px solid var(--line);margin-bottom:30px}
-  .kicker{font-size:12.5px;letter-spacing:2.5px;color:var(--brand);font-weight:700;text-transform:uppercase}
-  h1{font-size:27px;margin:12px 0 4px;font-weight:800;letter-spacing:-.3px}
-  h1 .cn{display:block;font-size:17px;color:var(--cn);font-weight:600;margin-top:3px;letter-spacing:0}
-  .period{
-    display:inline-flex;align-items:center;gap:8px;margin-top:16px;
-    background:var(--card2);border:1px solid var(--line);border-radius:999px;
-    padding:8px 18px;font-size:14px;font-weight:700;color:var(--brand-soft)
-  }
-  .meta{margin-top:12px;font-size:12.5px;color:var(--muted)}
-  .meta b{color:var(--txt)}
-
-  /* Section */
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:"Pretendard","Noto Sans KR","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 16px 60px}
+  header.top{text-align:center;padding:30px 16px 24px;border-bottom:1px solid var(--line);margin-bottom:28px}
+  header.top h1{margin:0 0 6px;font-size:26px;letter-spacing:-.3px}
+  header.top .sub{color:var(--sub);font-size:14px;margin:2px 0}
+  .period{display:inline-block;margin-top:14px;background:var(--card2);border:1px solid var(--line);
+    color:var(--accent);font-weight:600;font-size:14px;padding:7px 16px;border-radius:20px}
+  .auto{display:block;margin-top:10px;color:var(--sub);font-size:12.5px}
   section{margin-bottom:34px}
-  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-  .num{
-    flex:none;width:42px;height:42px;border-radius:12px;
-    background:linear-gradient(135deg,var(--brand),#3a63d6);
-    display:flex;align-items:center;justify-content:center;
-    font-size:19px;font-weight:800;color:#fff;box-shadow:0 4px 14px rgba(91,140,255,.32)
-  }
-  .sec-title{font-size:18px;font-weight:800}
-  .sec-title .cn{display:block;font-size:13px;color:var(--muted);font-weight:600;margin-top:1px}
-
-  /* Card */
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:18px 20px;margin-bottom:14px
-  }
-  .card .ko{font-size:15.5px;font-weight:700;color:var(--ko);margin-bottom:6px}
-  .tag{
-    display:inline-block;font-size:11px;font-weight:700;color:var(--brand-soft);
-    background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3);
-    padding:2px 9px;border-radius:6px;margin-bottom:9px;letter-spacing:.3px
-  }
-  .card .body-ko{font-size:14px;color:var(--txt);margin-bottom:8px}
-  .card .body-cn{font-size:13.5px;color:var(--cn);padding-top:8px;border-top:1px dashed var(--line)}
-  .card .body-cn .lead{color:var(--muted);font-size:11.5px;letter-spacing:.5px;display:block;margin-bottom:2px}
-
-  .srclink{
-    display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:12px;
+  .sec-head{display:flex;align-items:center;gap:12px;background:var(--card);
+    border:1px solid var(--line);border-left:3px solid var(--accent);
+    padding:13px 16px;border-radius:12px;margin-bottom:16px}
+  .sec-head .num{flex:none;width:30px;height:30px;border-radius:8px;background:var(--accent);
+    color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .sec-head .t-ko{font-size:17px;font-weight:700}
+  .sec-head .t-zh{font-size:13px;color:var(--sub)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:13px;
+    padding:17px 18px;margin-bottom:14px}
+  .card .tag{display:inline-block;font-size:11.5px;color:var(--accent);background:var(--card2);
+    border:1px solid var(--line);padding:2px 9px;border-radius:6px;margin-bottom:9px}
+  .card .ko{color:var(--ko);font-weight:600;font-size:15.5px;margin:0 0 7px}
+  .card .ko-body{color:var(--ko);font-weight:400;font-size:14px;margin:0 0 10px}
+  .card .zh{color:var(--zh);font-size:13.5px;margin:0;padding-top:10px;border-top:1px dashed var(--line)}
+  .card .zh .zh-t{font-weight:600;color:#cdd6ea;display:block;margin-bottom:3px}
+  .srclink{display:inline-flex;align-items:center;gap:5px;margin-top:9px;font-size:12px;
     color:#5b8cff;text-decoration:none;border:1px solid #2a2f3d;background:#1e222d;
-    padding:4px 10px;border-radius:7px;transition:border-color .15s,background .15s
-  }
-  .srclink:hover{border-color:var(--brand);background:#242a38}
-  .date-badge{font-size:11px;color:var(--muted);margin-left:8px}
-
-  /* Footer */
-  footer{margin-top:44px;padding-top:24px;border-top:1px solid var(--line)}
-  footer h3{font-size:14px;font-weight:800;margin-bottom:4px}
-  footer h3 .cn{font-weight:600;color:var(--muted);font-size:12.5px}
-  .src-note{font-size:12px;color:var(--muted);margin-bottom:14px}
-  .src-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-  .src-list li{
-    font-size:12.5px;background:var(--card);border:1px solid var(--line);
-    border-radius:9px;padding:9px 13px;display:flex;flex-wrap:wrap;align-items:center;gap:8px
-  }
-  .src-list .m{font-weight:700;color:var(--txt)}
-  .src-list .d{color:var(--brand-soft);font-size:11.5px}
-  .src-list a{color:var(--brand);text-decoration:none;word-break:break-all;font-size:11.5px}
-  .foot-bottom{margin-top:22px;text-align:center;font-size:11.5px;color:var(--muted);line-height:1.8}
+    padding:4px 10px;border-radius:7px}
+  .srclink:hover{border-color:var(--accent)}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;color:var(--sub);font-size:13px}
+  footer h3{color:var(--txt);font-size:15px;margin:0 0 12px}
+  footer ul{margin:0;padding-left:18px}
+  footer li{margin-bottom:7px}
+  footer li a{color:var(--accent);text-decoration:none}
+  footer .note{margin-top:16px;font-size:12px;color:var(--sub);line-height:1.7}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <div class="kicker">Korea Game Weekly</div>
-    <h1>한국 게임 주간 브리핑
-      <span class="cn">韩国游戏每周简报</span>
-    </h1>
-    <div class="period">📅 2026-09-14 ~ 09-20 주간</div>
-    <div class="meta">매주 월요일 10:00 KST 자동 업데이트 · <b>每周一 10:00 KST 自动更新</b><br>
-      본 리포트의 모든 기사는 최근 7일 이내(한국시간) 발행된 최신 보도입니다 · 全部资料均为近 7 天内(韩国时间)最新报道</div>
+  <header class="top">
+    <h1>🎮 한국 게임 주간 브리핑</h1>
+    <div class="sub">韩国游戏每周简报 · 中韩双语</div>
+    <span class="period">2026-09-28 ~ 10-04 주간 (Asia/Seoul)</span>
+    <span class="auto">⏱ 매주 월요일 10:00 KST 자동 업데이트 · 每周一 10:00 KST 自动更新</span>
   </header>
 
-  <!-- ① 新游戏发布 & 榜单 -->
+  <!-- ① 신작 & 순위 -->
   <section>
     <div class="sec-head">
       <div class="num">1</div>
-      <div class="sec-title">신작 출시 &amp; 마켓 차트
-        <span class="cn">新游戏发布 &amp; 榜单</span>
+      <div>
+        <div class="t-ko">신작 출시 & 순위</div>
+        <div class="t-zh">新游戏发布 & 榜单</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">구글플레이 매출 차트 · Google Play 畅销榜</span>
-      <div class="ko">국산 MMORPG, 구글 매출 1~3위 '싹쓸이'</div>
-      <div class="body-ko">이번 주 구글플레이 매출 순위는 컴투스 '제우스: 오만의 신'이 1위, 스마일게이트 '이클립스: 더 어웨이크닝'이 2위, 엔씨소프트 '리니지M'이 3위를 차지하며 국산 MMORPG가 최상위권을 장악했다. 4위 'WOS: 화이트아웃 서바이벌', 6위 넷마블 '솔: 인챈트'가 뒤를 이었다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>本周韩国 Google Play 畅销榜前三名被国产 MMORPG 包揽:Com2uS《宙斯:傲慢之神》登顶第 1,Smilegate《Eclipse: The Awakening》第 2,NCSOFT《天堂 M》第 3;第 4 为中国厂商《WOS: Whiteout Survival》,第 6 为 Netmarble《Sol: Enchant》。国产 MMO 强势回归成为本周榜单最大看点。</div>
-      <a class="srclink" href="https://www.khgames.co.kr/news/articleView.html?idxno=308374" target="_blank" rel="noopener">🔗 출처 · 来源:경향게임스(京乡游戏) ↗</a><span class="date-badge">2026-09-14</span>
+      <span class="tag">NC · 아이온2 / AION2</span>
+      <p class="ko">엔씨 '아이온2', 10월 5일 북미·남미·유럽·아시아 4개 권역 글로벌 정식 출시</p>
+      <p class="ko-body">퍼플·스팀 크로스플랫폼 전략을 채택했으며, 얼리 액세스에서 스팀 최고 동시접속자 17만 1,530명을 기록하고 스팀 인기 차트 1위에 올랐다. 한국·대만에 이어 서구권으로 흥행을 확장하려는 시도.</p>
+      <p class="zh"><span class="zh-t">NC《永恒之塔2》10月5日全球正式上线（北美·南美·欧洲·亚洲四大区域）</span>采用 Purple·Steam 跨平台策略；抢先体验期间 Steam 最高同时在线达 171,530 人，登上 Steam 热门榜第一。继韩国·台湾大卖后，正式进军欧美市场。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">사전등록 · 预约开启</span>
-      <div class="ko">넷마블 '나 혼자만 레벨업: 카르마' 한·일 사전등록 돌입</div>
-      <div class="body-ko">넷마블은 글로벌 흥행 IP 기반 로그라이크 액션 RPG '나 혼자만 레벨업: 카르마'를 도쿄게임쇼 2026에서 공개하고, 9월 16일부터 구글플레이·앱스토어에서 한국·일본 사전등록을 시작했다. 200종 이상의 버프와 8명의 플레이어블 캐릭터, '그림자 군단' 직접 조작이 특징이며, 사전등록자에게 '성진우 프레데터 의상' 등 한정 보상을 제공한다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Netmarble 在东京电玩展 2026 上公开基于全球爆款 IP 的肉鸽动作 RPG《我独自升级:业力》,并于 9 月 16 日在 Google Play / App Store 开启韩日双区预约。游戏主打 200+ 增益 buff、8 名可玩角色,以及可直接操控「影之军团」的核心玩法;预约玩家可获「成振宇 掠夺者外观」等限定奖励。</div>
-      <a class="srclink" href="https://www.industrynews.co.kr/news/articleView.html?idxno=86191" target="_blank" rel="noopener">🔗 출처 · 来源:인더스트리뉴스(产业新闻) ↗</a><span class="date-badge">2026-09-16</span>
+      <span class="tag">넥슨 · 템빨: 오버기어드 / Overgeared</span>
+      <p class="ko">넥슨 신작 MMORPG '템빨: 오버기어드', 10월 1일 사전등록 시작</p>
+      <p class="ko-body">그레이게임즈가 개발한 웹소설·웹툰 IP 기반 신작으로, PC·모바일 크로스플랫폼을 지원하며 연내 한국·대만·홍콩·마카오 출시 예정. 동명 애니메이션이 10월 방영돼 IP 시너지를 노린다. '확률 의존 경제' 대신 장비 강화 중심 구조를 전면에 내세웠다.</p>
+      <p class="zh"><span class="zh-t">Nexon 新作 MMORPG《神装：Overgeared》10月1日开启预约</span>由 Gray Games 开发，改编自高人气网络小说·网漫 IP，支持 PC·移动跨平台，年内在韩国·台湾·港澳上线；同名动画10月开播形成 IP 联动。主打"装备强化"而非"抽卡概率依赖"经济系统。</p>
+      <a class="srclink" href="https://www.invenglobal.com/articles/26685/nexon-opens-pre-registration-for-new-title-overgeared-on-oct-1" target="_blank" rel="noopener">🔗 출처 · 来源:Inven Global (2026-09-30) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">글로벌 출시 · 全球上线</span>
-      <div class="ko">넥슨 '데이브 더 다이버' 모바일 버전 글로벌 출시</div>
-      <div class="body-ko">국내 패키지 게임 최초로 글로벌 누적 1,000만 장을 돌파한 넥슨 '데이브 더 다이버'가 9월 17일 iOS·안드로이드 모바일 버전으로 글로벌 정식 출시됐다. 모바일 전용 협력 콘텐츠도 함께 추가됐다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Nexon《潜水员戴夫》(Dave the Diver)——韩国首款全球累计销量突破 1,000 万份的单机游戏——于 9 月 17 日推出 iOS/Android 手机版并全球上线,同步加入手机端专属合作(联机)内容。</div>
-      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100003" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스(首尔时报) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">카카오게임즈 · 도깨비의세계</span>
+      <p class="ko">카카오게임즈 '도깨비의세계', 10월 8일 정식 출시 예고</p>
+      <p class="ko-body">2.5D 하이브리드 비주얼과 한국 전통 설화 기반 콘텐츠로 차별화. AI 챗봇 '묘롱'으로 초보자 진입 장벽을 낮추고, 거래소 기초재화를 유료가 아닌 인게임 획득으로 설정해 '과금 피로도 완화'를 강조.</p>
+      <p class="zh"><span class="zh-t">Kakao Games《鬼怪世界》预告10月8日正式上线</span>以 2.5D 混合美术与韩国传统神话题材做差异化；通过 AI 聊天机器人"喵咙"降低新手门槛，交易所基础资源设定为游戏内获取而非付费，主打"减轻氪金疲劳"。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">넥슨 · 마비노기 모바일</span>
+      <p class="ko">'마비노기 모바일', 10월 7일 일본 시장 정식 출시 · 사전등록 20만 명 돌파</p>
+      <p class="ko-body">국내 흥행에 이어 일본 현지화로 해외 매출 확장에 나선다. 사전등록 20만 명을 기록하며 초반 모멘텀 확보.</p>
+      <p class="zh"><span class="zh-t">《玛奇 Mobile》10月7日正式登陆日本市场，预约突破20万</span>继韩国本土大卖后以本地化进军日本，拓展海外营收；预约20万确保首发势能。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
     </div>
   </section>
 
-  <!-- ② 市场趋势 & 行业动态 -->
+  <!-- ② 시장 트렌드 -->
   <section>
     <div class="sec-head">
       <div class="num">2</div>
-      <div class="sec-title">시장 트렌드 &amp; 업계 동향
-        <span class="cn">市场趋势 &amp; 行业动态</span>
+      <div>
+        <div class="t-ko">시장 트렌드 & 업계 동향</div>
+        <div class="t-zh">市场趋势 & 行业动态</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">도쿄게임쇼 2026 · TGS 2026</span>
-      <div class="ko">한국 기업 127개사 TGS 참가…중국 공백 메우며 역대급 존재감</div>
-      <div class="body-ko">9월 17~21일 일본 지바에서 열린 도쿄게임쇼 2026(총 1,138개사·53개국 참가)에 한국 기업이 전년 대비 50개사 늘어난 127개사가 참가했다. 중국 퍼블리셔의 대거 불참으로 생긴 공백을 한국 서브컬처·MMO 신작이 메우며 K-게임의 일본 시장 공략이 본격화됐다. 일본 모바일 게임 시장은 연 약 110억 달러(약 15조 원) 규모로 아시아 2위다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>9 月 17-21 日于日本千叶举办的东京电玩展 2026(共 1,138 家企业、53 国参展)中,韩国参展企业较去年增加 50 家、达 127 家。随着中国发行商大规模缺席,韩国二次元与 MMO 新作填补了空缺,K-游戏对日本市场的攻势全面展开。日本手游市场年规模约 110 亿美元(约 15 万亿韩元),为亚洲第二大市场。</div>
-      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">트렌드 · 가을 신작 대전</span>
+      <p class="ko">10월 초, 추석 이후 '가을 신작·대형 업데이트' 릴레이 본격화</p>
+      <p class="ko-body">넥슨(오버기어드)·엔씨(아이온2)·넷마블(세븐나이츠 리버스 협업)·펄어비스(검은사막 한가위 이벤트)·위메이드(레전드 오브 이미르) 등 주요 업체가 동시다발적으로 신작·업데이트·이벤트를 쏟아내며 4분기 성수기 경쟁에 돌입.</p>
+      <p class="zh"><span class="zh-t">10月初，中秋后"秋季新作+大型更新"密集开战</span>Nexon(Overgeared)、NC(永恒之塔2)、Netmarble(七骑士Reverse联动)、Pearl Abyss(黑色沙漠中秋活动)、Wemade(伊米尔传说)等主力厂商同步铺开新作·更新·活动，抢占Q4旺季。</p>
+      <a class="srclink" href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=88386" target="_blank" rel="noopener">🔗 출처 · 来源:이코리아 eKoreaNews (2026-10-01) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">장르 트렌드 · 品类趋势</span>
-      <div class="ko">K-서브컬처(수집형 RPG) 장르, 일본 무대 전면에 서다</div>
-      <div class="body-ko">이번 TGS에서 엔씨 '아스트라에 오라티오', 넥슨 '파레이돌리아', 넷마블 '펄 인 블루' 등 한국 서브컬처 신작이 대거 출품되며, 그간 일본이 강세를 보이던 수집형 RPG 시장에 한국 개발사들이 정면 도전하는 흐름이 뚜렷해졌다. 크로스플랫폼(PC·콘솔·모바일) 지원이 공통 키워드로 부상했다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>本届 TGS 上,NCSOFT《Astrae Oratio》、Nexon《Pareidolia》、Netmarble《Pearl in Blue》等一批韩国二次元(收集型 RPG)新作集中亮相,韩国厂商正面进军此前由日本主导的收集型 RPG 市场,趋势明显。跨平台(PC/主机/手机)互通成为多款新作的共同关键词。</div>
-      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">트렌드 · BM 전환</span>
+      <p class="ko">'과금 피로도 완화'가 신작 차별화 포인트로 부상</p>
+      <p class="ko-body">카카오 '도깨비의세계'(기초재화 인게임 획득)와 넥슨 '오버기어드'(장비 강화 중심, 확률 의존 축소)가 나란히 '덜 과금적인' 경제 설계를 마케팅 메시지로 내세웠다. 확률형 아이템 피로감이 커진 한국 시장에서 BM 신뢰 회복을 겨냥한 흐름.</p>
+      <p class="zh"><span class="zh-t">"减轻氪金疲劳"成为新作差异化卖点</span>Kakao《鬼怪世界》(基础资源可游戏内获取)与 Nexon《Overgeared》(以装备强化为核心、弱化概率依赖)不约而同将"更不氪"的经济设计作为营销主张。瞄准韩国市场对抽卡疲劳加剧、意在重建付费信任。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">트렌드 · 크로스플랫폼</span>
+      <p class="ko">PC·콘솔·스팀 크로스플랫폼 + 글로벌 동시 출시가 '기본값'으로</p>
+      <p class="ko-body">아이온2(퍼플·스팀), 오버기어드(PC·모바일), 붉은사막 DLC(글로벌 동시·다국어 풀더빙) 등 이번 주 공개된 라인업 대부분이 모바일 단독을 벗어나 PC/스팀·글로벌 동시 전략을 채택. 서구권 유입을 노린 플랫폼 확장이 업계 표준으로 자리잡는 양상.</p>
+      <p class="zh"><span class="zh-t">PC·主机·Steam 跨平台 + 全球同步上线成"标配"</span>永恒之塔2(Purple·Steam)、Overgeared(PC·移动)、红色沙漠DLC(全球同步·多语言全配音)等本周曝光阵容大多跳出"纯手游"，采用 PC/Steam·全球同步策略，意在导入欧美用户，平台扩张正成行业标准。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
     </div>
   </section>
 
-  <!-- ③ 竞品 / 大厂动向 -->
+  <!-- ③ 경쟁사 / 대형사 -->
   <section>
     <div class="sec-head">
       <div class="num">3</div>
-      <div class="sec-title">경쟁작 &amp; 주요사 동향
-        <span class="cn">竞品 / 大厂动向</span>
+      <div>
+        <div class="t-ko">경쟁사 / 대형 스튜디오 동향</div>
+        <div class="t-zh">竞品 / 大厂动向</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">엔씨소프트 · NCSOFT</span>
-      <div class="ko">엔씨 '아스트라에 오라티오' TGS 첫 시연…신전기(神電記) 장르</div>
-      <div class="body-ko">엔씨소프트는 '블루 아카이브' 출신 스태프가 참여한 다이나미스원 개발의 신작 모바일 RPG '아스트라에 오라티오'를 TGS에서 첫 공개했다. 가상의 1989년 도쿄를 배경으로 한 '신전기' 세계관으로, 삼성 갤럭시 S26 울트라 42대에서 시연 가능하게 구성했다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>NCSOFT 在 TGS 首度公开由 Dynamis One(团队含《蔚蓝档案》原班人马)开发的新作手机 RPG《Astrae Oratio》。作品以架空 1989 年东京为舞台、主打「神电记」都市奇幻世界观,现场用 42 台三星 Galaxy S26 Ultra 供玩家试玩。</div>
-      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/16/ncsoft-nexon-netmarble-take-new-titles-to-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-16</span>
+      <span class="tag">넷마블 Netmarble</span>
+      <p class="ko">'세븐나이츠 리버스'에 '귀멸의 칼날' 협업 콘텐츠 업데이트 · 'RF 온라인 넥스트' 신규 부스트 서버 '노바' 10월 21일 오픈</p>
+      <p class="ko-body">인기 애니 IP 콜라보로 기존작 리텐션·신규 유입을 노리고, RF 온라인 넥스트는 신규 서버로 복귀·신규 유저 동선을 확보.</p>
+      <p class="zh"><span class="zh-t">《七骑士Reverse》上线《鬼灭之刃》联动内容；《RF Online Next》新增加速服"Nova"10月21日开服</span>借人气动画 IP 联动拉动老作留存与新客导入；RF 以新服承接回流与新用户。</p>
+      <a class="srclink" href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=88386" target="_blank" rel="noopener">🔗 출처 · 来源:이코리아 eKoreaNews (2026-10-01) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">넥슨 · Nexon</span>
-      <div class="ko">넥슨, 추석 앞두고 대규모 업데이트 총력전</div>
-      <div class="body-ko">넥슨은 추석 성수기를 겨냥해 '카트라이더 러쉬플러스' 시즌41 '갤럭시'(신규 카트 6종), '던전앤파이터 모바일' 신규 캐릭터 '아처'와 '루크 레이드', '메이플스토리' 290레벨 에픽 던전 '아우룸 레기스', '서든어택' 시즌4 '문라이즈' 등을 잇달아 선보였다. TGS에서는 IO 스튜디오의 서브컬처 신작 '파레이돌리아'와 '마비노기 모바일' 일본 출시도 공개했다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Nexon 瞄准中秋旺季密集推出大型更新:《跑跑卡丁车 RUSH+》第 41 赛季「Galaxy」(6 款新车)、《DNF 手游》新角色「弓箭手」与「Luke 团本」、《冒险岛》290 级史诗副本「Aurum Regis」、《突击风暴》第 4 赛季「Moonrise」等。TGS 上还公开了 IO 工作室的二次元新作《Pareidolia》及《玛奇 Mobile》的日本上线计划。</div>
-      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100003" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스(首尔时报) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">펄어비스 Pearl Abyss</span>
+      <p class="ko">'붉은사막' DLC '미지의 여정' 10월 30일 글로벌 동시 출시 예고 · '검은사막' 한가위 후속 이벤트 진행</p>
+      <p class="ko-body">붉은사막 DLC는 파이웰 대륙 신규 탐험지역을 추가하고 다국어 풀 더빙을 지원하며, 기존 콘솔 이용자 할인으로 진입 장벽을 낮췄다. 검은사막은 추석 연계 이벤트로 명절 트래픽을 이어간다.</p>
+      <p class="zh"><span class="zh-t">《红色沙漠》DLC"未知旅程"预告10月30日全球同步上线；《黑色沙漠》延续中秋后续活动</span>DLC 新增派维尔大陆探索区域、支持多语言全配音，并以老主机玩家折扣降低门槛；黑沙以中秋活动延续节日流量。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">넷마블 · Netmarble</span>
-      <div class="ko">넷마블, TGS서 신작 3종 동시 공개</div>
-      <div class="body-ko">넷마블은 '나 혼자만 레벨업: 카르마', 일본 인기 만화 기반 '샹그릴라 프론티어: 7대 최강종족', 신작 서브컬처 RPG '펄 인 블루'(첫 공개) 등 3종을 TGS에 출품했다. 웹툰·만화 IP를 앞세운 일본·글로벌 동시 공략 전략이 두드러진다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Netmarble 在 TGS 同台公开 3 款新作:《我独自升级:业力》、改编自日本人气漫画的《香格里拉边境:七大最强种族》,以及首度亮相的二次元 RPG《Pearl in Blue》。以网漫/漫画 IP 为主力、日本与全球同步进攻的策略十分鲜明。</div>
-      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/16/ncsoft-nexon-netmarble-take-new-titles-to-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-16</span>
+      <span class="tag">위메이드 Wemade</span>
+      <p class="ko">'레전드 오브 이미르'에 신규 클래스 '어쌔신' 추가</p>
+      <p class="ko-body">신규 직업 업데이트로 전투 다양성을 확대하고 기존 유저 복귀·신규 캐릭터 육성 수요를 자극.</p>
+      <p class="zh"><span class="zh-t">《伊米尔传说 Legend of Ymir》新增职业"刺客"</span>以新职业更新扩充战斗多样性，刺激老用户回流与新角色养成需求。</p>
+      <a class="srclink" href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=88386" target="_blank" rel="noopener">🔗 출처 · 来源:이코리아 eKoreaNews (2026-10-01) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">스마일게이트 · 시프트업 · 카카오게임즈</span>
-      <div class="ko">스마일게이트·시프트업·카카오게임즈, 하반기 라인업 예열</div>
-      <div class="body-ko">스마일게이트는 수집형 RPG '미래시: 언씬 퓨처'와 로그라이트 '데드 어카운트: 두 개의 푸른 불꽃'을 선보이며 10월 19~26일 스팀 넥스트 페스트 참가를 예고했다. 시프트업은 '스텔라 블레이드 컴플리트 에디션'의 닌텐도 스위치2 버전을 공개했다. 카카오게임즈는 '도깨비'(10월 8일)와 '패스 오브 엑자일2'(12월 12일) 출시 일정을 알렸다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Smilegate 展出收集型 RPG《Miraeshi: The Unseen Future》与肉鸽《Dead Account: Two Blue Flames》,并预告 10 月 19-26 日参加 Steam 新品节;SHIFT UP 公开《剑星 完整版》的 Switch 2 版本;Kakao Games 公布《도깨비/Godsphere》(10 月 8 日)与《流放之路 2》(12 月 12 日)的上线时间。各大厂下半年阵容集中预热。</div>
-      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100015" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스(首尔时报) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">크래프톤 Krafton</span>
+      <p class="ko">PUBG, 게임 밖 '팝 컬처' 브랜드로 영역 확장 (콤플렉스콘 2026 참가 — ④ 참고)</p>
+      <p class="ko-body">배틀그라운드 IP를 패션·음악 페스티벌로 확장하며 글로벌 라이프스타일 브랜드화를 추진. 상세 내용은 아래 '마케팅 영감' 섹션 참고.</p>
+      <p class="zh"><span class="zh-t">PUBG 向游戏外"流行文化"品牌扩张（参展 ComplexCon 2026，详见第④板块）</span>将绝地求生 IP 延伸至时尚·音乐节，推动全球生活方式品牌化。详情见下方"营销灵感"板块。</p>
+      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100394" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스 SeoulTimes (2026-09-30) ↗</a>
     </div>
   </section>
 
-  <!-- ④ 营销 & 推广灵感 -->
+  <!-- ④ 마케팅 영감 -->
   <section>
     <div class="sec-head">
       <div class="num">4</div>
-      <div class="sec-title">마케팅 &amp; 프로모션 인사이트
-        <span class="cn">营销 &amp; 推广灵感</span>
+      <div>
+        <div class="t-ko">마케팅 & 프로모션 영감</div>
+        <div class="t-zh">营销 & 推广灵感</div>
       </div>
     </div>
 
     <div class="card">
-      <span class="tag">오프라인 부스 마케팅 · 线下展位营销</span>
-      <div class="ko">TGS 서브컬처 부스, '체험형 이벤트'로 승부</div>
-      <div class="body-ko">이번 TGS에서 한국 서브컬처 신작들은 단순 시연을 넘어 체험형 마케팅을 대거 도입했다. 넥슨 '파레이돌리아'는 AI 음성인식으로 캐릭터가 실시간 반응하는 부스를, 넷마블 '나 혼자만 레벨업: 카르마'는 성우 쇼와 현장 타임어택 대전을, 스마일게이트는 현지 코스어와 LED 타워 연출을 선보였다. IP 몰입감을 오프라인 경험으로 전환한 사례로 참고할 만하다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>本届 TGS 上,韩国二次元新作大量采用「体验式营销」而非单纯试玩:Nexon《Pareidolia》搭建 AI 语音识别、角色实时应答的展位;Netmarble《我独自升级:业力》举办声优 show 与现场限时挑战对战;Smilegate 则用当地 coser 与 LED 塔造型造势。将 IP 沉浸感转化为线下体验——非常值得借鉴的打法。</div>
-      <a class="srclink" href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">🔗 출처 · 来源:서울경제(首尔经济) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">크로스 컬처 · IP 확장</span>
+      <p class="ko">크래프톤 PUBG × 머신 건 켈리, 콤플렉스콘 2026(10/3~4 LA) 첫 협업</p>
+      <p class="ko-body">대표 맵 '미라마'를 모티브로 한 체험형 부스를 세우고, MGK가 세운 브랜드 '플로어 13(Floor 13)'과 공동 캡슐 컬렉션을 출시. 공연용 헬리콥터를 포토존으로 활용해 '생존'이라는 게임 핵심 가치를 패션·공간 경험으로 번역했다.<br><b>👉 참고 포인트:</b> 게임 IP를 '오프라인 팝컬처 페스티벌 × 아티스트 콜라보 × 한정 굿즈'로 확장하는 체험형 마케팅 공식.</p>
+      <p class="zh"><span class="zh-t">Krafton PUBG × Machine Gun Kelly，ComplexCon 2026(10/3~4 洛杉矶)首次合作</span>以代表地图"米拉玛"为灵感搭建体验式展位，与 MGK 创立的品牌"Floor 13"推出联名胶囊系列，并将演出直升机改造为打卡拍照点，把"生存"这一核心价值转译为时尚与空间体验。<br><b>👉 可借鉴：</b>把游戏 IP 扩展为"线下流行文化节 × 艺人联名 × 限定周边"的体验式营销公式。</p>
+      <a class="srclink" href="https://www.seoultimes.news/news/article.html?no=2000100394" target="_blank" rel="noopener">🔗 출처 · 来源:서울타임즈뉴스 SeoulTimes (2026-09-30) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">셀럽 &amp; IP 마케팅 · 名人 × IP 营销</span>
-      <div class="ko">'카르마' 미디어 행사에 일본 배우 혼고 카나타 특별 게스트</div>
-      <div class="body-ko">넷마블은 '나 혼자만 레벨업: 카르마'의 마쿠하리 메세 미디어 행사에 일본 배우 혼고 카나타를 특별 게스트로 초청해 빠른 템포의 전투를 직접 시연하게 했다. 현지 셀럽을 활용해 일본 시장 화제성을 끌어올리고, 사전등록 한정 코스튬('성진우 프레데터 의상')으로 전환을 유도한 IP×셀럽 조합이 돋보인다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Netmarble 在《我独自升级:业力》的幕张展媒体活动上邀请日本演员本乡奏多(Hongo Kanata)担任特别嘉宾,现场演示高速战斗。借助本地名人拉高日本市场话题度,再用预约限定外观(「成振宇 掠夺者」)促进转化——IP × 名人的组合拳很有参考价值。</div>
-      <a class="srclink" href="https://www.industrynews.co.kr/news/articleView.html?idxno=86191" target="_blank" rel="noopener">🔗 출처 · 来源:인더스트리뉴스(产业新闻) ↗</a><span class="date-badge">2026-09-16</span>
+      <span class="tag">애니 IP 콜라보</span>
+      <p class="ko">넷마블 '세븐나이츠 리버스' × '귀멸의 칼날' 콜라보</p>
+      <p class="ko-body">초인기 애니메이션 IP와의 기간 한정 콜라보로 휴면 유저 복귀와 신규 유입을 동시에 노리는 전형적 리텐션 전략.<br><b>👉 참고 포인트:</b> 분기별 '대형 애니 IP 콜라보'를 라이브 운영 캘린더에 고정 이벤트로 편성하는 방식.</p>
+      <p class="zh"><span class="zh-t">Netmarble《七骑士Reverse》×《鬼灭之刃》联动</span>以超人气动画 IP 的限时联动同时拉动沉默用户回流与新客导入，是典型的留存打法。<br><b>👉 可借鉴：</b>把"大型动画 IP 季度联动"作为固定事件编入 LiveOps 运营日历。</p>
+      <a class="srclink" href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=88386" target="_blank" rel="noopener">🔗 출처 · 来源:이코리아 eKoreaNews (2026-10-01) ↗</a>
     </div>
 
     <div class="card">
-      <span class="tag">리텐션 이벤트 · 留存活动</span>
-      <div class="ko">메이플스토리, '퍼스널 버닝'으로 명절 리텐션 설계</div>
-      <div class="body-ko">넥슨 '메이플스토리'는 9월 17일 업데이트에서 신규 에픽 던전 '아우룸 레기스'와 함께 캐릭터 육성 가속 이벤트 '퍼스널 버닝'을 11월 18일까지 장기간 운영한다. 추석 연휴 유입 유저를 두 달간 붙잡아두는 '롱런 리텐션' 설계가 핵심으로, 명절 시즌 마케팅 캘린더 참고 사례다.</div>
-      <div class="body-cn"><span class="lead">中文对照</span>Nexon《冒险岛》9 月 17 日更新推出新史诗副本「Aurum Regis」,并将角色养成加速活动「Personal Burning」长线运营至 11 月 18 日。用两个月周期留住中秋假期涌入的新老玩家,是典型的「长线留存」设计——节庆季营销日历的好范例。</div>
-      <a class="srclink" href="https://maplestory.nexon.com/promotion/event/2026/20260917/intro" target="_blank" rel="noopener">🔗 출처 · 来源:메이플스토리 공식(冒险岛官方) ↗</a><span class="date-badge">2026-09-17</span>
+      <span class="tag">온보딩 · AI 활용</span>
+      <p class="ko">카카오 '도깨비의세계' — AI 챗봇 '묘롱' 온보딩 + '덜 과금적인' BM 메시지</p>
+      <p class="ko-body">AI 챗봇으로 신규 유저의 초반 이탈을 줄이고, '과금 피로도 완화'를 핵심 마케팅 카피로 전면에 내세워 BM 불신을 역이용한 포지셔닝.<br><b>👉 참고 포인트:</b> ①AI 가이드 캐릭터를 온보딩 UX이자 마케팅 상징으로 활용 ②'착한 BM'을 광고 소구점으로 전환.</p>
+      <p class="zh"><span class="zh-t">Kakao《鬼怪世界》— AI 聊天机器人"喵咙"引导 +"更不氪"BM 讯息</span>用 AI 聊天机器人降低新手早期流失，并把"减轻氪金疲劳"作为核心营销文案，反向利用市场对付费模式的不信任来做定位。<br><b>👉 可借鉴：</b>①让 AI 向导角色既是新手引导 UX、又是营销符号；②把"良心 BM"转化为广告诉求点。</p>
+      <a class="srclink" href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">🔗 출처 · 来源:게임뷰 GameVu (2026-10-01) ↗</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <h3>이번 주 출처 매체 <span class="cn">/ 本周来源媒体</span></h3>
-    <p class="src-note">아래 모든 기사의 발행일은 이번 주(2026-09-14 ~ 09-20, 한국시간) 이내입니다. · 以下所有文章发布日期均在本周(2026-09-14 ~ 09-20,韩国时间)之内。</p>
-    <ul class="src-list">
-      <li><span class="m">경향게임스 京乡游戏</span><span class="d">2026-09-14</span><a href="https://www.khgames.co.kr/news/articleView.html?idxno=308374" target="_blank" rel="noopener">주간 모바일 차트 기사 ↗</a></li>
-      <li><span class="m">인더스트리뉴스 产业新闻</span><span class="d">2026-09-16</span><a href="https://www.industrynews.co.kr/news/articleView.html?idxno=86191" target="_blank" rel="noopener">나 혼자만 레벨업: 카르마 사전등록 ↗</a></li>
-      <li><span class="m">서울경제 首尔经济(Seoul Economic Daily)</span><span class="d">2026-09-16</span><a href="https://en.sedaily.com/technology/2026/09/16/ncsoft-nexon-netmarble-take-new-titles-to-tokyo-game-show" target="_blank" rel="noopener">TGS 신작 공개 ↗</a></li>
-      <li><span class="m">서울경제 首尔经济(Seoul Economic Daily)</span><span class="d">2026-09-17</span><a href="https://en.sedaily.com/technology/2026/09/17/k-subculture-games-take-center-stage-at-tokyo-game-show" target="_blank" rel="noopener">K-서브컬처 TGS 특집 ↗</a></li>
-      <li><span class="m">서울타임즈뉴스 首尔时报</span><span class="d">2026-09-17</span><a href="https://www.seoultimes.news/news/article.html?no=2000100003" target="_blank" rel="noopener">넥슨 추석 업데이트 ↗</a></li>
-      <li><span class="m">서울타임즈뉴스 首尔时报</span><span class="d">2026-09-17</span><a href="https://www.seoultimes.news/news/article.html?no=2000100015" target="_blank" rel="noopener">TGS 신작·하반기 라인업 ↗</a></li>
-      <li><span class="m">메이플스토리 공식 冒险岛官方</span><span class="d">2026-09-17</span><a href="https://maplestory.nexon.com/promotion/event/2026/20260917/intro" target="_blank" rel="noopener">2026년 9월 업데이트 ↗</a></li>
+    <h3>📚 이번 주 출처 매체 · 本周来源媒体</h3>
+    <ul>
+      <li><a href="https://www.gamevu.co.kr/news/articleView.html?idxno=61153" target="_blank" rel="noopener">게임뷰 GameVu — 「넥슨·엔씨·카카오·펄어비스, 각자 다른 10월의 반격 나서」 (2026-10-01) ↗</a></li>
+      <li><a href="https://www.ekoreanews.co.kr/news/articleView.html?idxno=88386" target="_blank" rel="noopener">이코리아 eKoreaNews — 「게임업계 가을맞이 분주…신작·이벤트·대형 업데이트」 (2026-10-01) ↗</a></li>
+      <li><a href="https://www.invenglobal.com/articles/26685/nexon-opens-pre-registration-for-new-title-overgeared-on-oct-1" target="_blank" rel="noopener">Inven Global — 「Nexon Opens Pre-Registration for 'Overgeared' on Oct. 1」 (2026-09-30) ↗</a></li>
+      <li><a href="https://www.seoultimes.news/news/article.html?no=2000100394" target="_blank" rel="noopener">서울타임즈뉴스 SeoulTimes — 「크래프톤 PUBG, 콤플렉스콘서 머신 건 켈리와 첫 협업」 (2026-09-30) ↗</a></li>
     </ul>
-    <div class="foot-bottom">
-      한국 게임 주간 브리핑 · 韩国游戏每周简报<br>
-      기준 주간: 2026-09-14 ~ 09-20 (Asia/Seoul) · 생성: 2026-09-21 월요일 10:00 KST<br>
-      ※ 자동 수집·정리된 요약으로, 발행 전 원문 링크로 팩트 확인을 권장합니다. / 本简报由自动整理生成,发布前建议通过原文链接核实。
+    <div class="note">
+      ✅ 모든 출처 기사의 발행일은 2026-09-28 ~ 10-04 (최근 7일, Asia/Seoul) 범위 내입니다.<br>
+      ✅ 以上所有来源文章发布日期均在 2026-09-28 ~ 10-04（最近7天，韩国时间）区间内。<br>
+      본 브리핑은 실제 접속·확인한 기사만 인용했으며, 각 항목의 출처 링크는 원문으로 연결됩니다. · 本简报仅引用实际访问核实过的文章，各条来源链接均指向原文。
     </div>
   </footer>
 
